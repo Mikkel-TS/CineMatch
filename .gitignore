@@ -4,6 +4,9 @@ __pycache__/
 models/
 Datasets/
 New_dataset/
+# GitHub rejects files over 100 MB. ratings.csv is about 877 MB; tags.csv is about 69 MB.
+Dataset/ml-32m/ratings.csv
+Dataset/ml-32m/tags.csv
 .DS_Store
 *.zip
 artifacts/
