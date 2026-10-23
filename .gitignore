@@ -6,3 +6,8 @@ Datasets/
 New_dataset/
 .DS_Store
 *.zip
+artifacts/
+.pytest_cache/
+*.egg-info/
+build/
+dist/
