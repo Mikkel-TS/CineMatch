@@ -8,6 +8,8 @@ The complete attempt list and exact comparisons remain in [leaderboard.json](lea
 
 Mikkel subsequently selected the winning model and authorized its integration into the iOS app. The [frontend integration record](FRONTEND_INTEGRATION.md) documents the implemented local scorer, the 8,937 verified TMDB movies shared by all active flows, and compatibility with existing opinions in `peter/CineMatch`. The frozen experiment artifact remains unchanged; iOS build/device validation requires Xcode.
 
+The [app-model benchmark design](APP_MODEL_BENCHMARK_DESIGN.md) reviews Anton's source and retained app bundle. A subsequent [separate direct comparison](comparisons/app-model-comparison-20261119-v1/REPORT.md) now compares refitted conditional neighbours and Anton's updated rating model on a shared catalogue with newly held-out users. Its results belong to a different benchmark and must not be mixed into this campaign's leaderboard.
+
 ## The comparison held fixed
 
 Every main-benchmark result uses the original 500 validation users, their exact five onboarding ratings, withheld targets, 9,021 candidate movies in the original order, watched-item exclusions, binary relevance threshold of four stars and established metric implementation. Two users have no relevant targets, leaving 498 in ranking averages. They remain included in coverage and rating-error calculations where applicable.

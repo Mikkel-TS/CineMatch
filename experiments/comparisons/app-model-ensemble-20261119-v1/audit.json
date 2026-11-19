@@ -1,0 +1,111 @@
+{
+  "status": "passed",
+  "audited_at_utc": "2026-11-19T12:16:00.807889+00:00",
+  "data": {
+    "disjoint_cohorts": {
+      "training_user_ids": 192442,
+      "anton_fit_user_ids": 1000,
+      "blend_validation_user_ids": 1000,
+      "test_user_ids": 2000,
+      "old_excluded_user_ids": 4500
+    },
+    "excluded_tag_users": 8500,
+    "training_rows_exactly_reproduced": 20783195,
+    "fresh_cohort_selection_reproduced": true,
+    "all_profiles_reproduced_from_source_ratings": {
+      "fit10": {
+        "users": 1000,
+        "disclosed_opinions": 10,
+        "minimum_remaining_known_positives": 0
+      },
+      "validation15": {
+        "users": 1000,
+        "disclosed_opinions": 15,
+        "minimum_remaining_known_positives": 6
+      },
+      "test15": {
+        "users": 2000,
+        "disclosed_opinions": 15,
+        "minimum_remaining_known_positives": 6
+      }
+    }
+  },
+  "validation_selection_replayed": true,
+  "confirmation_follows_frozen_selection": true,
+  "frozen_hashes_match": true,
+  "users": 2000,
+  "methods": [
+    "conditional",
+    "anton",
+    "rating_count",
+    "rating_mean",
+    "blend"
+  ],
+  "independent_scalar_metrics_per_user_and_aggregate": [
+    "ndcg_at_5",
+    "hit_rate_at_5",
+    "recall_at_5",
+    "recall_at_10",
+    "precision_at_5",
+    "top_1_known_positive",
+    "explicit_low_rate_at_5"
+  ],
+  "maximum_aggregate_absolute_error": 1.1102230246251565e-16,
+  "independent_primary_bootstrap_matches": true,
+  "ranking_checks": {
+    "native_anton_manual_conditional_and_manual_fusion_users": [
+      77,
+      9870,
+      20996,
+      29695,
+      40490,
+      52667,
+      63925,
+      74235,
+      84203,
+      94817,
+      105232,
+      115180,
+      125845,
+      137057,
+      146845,
+      157492,
+      166749,
+      179099,
+      189880,
+      200762
+    ],
+    "both_popularity_baselines_all_users": 2000,
+    "average_tie_ranks_recomputed_without_scipy": true
+  },
+  "independent_complementarity_diagnostics": {
+    "mean_standalone_top5_overlap": 1.258,
+    "users_with_anton_unique_known_like": 1155,
+    "anton_unique_known_like_slots": 2071,
+    "conditional_unique_known_like_slots": 3751,
+    "anton_rescues_zero_hit_conditional_users": 76,
+    "conditional_rescues_zero_hit_anton_users": 345,
+    "blend_rescues_zero_hit_conditional_users": 3,
+    "blend_loses_conditional_hit_users": 5,
+    "blend_known_like_slots_gained_vs_conditional": 46,
+    "blend_known_like_slots_lost_vs_conditional": 61,
+    "blend_users_improved_ndcg": 52,
+    "blend_users_worsened_ndcg": 91,
+    "blend_users_equal_ndcg": 1857
+  },
+  "production_artifacts_unchanged": {
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/peter/CineMatch/CineMatch/Core/Resources/cinematch_knn.json": true,
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/cm-20261119-full-knn-conditional/model/model.npz": true
+  },
+  "audit_source_sha256": "cd8f421d9cbfec8d8f90787b27050d0d3bd2d74a7b9557af81702d16a95a0dac",
+  "inputs_sha256": {
+    "test_results.json": "e831417d23928f991c88933c1d6b7fe735faf31826139b6389613f4fa51551a0",
+    "selection.json": "3d8bbf66ae1e166b90d1f0013ff249d513b2fc55fccd7db54f0adf4078b7a0e9",
+    "data/test15.npz": "8454854422757828754b1498870eef04fc56323e65d1e3b6195882c9aff2ab52",
+    "test/anton.npz": "6c41542655e1afa7d6c751bd33832fc457e0be5527c16d21a43fce973c5c0523",
+    "test/blend.npz": "7377b60c2f140266abb4d4df084211f3aadf718401501ce103b72c5070f77c69",
+    "test/conditional.npz": "f0b32f62881e57f483385f289df81fdb98327fce91f685be329f7439615cd4f8",
+    "test/rating_count.npz": "f0d97eebdc2076e4ea0514c9eba56d6c83c2f13ed2338dc3be5cf219e97fe6d9",
+    "test/rating_mean.npz": "0b2fe34db658c6ff0bcb94296bb9cdbbccfabad7846b3e7828485bb1aeaef578"
+  }
+}

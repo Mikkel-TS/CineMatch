@@ -1,0 +1,92 @@
+{
+  "audited_at_utc": "2026-11-19T12:00:48.020345+00:00",
+  "status": "passed",
+  "users": 2000,
+  "input_positive_opinions": 15,
+  "evaluation_depth": 5,
+  "profile_checks": {
+    "new_support_equals_original20_first15": true,
+    "original_five_inputs_unchanged": true,
+    "all_raw_observations_preserved": true,
+    "last_five_old_supports_restored_as_targets": 10000,
+    "targets_exclude_all15_disclosed": true,
+    "minimum_positive_targets": 6
+  },
+  "metric_recomputation": "Independent scalar DCG arithmetic and set membership; original evaluator not imported",
+  "checks": [
+    {
+      "method": "conditional",
+      "users": 2000,
+      "metrics": [
+        "ndcg_at_5",
+        "hit_rate_at_5",
+        "recall_at_5",
+        "recall_at_10",
+        "precision_at_5",
+        "top_1_known_positive",
+        "explicit_low_rate_at_5"
+      ],
+      "metrics_match": true,
+      "disclosed15_excluded": true
+    },
+    {
+      "method": "anton",
+      "users": 2000,
+      "metrics": [
+        "ndcg_at_5",
+        "hit_rate_at_5",
+        "recall_at_5",
+        "recall_at_10",
+        "precision_at_5",
+        "top_1_known_positive",
+        "explicit_low_rate_at_5"
+      ],
+      "metrics_match": true,
+      "disclosed15_excluded": true
+    },
+    {
+      "method": "rating_count",
+      "users": 2000,
+      "metrics": [
+        "ndcg_at_5",
+        "hit_rate_at_5",
+        "recall_at_5",
+        "recall_at_10",
+        "precision_at_5",
+        "top_1_known_positive",
+        "explicit_low_rate_at_5"
+      ],
+      "metrics_match": true,
+      "disclosed15_excluded": true
+    },
+    {
+      "method": "rating_mean",
+      "users": 2000,
+      "metrics": [
+        "ndcg_at_5",
+        "hit_rate_at_5",
+        "recall_at_5",
+        "recall_at_10",
+        "precision_at_5",
+        "top_1_known_positive",
+        "explicit_low_rate_at_5"
+      ],
+      "metrics_match": true,
+      "disclosed15_excluded": true
+    }
+  ],
+  "maximum_aggregate_absolute_error": 0.0,
+  "native_anton_top10_checks": 10,
+  "manual_conditional_top10_checks": 10,
+  "model_and_original_profile_hashes_unchanged": true,
+  "focused_tests_passed": 8,
+  "scope": "Descriptive follow-up on previously inspected evaluation users; no new confirmation claim",
+  "input_hashes": {
+    "onboarding15_top5/profiles.npz": "a5a0dd40337e13d3769425894bb8cc031b8b10b190246918c13a217f1204a6b4",
+    "onboarding15_top5/results.json": "5d1f13e4dc3fe2f3e398b8a5b44ef55d9f2eb1197ba29eeda07e66f859a81f98",
+    "onboarding15_top5/conditional.npz": "2db19df1c6af3e34ab3a46be79dcc5c99d284dde81780ba3b5a0650e271c8335",
+    "onboarding15_top5/anton.npz": "4e066f02aaf1bf035bf0dbf60221247e1c7363f98d288320faef74cb75e26c07",
+    "onboarding15_top5/rating_count.npz": "329e81f1378a642d24c7598c4292b7908fc3fedf5707ca88ec906e1b9ae6c515",
+    "onboarding15_top5/rating_mean.npz": "92bb99059311c574d33693afe545ca3781c096c2d5a4babca4f18c61f17bdbc3"
+  }
+}

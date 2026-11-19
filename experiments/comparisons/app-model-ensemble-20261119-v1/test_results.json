@@ -1,0 +1,234 @@
+{
+  "completed_at_utc": "2026-11-19T12:13:21.331856+00:00",
+  "users": 2000,
+  "catalogue_movies": 3788,
+  "onboarding_positive_opinions": 15,
+  "recommendations": 5,
+  "selection": {
+    "selected_at_utc": "2026-11-19T12:12:59.626458+00:00",
+    "anton_weight": 0.025,
+    "conditional_weight": 0.975,
+    "validation_ndcg": 0.5036357806254677,
+    "conditional_validation_ndcg": 0.5049961936894425,
+    "validation_difference": -0.0013604130639748302,
+    "validation_prefers_blend": false,
+    "test_predictions_computed_before_selection": false,
+    "selection_rule": "Best nonzero prespecified blend; ties prefer smaller Anton weight"
+  },
+  "metrics": {
+    "conditional": {
+      "ndcg_at_5": 0.5188934430713024,
+      "hit_rate_at_5": 0.8735,
+      "recall_at_5": 0.06259598003283225,
+      "recall_at_10": 0.10885942466857108,
+      "precision_at_5": 0.5045999999999999,
+      "top_1_known_positive": 0.567,
+      "explicit_low_rate_at_5": 0.0201,
+      "users": 2000,
+      "users_with_relevant_targets": 2000,
+      "users_without_relevant_targets": 0,
+      "catalogue_items": 3788,
+      "distinct_recommended_movies": 31,
+      "catalog_coverage_at_5": 0.008183738120380148,
+      "top5_exposure_slots": 10000,
+      "top5_concentration": 0.6801999999999999,
+      "exposure_hhi_at_5": 0.10856392000000001,
+      "short_list_rate_at_5": 0.0,
+      "empty_list_rate": 0.0
+    },
+    "anton": {
+      "ndcg_at_5": 0.3583776888109497,
+      "hit_rate_at_5": 0.739,
+      "recall_at_5": 0.036645895506708215,
+      "recall_at_10": 0.060276473359191125,
+      "precision_at_5": 0.3366,
+      "top_1_known_positive": 0.4375,
+      "explicit_low_rate_at_5": 0.009600000000000001,
+      "users": 2000,
+      "users_with_relevant_targets": 2000,
+      "users_without_relevant_targets": 0,
+      "catalogue_items": 3788,
+      "distinct_recommended_movies": 316,
+      "catalog_coverage_at_5": 0.08342133051742344,
+      "top5_exposure_slots": 10000,
+      "top5_concentration": 0.4216,
+      "exposure_hhi_at_5": 0.04643468,
+      "short_list_rate_at_5": 0.0,
+      "empty_list_rate": 0.0
+    },
+    "rating_count": {
+      "ndcg_at_5": 0.4234782909391054,
+      "hit_rate_at_5": 0.815,
+      "recall_at_5": 0.04716360954200381,
+      "recall_at_10": 0.07816717772557936,
+      "precision_at_5": 0.4133,
+      "top_1_known_positive": 0.462,
+      "explicit_low_rate_at_5": 0.0239,
+      "users": 2000,
+      "users_with_relevant_targets": 2000,
+      "users_without_relevant_targets": 0,
+      "catalogue_items": 3788,
+      "distinct_recommended_movies": 12,
+      "catalog_coverage_at_5": 0.0031678986272439284,
+      "top5_exposure_slots": 10000,
+      "top5_concentration": 0.8782000000000001,
+      "exposure_hhi_at_5": 0.16157416,
+      "short_list_rate_at_5": 0.0,
+      "empty_list_rate": 0.0
+    },
+    "rating_mean": {
+      "ndcg_at_5": 0.28906470616850305,
+      "hit_rate_at_5": 0.6525,
+      "recall_at_5": 0.026700477836477724,
+      "recall_at_10": 0.04945527231999423,
+      "precision_at_5": 0.25660000000000005,
+      "top_1_known_positive": 0.445,
+      "explicit_low_rate_at_5": 0.0087,
+      "users": 2000,
+      "users_with_relevant_targets": 2000,
+      "users_without_relevant_targets": 0,
+      "catalogue_items": 3788,
+      "distinct_recommended_movies": 10,
+      "catalog_coverage_at_5": 0.0026399155227032735,
+      "top5_exposure_slots": 10000,
+      "top5_concentration": 0.9307,
+      "exposure_hhi_at_5": 0.1766013,
+      "short_list_rate_at_5": 0.0,
+      "empty_list_rate": 0.0
+    },
+    "blend": {
+      "ndcg_at_5": 0.5173254378736485,
+      "hit_rate_at_5": 0.8725,
+      "recall_at_5": 0.062186513873352195,
+      "recall_at_10": 0.1082014320036285,
+      "precision_at_5": 0.5031,
+      "top_1_known_positive": 0.564,
+      "explicit_low_rate_at_5": 0.0201,
+      "users": 2000,
+      "users_with_relevant_targets": 2000,
+      "users_without_relevant_targets": 0,
+      "catalogue_items": 3788,
+      "distinct_recommended_movies": 33,
+      "catalog_coverage_at_5": 0.008711721224920803,
+      "top5_exposure_slots": 10000,
+      "top5_concentration": 0.6786,
+      "exposure_hhi_at_5": 0.10867231999999999,
+      "short_list_rate_at_5": 0.0,
+      "empty_list_rate": 0.0
+    }
+  },
+  "primary_comparison": {
+    "metric": "ndcg_at_5",
+    "users": 2000,
+    "excluded_users": 0,
+    "confidence": 0.95,
+    "repetitions": 5000,
+    "seed": 2026111901,
+    "difference": -0.0015680051976539099,
+    "confidence_interval": [
+      -0.002638912993123788,
+      -0.0005040596156772725
+    ]
+  },
+  "secondary_unadjusted_comparisons": {
+    "blend-vs-anton/ndcg_at_5": {
+      "metric": "ndcg_at_5",
+      "users": 2000,
+      "excluded_users": 0,
+      "confidence": 0.95,
+      "repetitions": 5000,
+      "seed": 2026111901,
+      "difference": 0.15894774906269873,
+      "confidence_interval": [
+        0.1468375859005504,
+        0.17093062683951254
+      ]
+    },
+    "blend-vs-rating_count/ndcg_at_5": {
+      "metric": "ndcg_at_5",
+      "users": 2000,
+      "excluded_users": 0,
+      "confidence": 0.95,
+      "repetitions": 5000,
+      "seed": 2026111901,
+      "difference": 0.09384714693454313,
+      "confidence_interval": [
+        0.08701421524609133,
+        0.100959105083678
+      ]
+    },
+    "blend-vs-conditional/hit_rate_at_5": {
+      "metric": "hit_rate_at_5",
+      "users": 2000,
+      "excluded_users": 0,
+      "confidence": 0.95,
+      "repetitions": 5000,
+      "seed": 2026111901,
+      "difference": -0.001,
+      "confidence_interval": [
+        -0.004,
+        0.0015
+      ]
+    },
+    "blend-vs-conditional/precision_at_5": {
+      "metric": "precision_at_5",
+      "users": 2000,
+      "excluded_users": 0,
+      "confidence": 0.95,
+      "repetitions": 5000,
+      "seed": 2026111901,
+      "difference": -0.0014999999999999996,
+      "confidence_interval": [
+        -0.0029,
+        -0.00010000000000000003
+      ]
+    },
+    "blend-vs-conditional/explicit_low_rate_at_5": {
+      "metric": "explicit_low_rate_at_5",
+      "users": 2000,
+      "excluded_users": 0,
+      "confidence": 0.95,
+      "repetitions": 5000,
+      "seed": 2026111901,
+      "difference": 0.0,
+      "confidence_interval": [
+        -0.0004,
+        0.0004
+      ]
+    }
+  },
+  "complementarity": {
+    "mean_standalone_top5_overlap": 1.258,
+    "users_with_anton_unique_known_like": 1155,
+    "anton_unique_known_like_slots": 2071,
+    "conditional_unique_known_like_slots": 3751,
+    "anton_rescues_zero_hit_conditional_users": 76,
+    "conditional_rescues_zero_hit_anton_users": 345,
+    "blend_rescues_zero_hit_conditional_users": 3,
+    "blend_loses_conditional_hit_users": 5,
+    "blend_known_like_slots_gained_vs_conditional": 46,
+    "blend_known_like_slots_lost_vs_conditional": 61,
+    "blend_users_improved_ndcg": 52,
+    "blend_users_worsened_ndcg": 91,
+    "blend_users_equal_ndcg": 1857,
+    "interpretation": "Retrospective diagnostics only; hidden labels never choose output movies"
+  },
+  "scoring_diagnostics": {
+    "scoring_seconds": {
+      "conditional": 0.08923949371092021,
+      "anton": 2.4196659135632217
+    },
+    "milliseconds_per_user": {
+      "conditional": 0.04461974685546011,
+      "anton": 1.2098329567816108
+    },
+    "anton_mean_number_tied_for_highest_score": 17.599,
+    "anton_fraction_users_top_score_clipped_to_four": 0.333
+  },
+  "evidence": {
+    "positive_gain_95_interval": false,
+    "point_gain_at_least_0_01": false,
+    "lower_bound_at_least_0_01": false
+  },
+  "production_unchanged": true
+}

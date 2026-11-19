@@ -1,0 +1,51 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-11-19T11:34:53.438554+00:00",
+  "purpose": "Data preparation only; no model scores or candidate selection",
+  "sources": {
+    "training": {
+      "path": "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/mf16-full-users-fixed-catalog-20261117/data/train.npz",
+      "sha256": "43d397f906be87146b93383338f0f5c58e099f540d7c9ce21d18091b4fbc282a",
+      "bytes": 70483441
+    },
+    "training_manifest": {
+      "path": "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/mf16-full-users-fixed-catalog-20261117/data/manifest.json",
+      "sha256": "faefc269e442f9135aaee7feb57610a602892604d63d3e0d4b8ad654281f038c",
+      "bytes": 2302364
+    },
+    "app_bundle": {
+      "path": "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/peter/CineMatch/CineMatch/Core/Resources/cinematch_knn.json",
+      "sha256": "a4bc91bd5796cbc04d9789657e9a6985202f421f6ff7caeafd8c2b2b64c89085",
+      "bytes": 22984443
+    },
+    "letterboxd_movies": {
+      "path": "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/extra_data/archive/movies.csv",
+      "sha256": "a0ea730f24e1819c6c28fc3d8c9a0e36b80a0964124df4063b2881801f78b3ee",
+      "bytes": 254431616
+    },
+    "tmdb_cache": {
+      "path": "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/experiments/integration/tmdb_verification_cache.json",
+      "sha256": "2a01565f14f8314973c9f621e7d7efaec148a10d62f0ebd24164ec5b786b545b",
+      "bytes": 10382829
+    }
+  },
+  "preparation_source_sha256": "7aadda6320e106303cce991321ae92bc6ad1d6b99ba2c365af8e84fe8485f153",
+  "seed": 20261119,
+  "validation_users": 1000,
+  "test_users": 2000,
+  "eligibility": {
+    "minimum_common_ratings": 35,
+    "minimum_common_positive_ratings": 21,
+    "positive_threshold": 4,
+    "source_population": "Existing full-training users only"
+  },
+  "selection": "Permutation of ascending eligible user IDs with numpy default_rng(seed); validation first, test next; output groups sorted",
+  "catalogue": "Verified eligible legacy overlap, unique TMDB/MovieLens identities, ascending MovieLens ID; reject evidenced LB1020663 alias",
+  "support_proxy": "floor(raw MovieLens rating), clipped to 1..5; 4/4.5 become Great4, 5 becomes Fantastic5; 0.5 becomes1 and3.5 becomes3",
+  "support_sampling": "Per-user SeedSequence([seed,userId,stream]); canonical item order; stream1 positive,stream2 mixed/fit; nested prefixes",
+  "ranking_targets": "All remaining observed common-catalogue ratings, original .5..5 scale; relevant if>=4; unrated is unknown",
+  "fit10": "Validation only: ten random RAW historical ratings and up to30 remaining raw targets; Anton source .5..5 to1..4 conversion belongs in adapter",
+  "cohort_bias": "Users are historical MovieLens raters with>=35 common ratings and>=21 positives; random positive selections approximate, not reproduce, self-selected favourites",
+  "scope": "Refitted algorithm comparison on common catalogue, not unchanged production artifacts or online app satisfaction",
+  "test_scores_read": false
+}

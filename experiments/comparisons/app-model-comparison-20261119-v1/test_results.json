@@ -1,0 +1,648 @@
+{
+  "split": "test",
+  "frozen_sha256": "11023886cdf2483e863de5bc88a9cfe4c8f3b9a7b4dfce0631722ab3086d5797",
+  "upstream_commit": "6e85958f503525b3020ec80fe613934e3c723d7b",
+  "catalogue_size": 3788,
+  "profiles": {
+    "positive5": {
+      "metrics": {
+        "conditional": {
+          "ndcg_at_5": 0.584141309774957,
+          "hit_rate_at_5": 0.9195,
+          "recall_at_5": 0.05353312303624209,
+          "recall_at_10": 0.09557306773683198,
+          "precision_at_5": 0.5656000000000001,
+          "top_1_known_positive": 0.654,
+          "explicit_low_rate_at_5": 0.0209,
+          "users": 2000,
+          "users_with_relevant_targets": 2000,
+          "users_without_relevant_targets": 0,
+          "catalogue_items": 3788,
+          "distinct_recommended_movies": 49,
+          "catalog_coverage_at_5": 0.01293558606124604,
+          "top5_exposure_slots": 10000,
+          "top5_concentration": 0.69,
+          "exposure_hhi_at_5": 0.11284558,
+          "short_list_rate_at_5": 0.0,
+          "empty_list_rate": 0.0
+        },
+        "anton": {
+          "ndcg_at_5": 0.38090334448844504,
+          "hit_rate_at_5": 0.78,
+          "recall_at_5": 0.030740751562269145,
+          "recall_at_10": 0.05279149097241287,
+          "precision_at_5": 0.34680000000000005,
+          "top_1_known_positive": 0.5095,
+          "explicit_low_rate_at_5": 0.0089,
+          "users": 2000,
+          "users_with_relevant_targets": 2000,
+          "users_without_relevant_targets": 0,
+          "catalogue_items": 3788,
+          "distinct_recommended_movies": 233,
+          "catalog_coverage_at_5": 0.06151003167898627,
+          "top5_exposure_slots": 10000,
+          "top5_concentration": 0.6236,
+          "exposure_hhi_at_5": 0.08431821999999999,
+          "short_list_rate_at_5": 0.0,
+          "empty_list_rate": 0.0
+        },
+        "rating_count": {
+          "ndcg_at_5": 0.4893074075314364,
+          "hit_rate_at_5": 0.8775,
+          "recall_at_5": 0.04302384223071871,
+          "recall_at_10": 0.07144373707255963,
+          "precision_at_5": 0.4758,
+          "top_1_known_positive": 0.5465,
+          "explicit_low_rate_at_5": 0.023899999999999998,
+          "users": 2000,
+          "users_with_relevant_targets": 2000,
+          "users_without_relevant_targets": 0,
+          "catalogue_items": 3788,
+          "distinct_recommended_movies": 8,
+          "catalog_coverage_at_5": 0.0021119324181626186,
+          "top5_exposure_slots": 10000,
+          "top5_concentration": 0.9614999999999999,
+          "exposure_hhi_at_5": 0.18604301999999998,
+          "short_list_rate_at_5": 0.0,
+          "empty_list_rate": 0.0
+        },
+        "rating_mean": {
+          "ndcg_at_5": 0.33656355096508117,
+          "hit_rate_at_5": 0.7355,
+          "recall_at_5": 0.024821163573549253,
+          "recall_at_10": 0.04655838997423609,
+          "precision_at_5": 0.2901,
+          "top_1_known_positive": 0.542,
+          "explicit_low_rate_at_5": 0.007300000000000001,
+          "users": 2000,
+          "users_with_relevant_targets": 2000,
+          "users_without_relevant_targets": 0,
+          "catalogue_items": 3788,
+          "distinct_recommended_movies": 7,
+          "catalog_coverage_at_5": 0.0018479408658922914,
+          "top5_exposure_slots": 10000,
+          "top5_concentration": 0.9805000000000001,
+          "exposure_hhi_at_5": 0.19263972000000001,
+          "short_list_rate_at_5": 0.0,
+          "empty_list_rate": 0.0
+        }
+      },
+      "differences": {
+        "conditional-vs-anton": {
+          "paired_95": {
+            "metric": "ndcg_at_5",
+            "users": 2000,
+            "excluded_users": 0,
+            "confidence": 0.95,
+            "repetitions": 5000,
+            "seed": 20261119,
+            "difference": 0.20323796528651195,
+            "confidence_interval": [
+              0.19174341302524367,
+              0.21481152866553302
+            ]
+          },
+          "familywise_95_bonferroni": {
+            "metric": "ndcg_at_5",
+            "users": 2000,
+            "excluded_users": 0,
+            "confidence": 0.9833333333333333,
+            "repetitions": 5000,
+            "seed": 20261119,
+            "difference": 0.20323796528651195,
+            "confidence_interval": [
+              0.1887361435194973,
+              0.21759219468892982
+            ]
+          }
+        },
+        "conditional-vs-rating_count": {
+          "paired_95": {
+            "metric": "ndcg_at_5",
+            "users": 2000,
+            "excluded_users": 0,
+            "confidence": 0.95,
+            "repetitions": 5000,
+            "seed": 20261119,
+            "difference": 0.09483390224352059,
+            "confidence_interval": [
+              0.08715372515435423,
+              0.10252249916581269
+            ]
+          },
+          "familywise_95_bonferroni": {
+            "metric": "ndcg_at_5",
+            "users": 2000,
+            "excluded_users": 0,
+            "confidence": 0.9833333333333333,
+            "repetitions": 5000,
+            "seed": 20261119,
+            "difference": 0.09483390224352059,
+            "confidence_interval": [
+              0.08551949948895388,
+              0.10405639124180992
+            ]
+          }
+        },
+        "conditional-vs-rating_mean": {
+          "paired_95": {
+            "metric": "ndcg_at_5",
+            "users": 2000,
+            "excluded_users": 0,
+            "confidence": 0.95,
+            "repetitions": 5000,
+            "seed": 20261119,
+            "difference": 0.24757775880987587,
+            "confidence_interval": [
+              0.23677533512847268,
+              0.2581918606345404
+            ]
+          },
+          "familywise_95_bonferroni": {
+            "metric": "ndcg_at_5",
+            "users": 2000,
+            "excluded_users": 0,
+            "confidence": 0.9833333333333333,
+            "repetitions": 5000,
+            "seed": 20261119,
+            "difference": 0.24757775880987587,
+            "confidence_interval": [
+              0.234323742754174,
+              0.26082874747800633
+            ]
+          }
+        }
+      },
+      "diagnostics": {
+        "scoring_seconds": {
+          "conditional": 0.05413231626152992,
+          "anton": 2.256836028303951
+        },
+        "milliseconds_per_user": {
+          "conditional": 0.02706615813076496,
+          "anton": 1.1284180141519755
+        },
+        "anton_mean_number_tied_for_highest_score": 39.795,
+        "anton_fraction_users_top_score_clipped_to_four": 0.2755
+      }
+    },
+    "positive10": {
+      "metrics": {
+        "conditional": {
+          "ndcg_at_5": 0.5566434929755973,
+          "hit_rate_at_5": 0.908,
+          "recall_at_5": 0.05777906020995201,
+          "recall_at_10": 0.10076322233751218,
+          "precision_at_5": 0.5405,
+          "top_1_known_positive": 0.62,
+          "explicit_low_rate_at_5": 0.0216,
+          "users": 2000,
+          "users_with_relevant_targets": 2000,
+          "users_without_relevant_targets": 0,
+          "catalogue_items": 3788,
+          "distinct_recommended_movies": 42,
+          "catalog_coverage_at_5": 0.011087645195353749,
+          "top5_exposure_slots": 10000,
+          "top5_concentration": 0.6922999999999999,
+          "exposure_hhi_at_5": 0.1124108,
+          "short_list_rate_at_5": 0.0,
+          "empty_list_rate": 0.0
+        },
+        "anton": {
+          "ndcg_at_5": 0.37570206542791723,
+          "hit_rate_at_5": 0.764,
+          "recall_at_5": 0.03386467781640835,
+          "recall_at_10": 0.05613753690166945,
+          "precision_at_5": 0.35130000000000006,
+          "top_1_known_positive": 0.4675,
+          "explicit_low_rate_at_5": 0.0094,
+          "users": 2000,
+          "users_with_relevant_targets": 2000,
+          "users_without_relevant_targets": 0,
+          "catalogue_items": 3788,
+          "distinct_recommended_movies": 307,
+          "catalog_coverage_at_5": 0.0810454065469905,
+          "top5_exposure_slots": 10000,
+          "top5_concentration": 0.4831,
+          "exposure_hhi_at_5": 0.05684304,
+          "short_list_rate_at_5": 0.0,
+          "empty_list_rate": 0.0
+        },
+        "rating_count": {
+          "ndcg_at_5": 0.46088020519592476,
+          "hit_rate_at_5": 0.855,
+          "recall_at_5": 0.04483870158825649,
+          "recall_at_10": 0.07401007669630918,
+          "precision_at_5": 0.4471,
+          "top_1_known_positive": 0.5175,
+          "explicit_low_rate_at_5": 0.024399999999999998,
+          "users": 2000,
+          "users_with_relevant_targets": 2000,
+          "users_without_relevant_targets": 0,
+          "catalogue_items": 3788,
+          "distinct_recommended_movies": 10,
+          "catalog_coverage_at_5": 0.0026399155227032735,
+          "top5_exposure_slots": 10000,
+          "top5_concentration": 0.9203000000000001,
+          "exposure_hhi_at_5": 0.17308984,
+          "short_list_rate_at_5": 0.0,
+          "empty_list_rate": 0.0
+        },
+        "rating_mean": {
+          "ndcg_at_5": 0.3125336641547891,
+          "hit_rate_at_5": 0.695,
+          "recall_at_5": 0.025524099556298235,
+          "recall_at_10": 0.04667624034122398,
+          "precision_at_5": 0.272,
+          "top_1_known_positive": 0.5,
+          "explicit_low_rate_at_5": 0.007600000000000001,
+          "users": 2000,
+          "users_with_relevant_targets": 2000,
+          "users_without_relevant_targets": 0,
+          "catalogue_items": 3788,
+          "distinct_recommended_movies": 10,
+          "catalog_coverage_at_5": 0.0026399155227032735,
+          "top5_exposure_slots": 10000,
+          "top5_concentration": 0.9541999999999999,
+          "exposure_hhi_at_5": 0.18382537999999998,
+          "short_list_rate_at_5": 0.0,
+          "empty_list_rate": 0.0
+        }
+      },
+      "differences": {
+        "conditional-vs-anton": {
+          "paired_95": {
+            "metric": "ndcg_at_5",
+            "users": 2000,
+            "excluded_users": 0,
+            "confidence": 0.95,
+            "repetitions": 5000,
+            "seed": 20261119,
+            "difference": 0.18094142754768017,
+            "confidence_interval": [
+              0.1688396303316348,
+              0.19285063574903713
+            ]
+          }
+        }
+      },
+      "diagnostics": {
+        "scoring_seconds": {
+          "conditional": 0.0705587132833898,
+          "anton": 2.3170961579307914
+        },
+        "milliseconds_per_user": {
+          "conditional": 0.0352793566416949,
+          "anton": 1.1585480789653957
+        },
+        "anton_mean_number_tied_for_highest_score": 24.0375,
+        "anton_fraction_users_top_score_clipped_to_four": 0.2855
+      }
+    },
+    "positive20": {
+      "metrics": {
+        "conditional": {
+          "ndcg_at_5": 0.4885894545182208,
+          "hit_rate_at_5": 0.834,
+          "recall_at_5": 0.06898130671625674,
+          "recall_at_10": 0.114313098952677,
+          "precision_at_5": 0.4716,
+          "top_1_known_positive": 0.5505,
+          "explicit_low_rate_at_5": 0.023200000000000002,
+          "users": 2000,
+          "users_with_relevant_targets": 2000,
+          "users_without_relevant_targets": 0,
+          "catalogue_items": 3788,
+          "distinct_recommended_movies": 34,
+          "catalog_coverage_at_5": 0.00897571277719113,
+          "top5_exposure_slots": 10000,
+          "top5_concentration": 0.6625,
+          "exposure_hhi_at_5": 0.10361487999999999,
+          "short_list_rate_at_5": 0.0,
+          "empty_list_rate": 0.0
+        },
+        "anton": {
+          "ndcg_at_5": 0.3267520372490494,
+          "hit_rate_at_5": 0.6875,
+          "recall_at_5": 0.03626452415089746,
+          "recall_at_10": 0.060068763502523305,
+          "precision_at_5": 0.308,
+          "top_1_known_positive": 0.392,
+          "explicit_low_rate_at_5": 0.0095,
+          "users": 2000,
+          "users_with_relevant_targets": 2000,
+          "users_without_relevant_targets": 0,
+          "catalogue_items": 3788,
+          "distinct_recommended_movies": 336,
+          "catalog_coverage_at_5": 0.08870116156282999,
+          "top5_exposure_slots": 10000,
+          "top5_concentration": 0.37749999999999995,
+          "exposure_hhi_at_5": 0.0391556,
+          "short_list_rate_at_5": 0.0,
+          "empty_list_rate": 0.0
+        },
+        "rating_count": {
+          "ndcg_at_5": 0.3985783683474211,
+          "hit_rate_at_5": 0.7715,
+          "recall_at_5": 0.04990703396024505,
+          "recall_at_10": 0.0815234083502776,
+          "precision_at_5": 0.38370000000000004,
+          "top_1_known_positive": 0.4515,
+          "explicit_low_rate_at_5": 0.027100000000000003,
+          "users": 2000,
+          "users_with_relevant_targets": 2000,
+          "users_without_relevant_targets": 0,
+          "catalogue_items": 3788,
+          "distinct_recommended_movies": 12,
+          "catalog_coverage_at_5": 0.0031678986272439284,
+          "top5_exposure_slots": 10000,
+          "top5_concentration": 0.8438,
+          "exposure_hhi_at_5": 0.15199827999999999,
+          "short_list_rate_at_5": 0.0,
+          "empty_list_rate": 0.0
+        },
+        "rating_mean": {
+          "ndcg_at_5": 0.26961140927151134,
+          "hit_rate_at_5": 0.6105,
+          "recall_at_5": 0.02813637955404515,
+          "recall_at_10": 0.04881445682891845,
+          "precision_at_5": 0.23590000000000003,
+          "top_1_known_positive": 0.43,
+          "explicit_low_rate_at_5": 0.008100000000000001,
+          "users": 2000,
+          "users_with_relevant_targets": 2000,
+          "users_without_relevant_targets": 0,
+          "catalogue_items": 3788,
+          "distinct_recommended_movies": 12,
+          "catalog_coverage_at_5": 0.0031678986272439284,
+          "top5_exposure_slots": 10000,
+          "top5_concentration": 0.9080999999999999,
+          "exposure_hhi_at_5": 0.17024193999999998,
+          "short_list_rate_at_5": 0.0,
+          "empty_list_rate": 0.0
+        }
+      },
+      "differences": {
+        "conditional-vs-anton": {
+          "paired_95": {
+            "metric": "ndcg_at_5",
+            "users": 2000,
+            "excluded_users": 0,
+            "confidence": 0.95,
+            "repetitions": 5000,
+            "seed": 20261119,
+            "difference": 0.1618374172691714,
+            "confidence_interval": [
+              0.15004330091928827,
+              0.17351370363065952
+            ]
+          }
+        }
+      },
+      "diagnostics": {
+        "scoring_seconds": {
+          "conditional": 0.09658635477535427,
+          "anton": 2.4063789350911975
+        },
+        "milliseconds_per_user": {
+          "conditional": 0.04829317738767713,
+          "anton": 1.2031894675455987
+        },
+        "anton_mean_number_tied_for_highest_score": 18.2735,
+        "anton_fraction_users_top_score_clipped_to_four": 0.297
+      }
+    },
+    "mixed10": {
+      "metrics": {
+        "conditional": {
+          "ndcg_at_5": 0.581836200011106,
+          "hit_rate_at_5": 0.9185,
+          "recall_at_5": 0.055099495215292706,
+          "recall_at_10": 0.09760262485837229,
+          "precision_at_5": 0.5672,
+          "top_1_known_positive": 0.635,
+          "explicit_low_rate_at_5": 0.0185,
+          "users": 2000,
+          "users_with_relevant_targets": 2000,
+          "users_without_relevant_targets": 0,
+          "catalogue_items": 3788,
+          "distinct_recommended_movies": 68,
+          "catalog_coverage_at_5": 0.01795142555438226,
+          "top5_exposure_slots": 10000,
+          "top5_concentration": 0.6793,
+          "exposure_hhi_at_5": 0.10915476000000002,
+          "short_list_rate_at_5": 0.0,
+          "empty_list_rate": 0.0
+        },
+        "anton": {
+          "ndcg_at_5": 0.43087091337198524,
+          "hit_rate_at_5": 0.8345,
+          "recall_at_5": 0.03842935834821518,
+          "recall_at_10": 0.06401755962929698,
+          "precision_at_5": 0.4113,
+          "top_1_known_positive": 0.4965,
+          "explicit_low_rate_at_5": 0.0074,
+          "users": 2000,
+          "users_with_relevant_targets": 2000,
+          "users_without_relevant_targets": 0,
+          "catalogue_items": 3788,
+          "distinct_recommended_movies": 623,
+          "catalog_coverage_at_5": 0.16446673706441395,
+          "top5_exposure_slots": 10000,
+          "top5_concentration": 0.28259999999999996,
+          "exposure_hhi_at_5": 0.02542218,
+          "short_list_rate_at_5": 0.0,
+          "empty_list_rate": 0.0
+        },
+        "rating_count": {
+          "ndcg_at_5": 0.4882689186240451,
+          "hit_rate_at_5": 0.8725,
+          "recall_at_5": 0.04397720594908445,
+          "recall_at_10": 0.07311019400558176,
+          "precision_at_5": 0.4759,
+          "top_1_known_positive": 0.539,
+          "explicit_low_rate_at_5": 0.021800000000000003,
+          "users": 2000,
+          "users_with_relevant_targets": 2000,
+          "users_without_relevant_targets": 0,
+          "catalogue_items": 3788,
+          "distinct_recommended_movies": 9,
+          "catalog_coverage_at_5": 0.002375923970432946,
+          "top5_exposure_slots": 10000,
+          "top5_concentration": 0.9426000000000001,
+          "exposure_hhi_at_5": 0.18006816000000003,
+          "short_list_rate_at_5": 0.0,
+          "empty_list_rate": 0.0
+        },
+        "rating_mean": {
+          "ndcg_at_5": 0.3317467681774006,
+          "hit_rate_at_5": 0.7315,
+          "recall_at_5": 0.02517308992738639,
+          "recall_at_10": 0.04695687738927514,
+          "precision_at_5": 0.287,
+          "top_1_known_positive": 0.5335,
+          "explicit_low_rate_at_5": 0.006900000000000001,
+          "users": 2000,
+          "users_with_relevant_targets": 2000,
+          "users_without_relevant_targets": 0,
+          "catalogue_items": 3788,
+          "distinct_recommended_movies": 8,
+          "catalog_coverage_at_5": 0.0021119324181626186,
+          "top5_exposure_slots": 10000,
+          "top5_concentration": 0.9683,
+          "exposure_hhi_at_5": 0.18839722000000003,
+          "short_list_rate_at_5": 0.0,
+          "empty_list_rate": 0.0
+        }
+      },
+      "differences": {
+        "conditional-vs-anton": {
+          "paired_95": {
+            "metric": "ndcg_at_5",
+            "users": 2000,
+            "excluded_users": 0,
+            "confidence": 0.95,
+            "repetitions": 5000,
+            "seed": 20261119,
+            "difference": 0.15096528663912084,
+            "confidence_interval": [
+              0.13716166669616686,
+              0.16462596295787768
+            ]
+          }
+        }
+      },
+      "diagnostics": {
+        "scoring_seconds": {
+          "conditional": 0.05228041554801166,
+          "anton": 2.3200864957179874
+        },
+        "milliseconds_per_user": {
+          "conditional": 0.02614020777400583,
+          "anton": 1.1600432478589937
+        },
+        "anton_mean_number_tied_for_highest_score": 7.24,
+        "anton_fraction_users_top_score_clipped_to_four": 0.069
+      }
+    },
+    "mixed20": {
+      "metrics": {
+        "conditional": {
+          "ndcg_at_5": 0.5544765219101748,
+          "hit_rate_at_5": 0.899,
+          "recall_at_5": 0.06118163523309288,
+          "recall_at_10": 0.10661463142251217,
+          "precision_at_5": 0.5394000000000001,
+          "top_1_known_positive": 0.606,
+          "explicit_low_rate_at_5": 0.0167,
+          "users": 2000,
+          "users_with_relevant_targets": 2000,
+          "users_without_relevant_targets": 0,
+          "catalogue_items": 3788,
+          "distinct_recommended_movies": 46,
+          "catalog_coverage_at_5": 0.012143611404435059,
+          "top5_exposure_slots": 10000,
+          "top5_concentration": 0.6731,
+          "exposure_hhi_at_5": 0.10759664,
+          "short_list_rate_at_5": 0.0,
+          "empty_list_rate": 0.0
+        },
+        "anton": {
+          "ndcg_at_5": 0.4207051714477092,
+          "hit_rate_at_5": 0.8275,
+          "recall_at_5": 0.04297219185324796,
+          "recall_at_10": 0.07196305456684655,
+          "precision_at_5": 0.4016,
+          "top_1_known_positive": 0.49,
+          "explicit_low_rate_at_5": 0.006900000000000001,
+          "users": 2000,
+          "users_with_relevant_targets": 2000,
+          "users_without_relevant_targets": 0,
+          "catalogue_items": 3788,
+          "distinct_recommended_movies": 615,
+          "catalog_coverage_at_5": 0.16235480464625132,
+          "top5_exposure_slots": 10000,
+          "top5_concentration": 0.22909999999999997,
+          "exposure_hhi_at_5": 0.018190619999999998,
+          "short_list_rate_at_5": 0.0,
+          "empty_list_rate": 0.0
+        },
+        "rating_count": {
+          "ndcg_at_5": 0.45544934927346437,
+          "hit_rate_at_5": 0.841,
+          "recall_at_5": 0.0466770496518483,
+          "recall_at_10": 0.0772017883964753,
+          "precision_at_5": 0.44170000000000004,
+          "top_1_known_positive": 0.5065,
+          "explicit_low_rate_at_5": 0.019600000000000003,
+          "users": 2000,
+          "users_with_relevant_targets": 2000,
+          "users_without_relevant_targets": 0,
+          "catalogue_items": 3788,
+          "distinct_recommended_movies": 12,
+          "catalog_coverage_at_5": 0.0031678986272439284,
+          "top5_exposure_slots": 10000,
+          "top5_concentration": 0.8819,
+          "exposure_hhi_at_5": 0.16256534,
+          "short_list_rate_at_5": 0.0,
+          "empty_list_rate": 0.0
+        },
+        "rating_mean": {
+          "ndcg_at_5": 0.30486217018404593,
+          "hit_rate_at_5": 0.6895,
+          "recall_at_5": 0.0260965734923244,
+          "recall_at_10": 0.04740216631189914,
+          "precision_at_5": 0.2651,
+          "top_1_known_positive": 0.4905,
+          "explicit_low_rate_at_5": 0.0060999999999999995,
+          "users": 2000,
+          "users_with_relevant_targets": 2000,
+          "users_without_relevant_targets": 0,
+          "catalogue_items": 3788,
+          "distinct_recommended_movies": 9,
+          "catalog_coverage_at_5": 0.002375923970432946,
+          "top5_exposure_slots": 10000,
+          "top5_concentration": 0.9336,
+          "exposure_hhi_at_5": 0.17746452000000001,
+          "short_list_rate_at_5": 0.0,
+          "empty_list_rate": 0.0
+        }
+      },
+      "differences": {
+        "conditional-vs-anton": {
+          "paired_95": {
+            "metric": "ndcg_at_5",
+            "users": 2000,
+            "excluded_users": 0,
+            "confidence": 0.95,
+            "repetitions": 5000,
+            "seed": 20261119,
+            "difference": 0.13377135046246555,
+            "confidence_interval": [
+              0.1199469778917482,
+              0.14764481137792235
+            ]
+          }
+        }
+      },
+      "diagnostics": {
+        "scoring_seconds": {
+          "conditional": 0.07365011237561703,
+          "anton": 2.433386094402522
+        },
+        "milliseconds_per_user": {
+          "conditional": 0.036825056187808514,
+          "anton": 1.216693047201261
+        },
+        "anton_mean_number_tied_for_highest_score": 5.2815,
+        "anton_fraction_users_top_score_clipped_to_four": 0.0665
+      }
+    }
+  },
+  "scope": "Refitted algorithms on shared catalogue, not unchanged production artifacts or an online A/B test",
+  "completed_at_utc": "2026-11-19T11:40:25.448039+00:00",
+  "under_ten_declared_fallback": {
+    "positive5": "If the export metadata's ten-rating rule is enforced, Anton's ordering equals rating_mean here.",
+    "primary": "Actual upstream recommendation function; no fallback gate."
+  }
+}

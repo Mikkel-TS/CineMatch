@@ -1,0 +1,155 @@
+{
+  "created_at_utc": "2026-11-19T11:59:26.605945+00:00",
+  "positive_onboarding_opinions": 15,
+  "evaluation_depth": 5,
+  "split": "test",
+  "users": 2000,
+  "status": "User-requested descriptive follow-up on previously examined users",
+  "changes": "Onboarding prefix length only; models, score functions and top-five metric unchanged",
+  "target_policy": "All observed movies except newly disclosed prefix; raw ratings preserved",
+  "frozen_sha256": "11023886cdf2483e863de5bc88a9cfe4c8f3b9a7b4dfce0631722ab3086d5797",
+  "source_profile_sha256": "4fc1690d0ba53955c0571458f560fbe551c8eafd0aa1ecd031e4618b2ceaaac1",
+  "original_results_sha256": "f412d699197b520f4bd23b97c6aa7f4637a33c4e96f0e98581716056c5838b6a",
+  "followup_source_sha256": "7cb31aec738531893b55fb72613b30e35bbf692a7846f0237cf59e433124c26a",
+  "no_retraining_or_ensemble": true,
+  "caveat": "Additional positive inputs become watched exclusions and leave the hidden target set; cross-size absolute scores are not a controlled measure of onboarding benefit",
+  "completed_at_utc": "2026-11-19T11:59:31.043197+00:00",
+  "catalogue_items": 3788,
+  "metrics": {
+    "conditional": {
+      "ndcg_at_5": 0.5271386385638541,
+      "hit_rate_at_5": 0.8865,
+      "recall_at_5": 0.0626660714259854,
+      "recall_at_10": 0.10689062230366599,
+      "precision_at_5": 0.5103000000000001,
+      "top_1_known_positive": 0.598,
+      "explicit_low_rate_at_5": 0.0218,
+      "users": 2000,
+      "users_with_relevant_targets": 2000,
+      "users_without_relevant_targets": 0,
+      "catalogue_items": 3788,
+      "distinct_recommended_movies": 35,
+      "catalog_coverage_at_5": 0.009239704329461458,
+      "top5_exposure_slots": 10000,
+      "top5_concentration": 0.6811,
+      "exposure_hhi_at_5": 0.10883388,
+      "short_list_rate_at_5": 0.0,
+      "empty_list_rate": 0.0
+    },
+    "anton": {
+      "ndcg_at_5": 0.35424525382753497,
+      "hit_rate_at_5": 0.7345,
+      "recall_at_5": 0.03514632357994895,
+      "recall_at_10": 0.05875332998070465,
+      "precision_at_5": 0.331,
+      "top_1_known_positive": 0.44,
+      "explicit_low_rate_at_5": 0.0094,
+      "users": 2000,
+      "users_with_relevant_targets": 2000,
+      "users_without_relevant_targets": 0,
+      "catalogue_items": 3788,
+      "distinct_recommended_movies": 320,
+      "catalog_coverage_at_5": 0.08447729672650475,
+      "top5_exposure_slots": 10000,
+      "top5_concentration": 0.409,
+      "exposure_hhi_at_5": 0.04432682000000001,
+      "short_list_rate_at_5": 0.0,
+      "empty_list_rate": 0.0
+    },
+    "rating_count": {
+      "ndcg_at_5": 0.4316250387064673,
+      "hit_rate_at_5": 0.831,
+      "recall_at_5": 0.04773896594857639,
+      "recall_at_10": 0.0779028465448361,
+      "precision_at_5": 0.4177,
+      "top_1_known_positive": 0.488,
+      "explicit_low_rate_at_5": 0.026000000000000002,
+      "users": 2000,
+      "users_with_relevant_targets": 2000,
+      "users_without_relevant_targets": 0,
+      "catalogue_items": 3788,
+      "distinct_recommended_movies": 12,
+      "catalog_coverage_at_5": 0.0031678986272439284,
+      "top5_exposure_slots": 10000,
+      "top5_concentration": 0.8825000000000001,
+      "exposure_hhi_at_5": 0.16217236000000002,
+      "short_list_rate_at_5": 0.0,
+      "empty_list_rate": 0.0
+    },
+    "rating_mean": {
+      "ndcg_at_5": 0.2908710241452432,
+      "hit_rate_at_5": 0.6595,
+      "recall_at_5": 0.02637829297126257,
+      "recall_at_10": 0.04759882371869683,
+      "precision_at_5": 0.2535,
+      "top_1_known_positive": 0.4675,
+      "explicit_low_rate_at_5": 0.007700000000000001,
+      "users": 2000,
+      "users_with_relevant_targets": 2000,
+      "users_without_relevant_targets": 0,
+      "catalogue_items": 3788,
+      "distinct_recommended_movies": 12,
+      "catalog_coverage_at_5": 0.0031678986272439284,
+      "top5_exposure_slots": 10000,
+      "top5_concentration": 0.9299000000000001,
+      "exposure_hhi_at_5": 0.17646766000000003,
+      "short_list_rate_at_5": 0.0,
+      "empty_list_rate": 0.0
+    }
+  },
+  "differences": {
+    "conditional-vs-anton": {
+      "metric": "ndcg_at_5",
+      "users": 2000,
+      "excluded_users": 0,
+      "confidence": 0.95,
+      "repetitions": 5000,
+      "seed": 20261119,
+      "difference": 0.17289338473631927,
+      "confidence_interval": [
+        0.1606568292281156,
+        0.1851776768811672
+      ]
+    },
+    "conditional-vs-rating_count": {
+      "metric": "ndcg_at_5",
+      "users": 2000,
+      "excluded_users": 0,
+      "confidence": 0.95,
+      "repetitions": 5000,
+      "seed": 20261119,
+      "difference": 0.09551359985738687,
+      "confidence_interval": [
+        0.08848861983073976,
+        0.10231369527771736
+      ]
+    },
+    "conditional-vs-rating_mean": {
+      "metric": "ndcg_at_5",
+      "users": 2000,
+      "excluded_users": 0,
+      "confidence": 0.95,
+      "repetitions": 5000,
+      "seed": 20261119,
+      "difference": 0.23626761441861094,
+      "confidence_interval": [
+        0.2256271119450426,
+        0.24668200325997566
+      ]
+    }
+  },
+  "scoring_diagnostics": {
+    "scoring_seconds": {
+      "conditional": 0.08547600219026208,
+      "anton": 2.351844808552414
+    },
+    "milliseconds_per_user": {
+      "conditional": 0.04273800109513104,
+      "anton": 1.175922404276207
+    },
+    "anton_mean_number_tied_for_highest_score": 20.9135,
+    "anton_fraction_users_top_score_clipped_to_four": 0.2965
+  },
+  "profile_sha256": "a5a0dd40337e13d3769425894bb8cc031b8b10b190246918c13a217f1204a6b4",
+  "original_seed_prefixes_match": true
+}

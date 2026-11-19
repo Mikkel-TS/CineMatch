@@ -1,0 +1,23 @@
+{
+  "frozen_at_utc": "2026-11-19T12:12:48.443057+00:00",
+  "source_hashes": {
+    "experiments/run_app_ensemble.py": "5a7fb406e8a69a6b7ebcc040c9cc25c6d7450d4f482c39a75fa0874f5e2a9f88",
+    "experiments/run_app_comparison.py": "2a2a4edd3e95dd85ce16848df9d2d8e60a3c8d8ee52b98bf709bebbc77c419f8",
+    "experiments/anton_adapter.py": "344984754af2fb40b86cac358dc22941e09ac4d9e56486f436a36c613d998e10",
+    "experiments/app_comparison_metrics.py": "1322c6e7d3143bcfe8a826dd021fda8df96d6e0baf67276878d5a983c6d60d74",
+    "experiments/prepare_app_comparison.py": "7aadda6320e106303cce991321ae92bc6ad1d6b99ba2c365af8e84fe8485f153",
+    "experiments/campaign_neighbors.py": "83426a77caeb65e8e6a6bc2639131bb6ffd247535ca8bbf2c3ac2a6e7b27c4fd",
+    "experiments/vendor/anton_6e85958/cinematch.py": "a32ce5f1f682defb8b56be4c84f72eeb8e6b86149337ae5f3de2b91185258699",
+    "experiments/vendor/anton_6e85958/movielens.py": "a2002bc730d9437de16f16e687f0b7d38244f5b01e2135858d86de6f54c7243f",
+    "experiments/vendor/anton_6e85958/rating_model.py": "53ebbbb13aa28c8b659f349f58dd810e4178d92ad6c4a35671f754fd1d9e3315"
+  },
+  "artifact_hashes": {
+    "data_frozen.json": "6bcd4fc66e2e7cf83076d20a8e4b35a9d9983632e977cb671e1607653f83461c",
+    "conditional/model.npz": "28875192578823e8368a36e8c9ef5125914f7e7f29928a056981d6d8da2fa4f2",
+    "anton/audience_vectors.npz": "6798aa041fd07861ad7418f267cf3812927f5aa3f450a842bb94358b3fd600f1",
+    "anton/components.json": "0451991d3fff63a4ee5d9444e6dcb27859eea80bf012919d604fc7ea3f077950",
+    "anton/fit.json": "032ef0e5522f2a51dd6fa61baca3730a4fbf06aa771ca754db982f407edfa052",
+    "anton/model.json": "75cda62c50c4e5d8aec408d22b73320ea45ae41aa514619e3e4b17c8ab606901",
+    "anton/provenance.json": "2f038ff6a9bdda31870f4b85b1ec844164a475c95281e8a4b0c45e770000edb6"
+  }
+}

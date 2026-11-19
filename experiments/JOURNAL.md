@@ -702,3 +702,37 @@ One frozen candidate, `cm-20261119-full-knn-conditional`, was evaluated once aga
 Candidate minus popularity NDCG: +0.105149; paired95% interval [0.08593586621705428, 0.12352216660464296]. App deployment remains unchanged.
 
 [Frozen final result](final-results/cinematch-systematic-20261119.json). The one-shot sentinel and exact frozen evaluation source are in the linked artifact directory.
+
+## app-model-comparison-20261119-v1 — separate direct comparison
+
+Mikkel authorized comparing the selected conditional method with Anton's updated rating model. Source pinned to Anton commit `6e85958f503525b3020ec80fe613934e3c723d7b`; the newly added recommendation function is used unchanged. No hybrid was trained.
+
+Both algorithms were refitted on 21,431,215 identical ratings from 196,442 users over 3,788 verified common movies. One thousand fresh validation users fit Anton's fixed blend weights; 2,000 further users were withheld for confirmation. All 4,500 old/new held-out users were excluded from comparison training and tag features. This benchmark has different catalogue/cohort/onboarding rules from the campaign above and must remain separate from its leaderboard.
+
+Frozen confirmation with five positive opinions: conditional NDCG@5 **0.584141**, Anton **0.380903**, rating-count popularity **0.489307**, mean-rating baseline **0.336564**. Conditional-minus-Anton is +0.203238, paired 95% interval [0.191743, 0.214812], and remains positive after adjustment for the three primary comparisons. Conditional leads all four secondary profile checks. Anton exposes more distinct movies and fewer explicitly low-rated targets. This establishes an advantage in retrospective recovery of recorded likes, not online discovery or universal superiority.
+
+All 109 Python tests passed; independent data and ranking audits passed. Source, models, policies, splits, per-user outcomes and final confirmation records are preserved. Production model/bundle unchanged. See the [complete comparison report](comparisons/app-model-comparison-20261119-v1/REPORT.md) and [final machine-readable results](comparisons/app-model-comparison-20261119-v1/test_results.json). Future changes must not tune on this confirmation set.
+
+## app-model-comparison-20261119-v1/depth15 — requested evaluation cutoff extension
+
+Mikkel requested fifteen instead of five after the NDCG@5 explanation. Evaluate the first fifteen recommendations while retaining the same five positive inputs, frozen model weights and 2,000 evaluation users. No retraining or hybrid. This is a descriptive follow-up on already inspected users, not fresh independent confirmation.
+
+NDCG@15: conditional **0.514879**, rating-count popularity **0.411025**, Anton **0.313419**, mean rating **0.286619**. Corresponding HitRate@15: **98.45%, 96.30%, 90.40%, 87.05%**. All original top-ten rankings match exactly. Six new boundary tests and independent recomputation of every user's top-fifteen metrics passed. See the [top-fifteen report](comparisons/app-model-comparison-20261119-v1/depth15/REPORT.md), [results](comparisons/app-model-comparison-20261119-v1/depth15/results.json) and [audit](comparisons/app-model-comparison-20261119-v1/depth15/audit.json).
+
+## app-model-comparison-20261119-v1/onboarding15_top5 — fifteen positive inputs
+
+Mikkel explicitly requested fifteen positive onboarding opinions and five recommendations. Keep the same frozen models, 2,000 evaluation users and original randomized positive seed order; extend the original five inputs to fifteen. All fifteen are excluded as watched. Reconstruct all original raw observations and return the old twenty-opinion profile's last five entries to hidden targets. No retraining or ensemble.
+
+NDCG@5: conditional **0.527139**, rating-count popularity **0.431625**, Anton **0.354245**, mean rating **0.290871**. HitRate@5: **88.65%, 83.10%, 73.45%, 65.95%**. Conditional remains highest within this setting. Cross-size score changes do not isolate the value of more onboarding because additional disclosed likes leave the target set. This is descriptive follow-up on known test users, not independent new confirmation.
+
+Eight focused tests and independent all-user/profile/ranking audits passed. Original artifacts and app unchanged. See the [fifteen-input report](comparisons/app-model-comparison-20261119-v1/onboarding15_top5/REPORT.md), [results](comparisons/app-model-comparison-20261119-v1/onboarding15_top5/results.json) and [audit](comparisons/app-model-comparison-20261119-v1/onboarding15_top5/audit.json).
+
+## app-model-ensemble-20261119-v1 — output complementarity experiment
+
+Mikkel authorized testing whether the two models improve one another's output. Keep fifteen positive onboarding opinions and five recommendations, but reserve new users because previous confirmation results motivated the hypothesis. Exclude all 4,500 previous holdouts, then reserve 1,000 dedicated Anton calibration users, 1,000 blend-validation users and 2,000 fresh confirmation users. Refit both methods on 20,783,195 identical ratings from 192,442 users over the same 3,788 movies; tag features exclude all 8,500 old/new holdouts.
+
+Test eight conditional-dominant reciprocal-rank blends, with average ranks for ties and watched exclusions before ranking. All blends lose to conditional on validation. Freeze the best nonzero challenger (97.5% conditional/2.5% Anton) under the prespecified policy and evaluate once on confirmation. NDCG@5: conditional **0.518893**, blend **0.517325**, count popularity **0.423478**, Anton **0.358378**, mean rating **0.289065**. Blend-minus-conditional **−0.001568**, paired 95% interval **[−0.002639,−0.000504]**. No measured ranking improvement; known-low rate remains 2.01%, with only 33 rather than 31 distinct exposed films.
+
+Complementary recorded likes exist: Anton finds at least one top-five known like absent from conditional for 1,155/2,000 users. But the actual blend adds 46 and removes 61 known-like recommendation slots, improving 52 users' NDCG and worsening 91. This tested combination does not earn adoption on the stated objective. No claim that all conceivable hybrids must fail; no further tuning on confirmation. Production artifacts remain unchanged.
+
+Forty-eight focused tests and the independent data/ranking audit passed. See [report](comparisons/app-model-ensemble-20261119-v1/REPORT.md), [frozen selection](comparisons/app-model-ensemble-20261119-v1/selection.json), [results](comparisons/app-model-ensemble-20261119-v1/test_results.json), and [independent audit](comparisons/app-model-ensemble-20261119-v1/audit.json). This is a new benchmark; do not compare its absolute scores to earlier cohorts as a pure model change.

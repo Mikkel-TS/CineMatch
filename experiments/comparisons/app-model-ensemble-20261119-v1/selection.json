@@ -1,0 +1,11 @@
+{
+  "selected_at_utc": "2026-11-19T12:12:59.626458+00:00",
+  "anton_weight": 0.025,
+  "conditional_weight": 0.975,
+  "validation_ndcg": 0.5036357806254677,
+  "conditional_validation_ndcg": 0.5049961936894425,
+  "validation_difference": -0.0013604130639748302,
+  "validation_prefers_blend": false,
+  "test_predictions_computed_before_selection": false,
+  "selection_rule": "Best nonzero prespecified blend; ties prefer smaller Anton weight"
+}

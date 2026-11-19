@@ -1,0 +1,14 @@
+{
+  "created_at_utc": "2026-11-19T11:53:36.378542+00:00",
+  "evaluation_depth": 15,
+  "input_positive_opinions": 5,
+  "profile": "positive5",
+  "split": "test",
+  "frozen_sha256": "11023886cdf2483e863de5bc88a9cfe4c8f3b9a7b4dfce0631722ab3086d5797",
+  "original_results_sha256": "f412d699197b520f4bd23b97c6aa7f4637a33c4e96f0e98581716056c5838b6a",
+  "extension_source_sha256": "f727709f31756be55a2ab49d28778ea050d1e6ff686ee9d480e3108bcc077438",
+  "status": "User-requested descriptive follow-up on already examined confirmation users",
+  "changes": "Evaluation cutoff only; no retraining, new opinions, tuning or ensemble",
+  "metric": "Binary relevance raw rating>=4; logarithmic discount; ideal normalization at new cutoff",
+  "uncertainty": "Paired user-bootstrap95% intervals; descriptive, not a new confirmatory claim"
+}

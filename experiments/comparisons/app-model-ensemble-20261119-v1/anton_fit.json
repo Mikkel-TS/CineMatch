@@ -1,0 +1,12 @@
+{
+  "users": 1000,
+  "rows": 29870,
+  "profile_size": 10,
+  "weights": {
+    "letterboxd": 0.2243,
+    "movielens": 0.2666,
+    "filmDeviation": 0.7571,
+    "tag": 0.5406,
+    "intercept": -0.0464
+  }
+}

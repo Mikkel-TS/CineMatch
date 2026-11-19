@@ -1,0 +1,66 @@
+{
+  "run_id": "app-model-comparison-20261119-v1",
+  "upstream_commit": "6e85958f503525b3020ec80fe613934e3c723d7b",
+  "objective": "Recover hidden recorded likes on a common verified catalogue",
+  "primary_profile": "positive5",
+  "primary_metric": "ndcg_at_5",
+  "primary_comparisons": [
+    "conditional-vs-anton",
+    "conditional-vs-rating_count",
+    "conditional-vs-rating_mean"
+  ],
+  "confidence": 0.95,
+  "familywise_confidence": 0.9833333333333333,
+  "bootstrap_repetitions": 5000,
+  "bootstrap_seed": 20261119,
+  "minimum_worthwhile_absolute_ndcg_gain": 0.01,
+  "interpretation_of_margin": "One NDCG percentage point is a prespecified practical screening margin, not a validated business value",
+  "profiles": [
+    "positive5",
+    "positive10",
+    "positive20",
+    "mixed10",
+    "mixed20"
+  ],
+  "methods": [
+    "conditional",
+    "anton",
+    "rating_count",
+    "rating_mean"
+  ],
+  "conditional_config": {
+    "feedback": "positive",
+    "similarity": "conditional",
+    "top_k": 100,
+    "shrink": 10.0,
+    "positive_threshold": 4.0,
+    "aggregation": "positive",
+    "block_size": 128
+  },
+  "anton": {
+    "serving": "Pinned score_candidates, including clipping and NO under-ten gate",
+    "neighbors_per_source": 50,
+    "fit_profile": 10,
+    "fit_targets_maximum": 30,
+    "fitting": "One least-squares fit on validation, rounded to four decimals",
+    "sources": [
+      "content",
+      "audience",
+      "tags",
+      "film_mean"
+    ],
+    "tag_policy": "Exclude every old and new heldout user before fitting vocabulary"
+  },
+  "rating_conversion": {
+    "app_proxy": "floor(MovieLens rating), clipped to 1..5",
+    "anton_serving": "1 + 0.75 * (app verdict - 1)",
+    "anton_fit": "Native upstream 1 + (raw rating - 0.5) * 2/3",
+    "relevant_targets": "Raw MovieLens >=4; low targets <=2"
+  },
+  "exclusions": "Only disclosed opinions are watched exclusions; all remaining observed labels are hidden targets",
+  "candidate_order": "Shared ascending MovieLens IDs; stable ties",
+  "scope": "Refitted algorithms on shared catalogue, not unchanged production artifacts or an online A/B test",
+  "secondary_profiles": "Exploratory, not additional confirmatory winner selection",
+  "under_ten_policy_diagnostic": "Declared Anton fallback would equal the rating_mean baseline; primary uses actual code",
+  "hybrids": "None: compare standalone models first"
+}

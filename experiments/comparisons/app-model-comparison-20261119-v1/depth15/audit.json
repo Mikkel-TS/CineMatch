@@ -1,0 +1,43 @@
+{
+  "status": "passed",
+  "audited_at_utc": "2026-11-19T11:54:27.783464+00:00",
+  "method": "Independent scalar math.log2 DCG and set-membership counts; evaluator code not imported",
+  "checks": [
+    {
+      "method": "conditional",
+      "users": 2000,
+      "metric_count": 5,
+      "all_per_user_and_aggregate_match": true,
+      "top10_matches_original": true,
+      "unique_15_and_seen_exclusions_match": true
+    },
+    {
+      "method": "anton",
+      "users": 2000,
+      "metric_count": 5,
+      "all_per_user_and_aggregate_match": true,
+      "top10_matches_original": true,
+      "unique_15_and_seen_exclusions_match": true
+    },
+    {
+      "method": "rating_count",
+      "users": 2000,
+      "metric_count": 5,
+      "all_per_user_and_aggregate_match": true,
+      "top10_matches_original": true,
+      "unique_15_and_seen_exclusions_match": true
+    },
+    {
+      "method": "rating_mean",
+      "users": 2000,
+      "metric_count": 5,
+      "all_per_user_and_aggregate_match": true,
+      "top10_matches_original": true,
+      "unique_15_and_seen_exclusions_match": true
+    }
+  ],
+  "maximum_aggregate_absolute_error": 1.1102230246251565e-16,
+  "unit_tests_passed": 6,
+  "scope": "Descriptive top-15 follow-up on the same 2,000 previously examined confirmation users; not a new independent trial",
+  "result_sha256": "a6cc9a7183e841cc03ea7e8b7477b0a167bbfa9b5598e5cbda02a29468cc8d5a"
+}

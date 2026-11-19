@@ -1,0 +1,113 @@
+{
+  "audit_version": 1,
+  "audited_at_utc": "2026-11-19T11:39:49.780870+00:00",
+  "run_id": "app-model-comparison-20261119-v1",
+  "status": "passed",
+  "checks": {
+    "source_hashes": {
+      "passed": true,
+      "checked": 5,
+      "mismatches": []
+    },
+    "frozen_hashes": {
+      "passed": true,
+      "checked": 29,
+      "mismatches": [],
+      "test_files_hashed_as_opaque_bytes": true
+    },
+    "training_contract_inputs": {
+      "passed": true,
+      "inputs": [
+        "data/training.npz",
+        "data/cohorts.npz",
+        "data/catalogue.csv",
+        "data/validation/fit10.npz"
+      ]
+    },
+    "cohort_isolation": {
+      "passed": true,
+      "validation_users": 1000,
+      "confirmation_users": 2000,
+      "old_excluded_users": 1500,
+      "all_excluded_users": 4500
+    },
+    "tag_exclusion_union": {
+      "passed": true,
+      "excluded_user_ids_sha256": "d6ffeb6514badbd4ed546b222dbda2112672bb2bd774d9b05f1f51859f679334"
+    },
+    "catalogue_unique_sorted": {
+      "passed": true,
+      "movies": 3788
+    },
+    "catalogue_exact_verified_membership": {
+      "passed": true,
+      "rejected_source_alias": 1020663,
+      "retained_source_alias": 1001148
+    },
+    "identity_collision_evidence": {
+      "passed": true,
+      "tmdb_id": 768362,
+      "movielens_id": 282843,
+      "retained_letterboxd_id": 1001148,
+      "rejected_letterboxd_id": 1020663
+    },
+    "training_has_no_heldout_users": {
+      "passed": true,
+      "training_users": 196442,
+      "training_rows": 21431215
+    },
+    "training_matches_exact_source_filter": {
+      "passed": true,
+      "independently_matched_rows": 21431215,
+      "comparison": "Chunkwise exact user/movie index and raw-rating equality; common catalogue minus all old/fresh excluded users"
+    },
+    "training_item_counts": {
+      "passed": true,
+      "total_ratings": 21431215,
+      "zero_count_movies": 0
+    },
+    "source_masks": {
+      "passed": true
+    },
+    "fresh_cohort_selection_reproduced": {
+      "passed": true,
+      "eligible_users": 119892,
+      "selection_seed": 20261119
+    },
+    "old_holdout_ids_match_manifest": {
+      "passed": true,
+      "old_label_npz_files_opened": false
+    },
+    "tag_provenance_reproduced": {
+      "passed": true,
+      "input_rows": 2000072,
+      "retained_rows": 1078302,
+      "excluded_heldout_rows_in_catalogue": 27578,
+      "films_with_tags": 3788,
+      "source_sha256": "c52e458a89b9deee410f50813e7a64491fbe92a6f07b5c4b58e64c0b3cc95b89"
+    },
+    "preconfirmation_state": {
+      "passed": true,
+      "confirmation_started": false
+    }
+  },
+  "read_boundary": {
+    "confirmation_profile_npz_arrays_opened": false,
+    "old_holdout_profile_npz_arrays_opened": false,
+    "model_predictions_computed": false,
+    "source_training_ratings_read_for_reconstruction": true,
+    "frozen_files_modified": false
+  },
+  "limitations": [
+    "This audit verifies recorded artifacts and inspected preparation/training data paths; it cannot prove that no unrelated process historically accessed a label file."
+  ],
+  "evidence_hashes": {
+    "frozen.json": "11023886cdf2483e863de5bc88a9cfe4c8f3b9a7b4dfce0631722ab3086d5797",
+    "training_contract.json": "e4676b1cbb9445fe9240cb155816b24acc85d87ee6d0a764b7f245757a44c13f",
+    "data/manifest.json": "d7790c4825d51358a671fc874813a53def035938abf48166de03c8008cd26b0c",
+    "data/catalogue.csv": "89928cabe36f28320d6ae8e1948ba009c9f22c798d06a6094fdc3110bcad859d",
+    "data/training.npz": "d729f5ba52efe30da3d52953e5f963df0e39bf63774dacae53d269f2f7b2b686",
+    "data/cohorts.npz": "453ed706b1e0e48890b23a0d0f3a939de664db5cf7b7422ee501115c78d37bbd",
+    "anton/provenance.json": "c3218167915bc2125ba53c7c5b754936666cca591c02b628fdd508e1a2a83eaa"
+  }
+}

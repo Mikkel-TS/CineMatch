@@ -1,0 +1,370 @@
+{
+  "audited_at_utc": "2026-11-19T11:40:39.567678+00:00",
+  "split": "test",
+  "status": "passed",
+  "independent_metric_recomputation": true,
+  "method": "Scalar DCG arithmetic and set membership; benchmark metric implementation not imported",
+  "users_per_profile": 2000,
+  "profile_method_pairs": 20,
+  "checks": [
+    {
+      "profile": "positive5",
+      "method": "conditional",
+      "users": 2000,
+      "metrics": [
+        "ndcg_at_5",
+        "hit_rate_at_5",
+        "recall_at_5",
+        "recall_at_10",
+        "precision_at_5",
+        "top_1_known_positive",
+        "explicit_low_rate_at_5"
+      ],
+      "per_user_and_aggregate_match": true
+    },
+    {
+      "profile": "positive5",
+      "method": "anton",
+      "users": 2000,
+      "metrics": [
+        "ndcg_at_5",
+        "hit_rate_at_5",
+        "recall_at_5",
+        "recall_at_10",
+        "precision_at_5",
+        "top_1_known_positive",
+        "explicit_low_rate_at_5"
+      ],
+      "per_user_and_aggregate_match": true
+    },
+    {
+      "profile": "positive5",
+      "method": "rating_count",
+      "users": 2000,
+      "metrics": [
+        "ndcg_at_5",
+        "hit_rate_at_5",
+        "recall_at_5",
+        "recall_at_10",
+        "precision_at_5",
+        "top_1_known_positive",
+        "explicit_low_rate_at_5"
+      ],
+      "per_user_and_aggregate_match": true
+    },
+    {
+      "profile": "positive5",
+      "method": "rating_mean",
+      "users": 2000,
+      "metrics": [
+        "ndcg_at_5",
+        "hit_rate_at_5",
+        "recall_at_5",
+        "recall_at_10",
+        "precision_at_5",
+        "top_1_known_positive",
+        "explicit_low_rate_at_5"
+      ],
+      "per_user_and_aggregate_match": true
+    },
+    {
+      "profile": "positive10",
+      "method": "conditional",
+      "users": 2000,
+      "metrics": [
+        "ndcg_at_5",
+        "hit_rate_at_5",
+        "recall_at_5",
+        "recall_at_10",
+        "precision_at_5",
+        "top_1_known_positive",
+        "explicit_low_rate_at_5"
+      ],
+      "per_user_and_aggregate_match": true
+    },
+    {
+      "profile": "positive10",
+      "method": "anton",
+      "users": 2000,
+      "metrics": [
+        "ndcg_at_5",
+        "hit_rate_at_5",
+        "recall_at_5",
+        "recall_at_10",
+        "precision_at_5",
+        "top_1_known_positive",
+        "explicit_low_rate_at_5"
+      ],
+      "per_user_and_aggregate_match": true
+    },
+    {
+      "profile": "positive10",
+      "method": "rating_count",
+      "users": 2000,
+      "metrics": [
+        "ndcg_at_5",
+        "hit_rate_at_5",
+        "recall_at_5",
+        "recall_at_10",
+        "precision_at_5",
+        "top_1_known_positive",
+        "explicit_low_rate_at_5"
+      ],
+      "per_user_and_aggregate_match": true
+    },
+    {
+      "profile": "positive10",
+      "method": "rating_mean",
+      "users": 2000,
+      "metrics": [
+        "ndcg_at_5",
+        "hit_rate_at_5",
+        "recall_at_5",
+        "recall_at_10",
+        "precision_at_5",
+        "top_1_known_positive",
+        "explicit_low_rate_at_5"
+      ],
+      "per_user_and_aggregate_match": true
+    },
+    {
+      "profile": "positive20",
+      "method": "conditional",
+      "users": 2000,
+      "metrics": [
+        "ndcg_at_5",
+        "hit_rate_at_5",
+        "recall_at_5",
+        "recall_at_10",
+        "precision_at_5",
+        "top_1_known_positive",
+        "explicit_low_rate_at_5"
+      ],
+      "per_user_and_aggregate_match": true
+    },
+    {
+      "profile": "positive20",
+      "method": "anton",
+      "users": 2000,
+      "metrics": [
+        "ndcg_at_5",
+        "hit_rate_at_5",
+        "recall_at_5",
+        "recall_at_10",
+        "precision_at_5",
+        "top_1_known_positive",
+        "explicit_low_rate_at_5"
+      ],
+      "per_user_and_aggregate_match": true
+    },
+    {
+      "profile": "positive20",
+      "method": "rating_count",
+      "users": 2000,
+      "metrics": [
+        "ndcg_at_5",
+        "hit_rate_at_5",
+        "recall_at_5",
+        "recall_at_10",
+        "precision_at_5",
+        "top_1_known_positive",
+        "explicit_low_rate_at_5"
+      ],
+      "per_user_and_aggregate_match": true
+    },
+    {
+      "profile": "positive20",
+      "method": "rating_mean",
+      "users": 2000,
+      "metrics": [
+        "ndcg_at_5",
+        "hit_rate_at_5",
+        "recall_at_5",
+        "recall_at_10",
+        "precision_at_5",
+        "top_1_known_positive",
+        "explicit_low_rate_at_5"
+      ],
+      "per_user_and_aggregate_match": true
+    },
+    {
+      "profile": "mixed10",
+      "method": "conditional",
+      "users": 2000,
+      "metrics": [
+        "ndcg_at_5",
+        "hit_rate_at_5",
+        "recall_at_5",
+        "recall_at_10",
+        "precision_at_5",
+        "top_1_known_positive",
+        "explicit_low_rate_at_5"
+      ],
+      "per_user_and_aggregate_match": true
+    },
+    {
+      "profile": "mixed10",
+      "method": "anton",
+      "users": 2000,
+      "metrics": [
+        "ndcg_at_5",
+        "hit_rate_at_5",
+        "recall_at_5",
+        "recall_at_10",
+        "precision_at_5",
+        "top_1_known_positive",
+        "explicit_low_rate_at_5"
+      ],
+      "per_user_and_aggregate_match": true
+    },
+    {
+      "profile": "mixed10",
+      "method": "rating_count",
+      "users": 2000,
+      "metrics": [
+        "ndcg_at_5",
+        "hit_rate_at_5",
+        "recall_at_5",
+        "recall_at_10",
+        "precision_at_5",
+        "top_1_known_positive",
+        "explicit_low_rate_at_5"
+      ],
+      "per_user_and_aggregate_match": true
+    },
+    {
+      "profile": "mixed10",
+      "method": "rating_mean",
+      "users": 2000,
+      "metrics": [
+        "ndcg_at_5",
+        "hit_rate_at_5",
+        "recall_at_5",
+        "recall_at_10",
+        "precision_at_5",
+        "top_1_known_positive",
+        "explicit_low_rate_at_5"
+      ],
+      "per_user_and_aggregate_match": true
+    },
+    {
+      "profile": "mixed20",
+      "method": "conditional",
+      "users": 2000,
+      "metrics": [
+        "ndcg_at_5",
+        "hit_rate_at_5",
+        "recall_at_5",
+        "recall_at_10",
+        "precision_at_5",
+        "top_1_known_positive",
+        "explicit_low_rate_at_5"
+      ],
+      "per_user_and_aggregate_match": true
+    },
+    {
+      "profile": "mixed20",
+      "method": "anton",
+      "users": 2000,
+      "metrics": [
+        "ndcg_at_5",
+        "hit_rate_at_5",
+        "recall_at_5",
+        "recall_at_10",
+        "precision_at_5",
+        "top_1_known_positive",
+        "explicit_low_rate_at_5"
+      ],
+      "per_user_and_aggregate_match": true
+    },
+    {
+      "profile": "mixed20",
+      "method": "rating_count",
+      "users": 2000,
+      "metrics": [
+        "ndcg_at_5",
+        "hit_rate_at_5",
+        "recall_at_5",
+        "recall_at_10",
+        "precision_at_5",
+        "top_1_known_positive",
+        "explicit_low_rate_at_5"
+      ],
+      "per_user_and_aggregate_match": true
+    },
+    {
+      "profile": "mixed20",
+      "method": "rating_mean",
+      "users": 2000,
+      "metrics": [
+        "ndcg_at_5",
+        "hit_rate_at_5",
+        "recall_at_5",
+        "recall_at_10",
+        "precision_at_5",
+        "top_1_known_positive",
+        "explicit_low_rate_at_5"
+      ],
+      "per_user_and_aggregate_match": true
+    }
+  ],
+  "maximum_aggregate_absolute_error": 0.0,
+  "native_anton_top10_checks": [
+    50,
+    79,
+    100,
+    168,
+    252,
+    400,
+    587,
+    649,
+    981,
+    1006
+  ],
+  "manual_conditional_top10_checks": [
+    50,
+    79,
+    100,
+    168,
+    252,
+    400,
+    587,
+    649,
+    981,
+    1006
+  ],
+  "upstream_commit": "6e85958f503525b3020ec80fe613934e3c723d7b",
+  "independent_confirmation": true,
+  "validation_caveat": "Validation users fit Anton's weights; matching validation arithmetic does not establish generalization",
+  "inputs_sha256": {
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/test/results.json": "f412d699197b520f4bd23b97c6aa7f4637a33c4e96f0e98581716056c5838b6a",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/data/test/positive5.npz": "97e10075f5b354eb970f9496e7f8df508e2b3c77b7d0fdc72c72151514b2ffd1",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/test/positive5-conditional.npz": "3bd63732ee9fb474d63a0e387e40df1c7338c8ccfb16fd85138685bbc0285536",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/test/positive5-anton.npz": "df33be56c792e390d9d645a3d7c3833960d102f4de3b917b2af16175135c6b98",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/test/positive5-rating_count.npz": "23bd60283e2b027a9357b1647f5add402fe724612155102e737633d10ec71b6f",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/test/positive5-rating_mean.npz": "144895c1c43e937af1ca94c2e54dc2b6cd6ea657414588fff2eeb7eac534f348",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/data/test/positive10.npz": "93521d2a7a15991190400fa73176a3898d79376c2c2841b4198075039310db35",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/test/positive10-conditional.npz": "18c4b4122a8897b84b9b9e36bfdb84afec2587d824551c313df3d39c2fbde535",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/test/positive10-anton.npz": "ff7cfdb983036ecb5c100e4952e143c888e3b853da8428e281036960ed5ecc3b",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/test/positive10-rating_count.npz": "f452628d79e97a1c258fef2793bf56731b6e45f34348f6c18789a9dde7af128e",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/test/positive10-rating_mean.npz": "b965c866bbd850055dd1ba4cb4efd941ba03b9b03372b2402dc3e0ee0c5c27b6",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/data/test/positive20.npz": "4fc1690d0ba53955c0571458f560fbe551c8eafd0aa1ecd031e4618b2ceaaac1",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/test/positive20-conditional.npz": "e6405d541b8ca689ea0e98f863a03702b7056c112fe50f386daa21e712b0e4b6",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/test/positive20-anton.npz": "67233d75310a3f172b8f65d031ddc5b91b1947568d1a64d71a7291dc0de2035b",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/test/positive20-rating_count.npz": "e7d2a5312d821fa484506b1293f0b860be4cda76acf7e3d95d468201744afff6",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/test/positive20-rating_mean.npz": "dd08fdce563c779d0905a76041ba6505bec56f7ed4e38bd27445eabf7997e437",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/data/test/mixed10.npz": "ca7eccddad0a0e0d595fe5a94e9d75d91def24bbd0921e87959ce9bb9696bd83",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/test/mixed10-conditional.npz": "4d7252ccd30cbeb4a969c2e6adaa638386e7646a79f119fcd4332ea84211352d",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/test/mixed10-anton.npz": "b92db8d2b97fd3fdf3547133648fad261a99f33560b241052303079dc81026e6",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/test/mixed10-rating_count.npz": "885935a67872ee2efabfe8028992ac403dda07389a0e12841640e726093885fd",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/test/mixed10-rating_mean.npz": "af8af241d364e7e7fde3cf4709bfe73b73a4ae4a60efadbed61de8d18753790e",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/data/test/mixed20.npz": "f72291b321108b578b531e464357573f0770c845995bf38560181bbe379bd218",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/test/mixed20-conditional.npz": "8d3abd2d41ab201bd22a070d77f003c1fc2d672cd46f99748231c50174e3460b",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/test/mixed20-anton.npz": "c90a349c690920777c417eff0f9947e60098a3c9b534431ab5091b141a4ae458",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/test/mixed20-rating_count.npz": "0a9a17e0c3e86029a2647bf97812360b092ccc2d50c9400f060554dcc21fdb48",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/test/mixed20-rating_mean.npz": "34fc38f5a9db0e2b8fb2dce2d5f9384b78ec534ad7338b6dd75c28fd51033a22",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/anton/model.json": "b09f68cbc17e9032f1f92a717a36cfa825fc662b1026531e8e237ca80d1f728c",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1/conditional/model.npz": "fdfe4059af3f9aaa70a48964c63d5530b8bff7075b328d39a0202668639a5e62"
+  },
+  "audit_source_sha256": "be0339f75e6b5e48a585104df1a71f0958086cb16c7c5258821df9eb37d9da6f"
+}

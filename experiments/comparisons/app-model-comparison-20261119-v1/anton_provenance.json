@@ -1,0 +1,26 @@
+{
+  "upstream_commit": "6e85958f503525b3020ec80fe613934e3c723d7b",
+  "upstream_files": {
+    "cinematch.py": "a32ce5f1f682defb8b56be4c84f72eeb8e6b86149337ae5f3de2b91185258699",
+    "movielens.py": "a2002bc730d9437de16f16e687f0b7d38244f5b01e2135858d86de6f54c7243f",
+    "rating_model.py": "53ebbbb13aa28c8b659f349f58dd810e4178d92ad6c4a35671f754fd1d9e3315"
+  },
+  "training_rows": 21431215,
+  "training_users": 196442,
+  "catalogue_items": 3788,
+  "audience_components": 48,
+  "tag_features": {
+    "input_rows": 2000072,
+    "retained_rows": 1078302,
+    "excluded_heldout_rows_in_catalogue": 27578,
+    "excluded_user_count": 4500,
+    "excluded_user_ids_sha256": "d6ffeb6514badbd4ed546b222dbda2112672bb2bd774d9b05f1f51859f679334",
+    "films_with_tags": 3788,
+    "features": 32053,
+    "source_sha256": "c52e458a89b9deee410f50813e7a64491fbe92a6f07b5c4b58e64c0b3cc95b89"
+  },
+  "neighbours": 50,
+  "serving_policy": "Pinned score_candidates; no personalFromRatings gate",
+  "identity_boundary": "MovieLens IDs; metadata joined through verified Letterboxd IDs",
+  "components_sha256": "651b6472b95b0c2e0fcd2af7a30ca121ee783f9c7cbb3e7a1c2dd134f2aeba75"
+}

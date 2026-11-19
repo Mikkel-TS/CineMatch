@@ -1,0 +1,45 @@
+{
+  "frozen_at_utc": "2026-11-19T11:35:59.592539+00:00",
+  "source_hashes": {
+    "experiments/run_app_comparison.py": "2a2a4edd3e95dd85ce16848df9d2d8e60a3c8d8ee52b98bf709bebbc77c419f8",
+    "experiments/anton_adapter.py": "344984754af2fb40b86cac358dc22941e09ac4d9e56486f436a36c613d998e10",
+    "experiments/app_comparison_metrics.py": "1322c6e7d3143bcfe8a826dd021fda8df96d6e0baf67276878d5a983c6d60d74",
+    "experiments/prepare_app_comparison.py": "7aadda6320e106303cce991321ae92bc6ad1d6b99ba2c365af8e84fe8485f153",
+    "experiments/campaign_neighbors.py": "83426a77caeb65e8e6a6bc2639131bb6ffd247535ca8bbf2c3ac2a6e7b27c4fd",
+    "experiments/vendor/anton_6e85958/cinematch.py": "a32ce5f1f682defb8b56be4c84f72eeb8e6b86149337ae5f3de2b91185258699",
+    "experiments/vendor/anton_6e85958/movielens.py": "a2002bc730d9437de16f16e687f0b7d38244f5b01e2135858d86de6f54c7243f",
+    "experiments/vendor/anton_6e85958/rating_model.py": "53ebbbb13aa28c8b659f349f58dd810e4178d92ad6c4a35671f754fd1d9e3315"
+  },
+  "artifact_hashes": {
+    "policy.json": "54eb18c390287c6e965b233a75afdd3bbfdf13621d5f598f084916487b2a16fc",
+    "training_contract.json": "e4676b1cbb9445fe9240cb155816b24acc85d87ee6d0a764b7f245757a44c13f",
+    "data/manifest.json": "d7790c4825d51358a671fc874813a53def035938abf48166de03c8008cd26b0c",
+    "data/plan.json": "a192804d1c99357a27cbdf64bbf6157e40f8f3d7ff8460b7129b429f19e01f73",
+    "data/catalogue.csv": "89928cabe36f28320d6ae8e1948ba009c9f22c798d06a6094fdc3110bcad859d",
+    "conditional/model.npz": "fdfe4059af3f9aaa70a48964c63d5530b8bff7075b328d39a0202668639a5e62",
+    "anton/model.json": "b09f68cbc17e9032f1f92a717a36cfa825fc662b1026531e8e237ca80d1f728c",
+    "anton/provenance.json": "c3218167915bc2125ba53c7c5b754936666cca591c02b628fdd508e1a2a83eaa",
+    "data/cohorts.npz": "453ed706b1e0e48890b23a0d0f3a939de664db5cf7b7422ee501115c78d37bbd",
+    "data/test/mixed10.npz": "ca7eccddad0a0e0d595fe5a94e9d75d91def24bbd0921e87959ce9bb9696bd83",
+    "data/test/mixed20.npz": "f72291b321108b578b531e464357573f0770c845995bf38560181bbe379bd218",
+    "data/test/positive10.npz": "93521d2a7a15991190400fa73176a3898d79376c2c2841b4198075039310db35",
+    "data/test/positive20.npz": "4fc1690d0ba53955c0571458f560fbe551c8eafd0aa1ecd031e4618b2ceaaac1",
+    "data/test/positive5.npz": "97e10075f5b354eb970f9496e7f8df508e2b3c77b7d0fdc72c72151514b2ffd1",
+    "data/training.npz": "d729f5ba52efe30da3d52953e5f963df0e39bf63774dacae53d269f2f7b2b686",
+    "data/validation/fit10.npz": "509e7a4af2048beb5fa9fdf1dc61baf6b5d5adadf30a585cccb85908b21bd289",
+    "data/validation/mixed10.npz": "d9c8dc3e6ac58510a2261ff1c299e994a906760d35dc1a9dd16e358438717c6f",
+    "data/validation/mixed20.npz": "9eaae2655b9d0b5c7e7b13a3aaa33ef61eb22bc4a0eaded00b1aeb4a912b068a",
+    "data/validation/positive10.npz": "79c015ad90bffbf69af66f083fbceafaabc1a7e50a025d57311d51c0edd1ea6d",
+    "data/validation/positive20.npz": "4f01fc721064288f8ce7bbecaa7f7ddb93c1701b8d759a2f344d35efd13faf3a",
+    "data/validation/positive5.npz": "fc3b64a644106a348418ac3c258e3acbe5a1d9dcf5ec8af4485e863de3b0231b"
+  },
+  "versions": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0",
+    "threadpoolctl": "3.8.0"
+  },
+  "confirmation_labels_read_for_scoring": false
+}

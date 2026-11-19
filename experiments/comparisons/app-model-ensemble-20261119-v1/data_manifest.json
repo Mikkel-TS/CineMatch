@@ -1,0 +1,61 @@
+{
+  "prepared_at_utc": "2026-11-19T12:12:22.005966+00:00",
+  "counts": {
+    "source_training_users": 196442,
+    "source_training_rows": 21431215,
+    "common_training_users_before_new_split": 196442,
+    "common_training_rows_before_new_split": 21431215,
+    "common_positive_rows_before_new_split": 10981241,
+    "eligible_fresh_users": 116892,
+    "training_users": 192442,
+    "training_rows": 20783195,
+    "validation_users": 2000,
+    "test_users": 2000,
+    "old_excluded_users": 4500,
+    "zero_training_count_movies": 0
+  },
+  "profiles": {
+    "fit10": {
+      "users": 1000,
+      "support_size": 10,
+      "target_ratings": 29870,
+      "users_with_positive_targets": 999,
+      "min_target_count": 25,
+      "max_target_count": 30
+    },
+    "validation15": {
+      "users": 1000,
+      "support_size": 15,
+      "target_ratings": 141337,
+      "users_with_positive_targets": 1000,
+      "min_target_count": 20,
+      "max_target_count": 1489
+    },
+    "test15": {
+      "users": 2000,
+      "support_size": 15,
+      "target_ratings": 301546,
+      "users_with_positive_targets": 2000,
+      "min_target_count": 20,
+      "max_target_count": 2105
+    }
+  },
+  "previous_run": "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/app-model-comparison-20261119-v1",
+  "previous_frozen_sha256": "11023886cdf2483e863de5bc88a9cfe4c8f3b9a7b4dfce0631722ab3086d5797",
+  "source_training_sha256": "d729f5ba52efe30da3d52953e5f963df0e39bf63774dacae53d269f2f7b2b686",
+  "prior_excluded_users": 4500,
+  "all_excluded_tag_users": 8500,
+  "production_hashes": {
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/peter/CineMatch/CineMatch/Core/Resources/cinematch_knn.json": "a4bc91bd5796cbc04d9789657e9a6985202f421f6ff7caeafd8c2b2b64c89085",
+    "/Users/mikkeltoftschwarz/Desktop/Studie/kandidat/2. Semester/Projects in Digital Engineering/CineMatch/artifacts/experiments/cm-20261119-full-knn-conditional/model/model.npz": "1b7a90f95036324bf87502032b662e846d955decee39d538bffe2eac4dbbf8ba"
+  },
+  "source_environment": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.0",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "joblib": "1.6.0",
+    "threadpoolctl": "3.8.0"
+  },
+  "test_scores_computed": false
+}

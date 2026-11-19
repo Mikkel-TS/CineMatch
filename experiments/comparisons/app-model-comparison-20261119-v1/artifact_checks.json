@@ -1,0 +1,7 @@
+{
+  "source_snapshot": "artifacts/experiments/app-model-comparison-20261119-v1/frozen_source",
+  "copied_sources_match_preconfirmation_hashes": true,
+  "content_index_sha256": "fd38cb42c6d289ccdf118857b9d316c18ee1c24a98179699f5ab27125c0e93c0",
+  "app_bundle_sha256": "a4bc91bd5796cbc04d9789657e9a6985202f421f6ff7caeafd8c2b2b64c89085",
+  "original_selected_npz_sha256": "1b7a90f95036324bf87502032b662e846d955decee39d538bffe2eac4dbbf8ba"
+}
