@@ -1,0 +1,144 @@
+{
+  "run_id": "mf16-sample-20261023",
+  "parent_run": null,
+  "status": "historical_reference",
+  "run_date": "2026-10-23",
+  "benchmark_id": "7b0b1ce54a04ae5830072a94ff6537ce1bd7cb98c50db610a00366dd94248a40",
+  "question": "First working explicit-rating matrix-factorisation experiment.",
+  "decision_context": "Sampled 10,000 training users to keep the first CPU experiment manageable.",
+  "training_users": 10000,
+  "training_ratings": 1500603,
+  "candidate_movies": 9021,
+  "parameters": {
+    "factors": 16,
+    "epochs": 20,
+    "batch_size": 4096,
+    "learning_rate": 0.001,
+    "regularization": 0.01,
+    "fold_in_grid": [
+      1.0,
+      5.0,
+      20.0
+    ],
+    "bias_regularization": 5.0,
+    "patience": 3,
+    "seed": 42,
+    "threads": 4,
+    "bias_initialization": "regularized training-user/movie biases",
+    "device": "cpu",
+    "torch_version": "2.14.1",
+    "numpy_version": "2.5.4"
+  },
+  "checkpoint_sha256": "bdc4066d1a73e99b85449af7fea0a54d480f91f76b75ba01d7c602fc95b5888e",
+  "dataset_sha256": "a24f886816fc6d7a3a87748c3624b1bc7a4824f984c4d6ad1ca73426b02080aa",
+  "source_revision": "Not embedded in the historical checkpoint; unknown.",
+  "validation": {
+    "best_epoch": 6,
+    "validation": {
+      "fold_in_regularization": 1.0,
+      "users": 500,
+      "users_with_relevant_targets": 498,
+      "rmse_macro": 0.9247006209325077,
+      "ndcg_at_5": 0.15190124049993667,
+      "recall_at_5": 0.016160885173455545,
+      "hit_rate_at_5": 0.3815261044176707,
+      "catalog_coverage_at_5": 0.02560691719321583
+    },
+    "baseline_validation": {
+      "users": 500,
+      "users_with_relevant_targets": 498,
+      "rmse_macro": 0.9214120880230314,
+      "ndcg_at_5": 0.06263502914406811,
+      "recall_at_5": 0.012388728137627833,
+      "hit_rate_at_5": 0.43373493975903615,
+      "catalog_coverage_at_5": 0.0006651147322913202
+    },
+    "popularity_validation": {
+      "users": 500,
+      "users_with_relevant_targets": 498,
+      "rmse_macro": null,
+      "ndcg_at_5": 0.37954773079730203,
+      "recall_at_5": 0.043410688835916166,
+      "hit_rate_at_5": 0.7429718875502008,
+      "catalog_coverage_at_5": 0.0008868196430550937
+    },
+    "model_prior_validation": {
+      "users": 500,
+      "users_with_relevant_targets": 498,
+      "rmse_macro": 0.9221577118309926,
+      "ndcg_at_5": 0.004302519189477785,
+      "recall_at_5": 0.00019449745593824608,
+      "hit_rate_at_5": 0.01606425702811245,
+      "catalog_coverage_at_5": 0.0006651147322913202
+    },
+    "selection": "Highest validation NDCG@5; lower RMSE breaks ties.",
+    "test_evaluated": false
+  },
+  "legacy_test": {
+    "model": {
+      "users": 500,
+      "users_with_relevant_targets": 499,
+      "rmse_macro": 0.9226542854670134,
+      "ndcg_at_5": 0.13279601525324336,
+      "recall_at_5": 0.014124389110043795,
+      "hit_rate_at_5": 0.35070140280561124,
+      "catalog_coverage_at_5": 0.02904334331005432
+    },
+    "baseline": {
+      "users": 500,
+      "users_with_relevant_targets": 499,
+      "rmse_macro": 0.9221391426861038,
+      "ndcg_at_5": 0.06185908193213635,
+      "recall_at_5": 0.009669976540190346,
+      "hit_rate_at_5": 0.4088176352705411,
+      "catalog_coverage_at_5": 0.0006651147322913202
+    },
+    "popularity": {
+      "users": 500,
+      "users_with_relevant_targets": 499,
+      "rmse_macro": null,
+      "ndcg_at_5": 0.3721213503938399,
+      "recall_at_5": 0.0420226639873093,
+      "hit_rate_at_5": 0.7134268537074149,
+      "catalog_coverage_at_5": 0.000775967187673207
+    },
+    "model_prior": {
+      "users": 500,
+      "users_with_relevant_targets": 499,
+      "rmse_macro": 0.9223755926748767,
+      "ndcg_at_5": 0.00553730462234516,
+      "recall_at_5": 0.00013046685028850403,
+      "hit_rate_at_5": 0.01603206412825651,
+      "catalog_coverage_at_5": 0.0005542622769094336
+    },
+    "paired_comparison": {
+      "ndcg_at_5_difference": 0.07093693332110704,
+      "bootstrap_95_percent": [
+        0.050917175683810885,
+        0.09096240459492307
+      ]
+    },
+    "paired_vs_popularity": {
+      "ndcg_at_5_difference": -0.2393253351405965,
+      "bootstrap_95_percent": [
+        -0.26886166354372754,
+        -0.21017421652067034
+      ]
+    },
+    "paired_vs_model_prior": {
+      "ndcg_at_5_difference": 0.12725871063089822,
+      "bootstrap_95_percent": [
+        0.10680917465556598,
+        0.14684259407979383
+      ]
+    },
+    "checkpoint_sha256": "bdc4066d1a73e99b85449af7fea0a54d480f91f76b75ba01d7c602fc95b5888e",
+    "best_epoch": 6,
+    "fold_in_regularization": 1.0,
+    "protocol": "Full eligible catalogue minus onboarding movies. Relevant means a held-out rating >=4. Users with no relevant targets are omitted only from ranking metrics. RMSE gives each user equal weight.",
+    "limitations": "Retrospective reconstruction from random onboarding ratings; unrated movies have unknown relevance. Does not measure self-selected favourites, future viewing, or movies excluded by training support. After inspecting this test report, further model selection requires a fresh test group."
+  },
+  "legacy_test_status": "Already inspected; development evidence, not an untouched final test.",
+  "artifact_directory": "artifacts/mf16",
+  "adoption_decision": "Historical reference only; underperformed popularity."
+}

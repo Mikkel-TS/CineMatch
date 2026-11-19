@@ -1,0 +1,325 @@
+{
+  "run_id": "cm-20261119-bpr16-no-bias",
+  "family": "pairwise_ranking",
+  "parent_run": "cm-20261119-bpr16",
+  "configuration": {
+    "scale": "sample",
+    "seed": 42,
+    "kind": "ranking",
+    "factors": 16,
+    "epochs": 8,
+    "patience": 3,
+    "pairs_per_epoch": 300000,
+    "use_item_bias": false,
+    "aggregation": "positive",
+    "threads": 2
+  },
+  "question": "Can a pairwise item-context objective improve recommendations for unseen users?",
+  "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+  "changed_variable": "{\"kind\": \"ranking\", \"factors\": 16, \"epochs\": 8, \"patience\": 3, \"pairs_per_epoch\": 300000, \"use_item_bias\": false, \"aggregation\": \"positive\", \"threads\": 2}",
+  "evidence_stage": "exploratory_validation",
+  "campaign_id": "cinematch-systematic-20261119",
+  "status": "complete",
+  "created_at": "2026-11-19T09:06:08.837146+00:00",
+  "benchmark_id": "7b0b1ce54a04ae5830072a94ff6537ce1bd7cb98c50db610a00366dd94248a40",
+  "training_data": {
+    "scale": "sample",
+    "path": "artifacts/data",
+    "manifest_sha256": "a24f886816fc6d7a3a87748c3624b1bc7a4824f984c4d6ad1ca73426b02080aa",
+    "training_arrays_sha256": "9a0d22ecad7da559dc34f86074ceac5a705d9658dfd013bcff0ad6ad027041af",
+    "users": 10000,
+    "ratings": 1500603
+  },
+  "holdout_contract": {
+    "validation_sha256": "2515bdbcf41deacc0cd9a4639c50d6d95624e148b41cad843fa23dbe462b2273",
+    "reserved_fresh_test_sha256": "297eb9875df60af0647bada547584793b2a9761360518c57a31d9fb2ca3b6e2f",
+    "fresh_test_loaded": false,
+    "all_reserved_users_excluded_from_training": true
+  },
+  "fixed_conditions": [
+    "500 frozen validation users, exact five onboarding ratings and target arrays",
+    "9,021 catalogue IDs and order",
+    "Exclude onboarding; positive heldout rating >=4; original top_items and evaluation metric arithmetic",
+    "Original, full-user and both popularity controls retained",
+    "No app deployment"
+  ],
+  "source_revision": "536c1efedddd9e0e98127c8ef2a747b55c8100e7",
+  "source_sha256": {
+    "environment.lock": "70ce2fb68d50bc924b2545654dab6b45e470b415ead859f39a01bf5c8ef9d623",
+    "experiments/campaign_common.py": "b1b6987c6b6b8756c1fb195202bbb01d969995284b9f5d6b32266eef53949d63",
+    "experiments/campaign_mf.py": "1485f118f45fd5dcfc6c18f3b1ba40838f779fb8aed376212a90ac0195e26e55",
+    "experiments/campaign_neighbors.py": "83426a77caeb65e8e6a6bc2639131bb6ffd247535ca8bbf2c3ac2a6e7b27c4fd",
+    "experiments/campaign_ranking.py": "4402b8c38f3d39fc1a42e00fa8b8b2e8724429d011f3b11f7a1523b3bef805fe",
+    "experiments/run_campaign.py": "81756b24add80ce863dadbcf3c8e70fbd626396fc5f59115edc10ccc678fea61",
+    "experiments/run_full_data.py": "7000cccb0247b1bdbd2e64a2f29731c1dcdd7cb61c9868830c876192e452a1da",
+    "git.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pyproject.toml": "4f2219feabb7aa295ff7419751189e4bde6b1af2ddce2b4061b06be8d1ae9869",
+    "requirements.lock": "e8b1c2122c024c8313c97a2de0657ff0174dcbb284be8119b1a59595b8f8daa9",
+    "src/cinematch/__init__.py": "dfe7c50843f3d7cb23dc967cc6ba6fa6075f3e095ab99095e06a47e0de174d00",
+    "src/cinematch/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "src/cinematch/cli.py": "542e4722e7e556f73cd04038774b5cf6db3d7be0f1228799e4f078440f9d4d59",
+    "src/cinematch/data.py": "c752c22a6a5d58a1e01e13f2a2bbedd483afb5cfcf6f0f29bd8573aa92010547",
+    "src/cinematch/evaluation.py": "283dcfabbf90a4134a0b2383331468beac04dbcaf856a81773994d46e53709b0",
+    "src/cinematch/model.py": "3d5e55db9110764e54641481057b8f9657420681769f755b8f56a6a3ad5bd867",
+    "src/cinematch/recommend.py": "d1f2545b3c7c2922009d6f400b5657969899f180932ab29b4db0cf46dd45b04e",
+    "src/cinematch/training.py": "d94e04ce4bdcbbf254834023daf72171779026f32838552dec46082084c63961"
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "platform": "macOS-26.3.1-arm64-arm-64bit",
+    "numpy": "2.5.4",
+    "torch": "2.14.1",
+    "pandas": "3.1.0",
+    "dependencies": "source/environment.lock",
+    "cpu_threads": 2
+  },
+  "artifact_directory": "artifacts/experiments/cm-20261119-bpr16-no-bias",
+  "model_artifacts": "artifacts/experiments/cm-20261119-bpr16-no-bias/model",
+  "reproduction_command": ".venv/bin/python -B -u experiments/run_campaign.py --replay cm-20261119-bpr16-no-bias --run-id new-unique-id",
+  "adoption_decision": "Not deployed; current app model unchanged",
+  "started_at": "2026-11-19T09:06:09.455470+00:00",
+  "finished_at": "2026-11-19T09:06:15.935769+00:00",
+  "elapsed_seconds": 6.480300083057955,
+  "metrics": {
+    "users": 500,
+    "users_with_relevant_targets": 498,
+    "rmse_macro": null,
+    "ndcg_at_5": 0.4033058207123147,
+    "recall_at_5": 0.04983799950156867,
+    "hit_rate_at_5": 0.7891566265060241,
+    "catalog_coverage_at_5": 0.0013302294645826404,
+    "distinct_recommended_movies": 12
+  },
+  "comparisons": {
+    "original_sample": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": 0.251404580212378,
+          "relative_percent": 165.50528447625337
+        },
+        "hit_rate_at_5": {
+          "absolute": 0.40763052208835343,
+          "relative_percent": 106.84210526315789
+        },
+        "recall_at_5": {
+          "absolute": 0.03367711432811313,
+          "relative_percent": 208.38657020735602
+        },
+        "catalog_coverage_at_5": {
+          "absolute": -0.024276687728633187,
+          "relative_percent": -94.8051948051948
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": 0.25140458021237805,
+      "bootstrap_95_percent": [
+        0.22458937666947767,
+        0.2792709001231424
+      ]
+    },
+    "established_popularity": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": 0.02375808991501266,
+          "relative_percent": 6.25957896391711
+        },
+        "hit_rate_at_5": {
+          "absolute": 0.04618473895582331,
+          "relative_percent": 6.216216216216219
+        },
+        "recall_at_5": {
+          "absolute": 0.006427310665652504,
+          "relative_percent": 14.805825104380327
+        },
+        "catalog_coverage_at_5": {
+          "absolute": 0.0004434098215275467,
+          "relative_percent": 49.999999999999986
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": 0.023758089915012683,
+      "bootstrap_95_percent": [
+        0.01335978448084439,
+        0.03419329223064899
+      ]
+    },
+    "full_user": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": 0.23578785651579395,
+          "relative_percent": 140.75377386940042
+        },
+        "hit_rate_at_5": {
+          "absolute": 0.3795180722891567,
+          "relative_percent": 92.64705882352943
+        },
+        "recall_at_5": {
+          "absolute": 0.032641428591679525,
+          "relative_percent": 189.81358994605475
+        },
+        "catalog_coverage_at_5": {
+          "absolute": -0.0475557033588294,
+          "relative_percent": -97.27891156462584
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": 0.23578785651579395,
+      "bootstrap_95_percent": [
+        0.207858855684764,
+        0.26569234501576233
+      ]
+    },
+    "full_popularity": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": 0.02375808991501266,
+          "relative_percent": 6.25957896391711
+        },
+        "hit_rate_at_5": {
+          "absolute": 0.04618473895582331,
+          "relative_percent": 6.216216216216219
+        },
+        "recall_at_5": {
+          "absolute": 0.006427310665652504,
+          "relative_percent": 14.805825104380327
+        },
+        "catalog_coverage_at_5": {
+          "absolute": 0.0004434098215275467,
+          "relative_percent": 49.999999999999986
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": 0.023758089915012683,
+      "bootstrap_95_percent": [
+        0.01335978448084439,
+        0.03419329223064899
+      ]
+    },
+    "training_matched_popularity": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": 0.02375808991501266,
+          "relative_percent": 6.25957896391711
+        },
+        "hit_rate_at_5": {
+          "absolute": 0.04618473895582331,
+          "relative_percent": 6.216216216216219
+        },
+        "recall_at_5": {
+          "absolute": 0.006427310665652504,
+          "relative_percent": 14.805825104380327
+        },
+        "catalog_coverage_at_5": {
+          "absolute": 0.0004434098215275467,
+          "relative_percent": 49.999999999999986
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": 0.023758089915012683,
+      "bootstrap_95_percent": [
+        0.01335978448084439,
+        0.03419329223064899
+      ]
+    },
+    "immediate_parent": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": -0.006188715998967476,
+          "relative_percent": -1.511306121119483
+        },
+        "hit_rate_at_5": {
+          "absolute": 0.006024096385542244,
+          "relative_percent": 0.7692307692307788
+        },
+        "recall_at_5": {
+          "absolute": -0.0019061784942061982,
+          "relative_percent": -3.6838511462330037
+        },
+        "catalog_coverage_at_5": {
+          "absolute": -0.000443409821527547,
+          "relative_percent": -25.000000000000007
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": -0.006188715998967418,
+      "bootstrap_95_percent": [
+        -0.012683387164091188,
+        -0.00018099310869192285
+      ]
+    }
+  },
+  "interpretation": {
+    "decision": "retain item bias for this BPR screen",
+    "conclusion": "Validation NDCG@5 0.403306; difference from established popularity +0.023758, paired 95% interval [+0.013360, +0.034193]. Removing the learned target-item bias slightly reduces ranking relative to BPR16 and narrows the set of recommended titles.",
+    "limitations": "The parent interval is only narrowly below zero after many comparisons; one seed does not establish a universal need for target-item biases. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-bpr16-no-bias.json",
+    "source_record_sha256_before_review_merge": "61b367292606f5087726cc077fdfb558bf1490b8a78663412a00ace255ed7a59",
+    "immediate_parent": "cm-20261119-bpr16",
+    "immediate_parent_ndcg_difference": -0.006188715998967418,
+    "immediate_parent_bootstrap_95_percent": [
+      -0.012683387164091188,
+      -0.00018099310869192285
+    ]
+  },
+  "resource_use": {
+    "peak_process_rss_bytes": 452050944,
+    "rss_units": "bytes on macOS; process lifetime high-water mark",
+    "validation_scoring_seconds": 0.029104207875207067,
+    "milliseconds_per_user_cpu": 0.05820841575041413,
+    "model_artifact_bytes": 1097175
+  },
+  "artifact_checksums": {
+    "comparison.json": "b0e73f347915471b35885241775f54f72af3e36d8a2205c9eb4f8f6e659b812a",
+    "diagnostics.json": "8483d4b3fb22d1a9643a507d7ee4139c7f01a69ec8c4e7de1c7acf81f35d540b",
+    "model/config.json": "1669d3752d2d6e7a797a2f3920411e1a919e3f2aa6e109741b9c226fa5a28a8f",
+    "model/history.json": "6761c8463535acea8910b12229c19085a4f1b3854f2aaa5f757f20ea3f188c53",
+    "model/model.npz": "d90b092f3f6c212beaa49d120d5940b6f65cb6ac303853e702c7f5e1e3e7d48b",
+    "model/sampling.json": "ee4dba7f26cfcbb771c6fc9af30591ef51382203924a33273968e37a5b40407a",
+    "validation_per_user.npz": "91b4bca64a6826a32ad61c42ee2746543320b1703c0920af45a341e74c8b6789",
+    "review.json": "9ffe60e3374687c85c8c5c90960130f5b58f09d24cb9d7b5f5d749789c881555"
+  },
+  "record_corrections": [
+    {
+      "at": "2026-11-19T09:08:26.604100+00:00",
+      "changes": [
+        {
+          "field": "parent_run",
+          "before": "mf16-sample-20261023",
+          "after": "cm-20261119-bpr16",
+          "reason": "Use the immediate conceptual refinement parent; original fixed references remain unchanged."
+        },
+        {
+          "field": "reproduction_command",
+          "reason": "Use corrected replay dispatcher; it copies the original archived source, not current implementation."
+        }
+      ],
+      "original_plan_preserved": true
+    }
+  ],
+  "automated_initial_interpretation": {
+    "conclusion": "Observed NDCG@5 0.403306; difference from established popularity +0.023758 (interval above zero).",
+    "limitations": "Exploratory validation search. User-bootstrap uncertainty excludes training-seed variability and best-of-many selection. Coverage is not quality. Existing retrospective onboarding/exposure limitations remain.",
+    "decision": "investigate and confirm",
+    "personalization_check": 0.7896000000000002
+  }
+}

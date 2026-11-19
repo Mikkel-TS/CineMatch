@@ -1,0 +1,249 @@
+{
+  "scope": "40 completed validation attempts before final evaluation",
+  "all_checks_pass": true,
+  "attempts": [
+    {
+      "run_id": "cm-20261119-bias-half",
+      "all_checks_pass": true,
+      "check_count": 26,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-bias-shrink100",
+      "all_checks_pass": true,
+      "check_count": 26,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-bias-shrink1000",
+      "all_checks_pass": true,
+      "check_count": 26,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-bias-zero",
+      "all_checks_pass": true,
+      "check_count": 26,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-blend-confidence",
+      "all_checks_pass": true,
+      "check_count": 25,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-blend25",
+      "all_checks_pass": true,
+      "check_count": 25,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-blend50",
+      "all_checks_pass": true,
+      "check_count": 25,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-bpr16-no-bias",
+      "all_checks_pass": true,
+      "check_count": 28,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-bpr16",
+      "all_checks_pass": true,
+      "check_count": 28,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-bpr32",
+      "all_checks_pass": true,
+      "check_count": 28,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-fit-centered",
+      "all_checks_pass": true,
+      "check_count": 26,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-fit-lambda001",
+      "all_checks_pass": true,
+      "check_count": 26,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-fit-lambda01",
+      "all_checks_pass": true,
+      "check_count": 26,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-fit-no-intercept",
+      "all_checks_pass": true,
+      "check_count": 26,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-full-blend25",
+      "all_checks_pass": true,
+      "check_count": 25,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-full-bpr32-budget300k",
+      "all_checks_pass": true,
+      "check_count": 29,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-full-bpr32-seed123",
+      "all_checks_pass": true,
+      "check_count": 28,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-full-bpr32-seed42",
+      "all_checks_pass": true,
+      "check_count": 28,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-full-bpr32-seed7",
+      "all_checks_pass": true,
+      "check_count": 28,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-full-knn-binary",
+      "all_checks_pass": true,
+      "check_count": 27,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-full-knn-blend50",
+      "all_checks_pass": true,
+      "check_count": 26,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-full-knn-conditional",
+      "all_checks_pass": true,
+      "check_count": 25,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-full-knn-cos300",
+      "all_checks_pass": true,
+      "check_count": 25,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-full-knn-no-personal",
+      "all_checks_pass": true,
+      "check_count": 26,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-full-knn-no-shrink",
+      "all_checks_pass": true,
+      "check_count": 26,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-full-knn-observed",
+      "all_checks_pass": true,
+      "check_count": 26,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-genre-blend25",
+      "all_checks_pass": true,
+      "check_count": 25,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-genre",
+      "all_checks_pass": true,
+      "check_count": 25,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-knn-conditional",
+      "all_checks_pass": true,
+      "check_count": 25,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-knn-cos100",
+      "all_checks_pass": true,
+      "check_count": 25,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-knn-cos300",
+      "all_checks_pass": true,
+      "check_count": 25,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-knn-k300-isolate",
+      "all_checks_pass": true,
+      "check_count": 25,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-knn-observed",
+      "all_checks_pass": true,
+      "check_count": 25,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-knn-shrink50-isolate",
+      "all_checks_pass": true,
+      "check_count": 25,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-knn-signed",
+      "all_checks_pass": true,
+      "check_count": 25,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-mf-biasreg10",
+      "all_checks_pass": true,
+      "check_count": 28,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-mf-huber",
+      "all_checks_pass": true,
+      "check_count": 28,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-mf32",
+      "all_checks_pass": true,
+      "check_count": 28,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-mf8",
+      "all_checks_pass": true,
+      "check_count": 28,
+      "failed": []
+    },
+    {
+      "run_id": "cm-20261119-rerank100",
+      "all_checks_pass": true,
+      "check_count": 25,
+      "failed": []
+    }
+  ],
+  "original_and_full_checkpoints_unchanged": true,
+  "fresh_test_checksum_unchanged": true,
+  "fresh_profiles_deserialized_by_this_audit": false
+}

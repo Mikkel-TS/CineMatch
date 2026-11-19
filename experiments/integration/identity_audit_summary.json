@@ -1,0 +1,127 @@
+{
+  "audit_type": "read_only_identity_coverage_and_unverified_match_candidates",
+  "selected_model_run": "cm-20261119-full-knn-conditional",
+  "live_tmdb_verification_performed": false,
+  "tmdb_evidence": "Positive integer IDs in the local MovieLens links.csv; not live movie availability or identity verification.",
+  "sources": {
+    "frontend_bundle": {
+      "path": "peter/CineMatch/CineMatch/Core/Resources/cinematch_model.json",
+      "sha256": "eacaa9f826d0726f20cac8deb9064f621b75d10f7afdd5bd753ea7f66e67b4a9"
+    },
+    "existing_mapping": {
+      "path": "extra_data/id_mapping.csv",
+      "sha256": "65a706113dd3c7f6d7487478c54655be3ee896f80cbc9c230b97665c57f2c394"
+    },
+    "movielens_movies": {
+      "path": "CineMatch/Dataset/ml-32m/movies.csv",
+      "sha256": "b37ca1abc7798de741138ed252b62f69f7e37c84b8a8fab1b82d409b4c6c5cc2"
+    },
+    "movielens_links": {
+      "path": "CineMatch/Dataset/ml-32m/links.csv",
+      "sha256": "ef17da7710be76f7d510d5768d1b61826e3af4bf57812b9ca377e4c912123b22"
+    },
+    "selected_model": {
+      "path": "CineMatch/artifacts/experiments/cm-20261119-full-knn-conditional/model/model.npz",
+      "sha256": "1b7a90f95036324bf87502032b662e846d955decee39d538bffe2eac4dbbf8ba"
+    }
+  },
+  "script_sha256": "a18beef26877892f392d8d441189d8e06d73a256d5685ba488d3004ec530d287",
+  "normalization": {
+    "steps": [
+      "Unicode NFKD decomposition and lowercase",
+      "Remove trailing ', the', ', a' or ', an'",
+      "Remove leading 'the ', 'a ' or 'an '",
+      "Retain only Unicode alphanumeric characters",
+      "Require identical year parsed from final MovieLens '(YYYY)'"
+    ],
+    "uniqueness_scope": "All rows of MovieLens movies.csv, not just the selected model",
+    "candidate_scope": "Only frontend IDs absent from the existing mapping, with a unique match in the selected model",
+    "identity_guarantee": false,
+    "automatic_acceptance": false
+  },
+  "counts": {
+    "frontend_films": 8000,
+    "selected_model_movies": 9021,
+    "existing_mapping_any_movielens": 5700,
+    "existing_mapping_inside_selected_model": 3347,
+    "existing_mapping_inside_selected_model_unique_target": 3347,
+    "existing_mapping_outside_selected_model": 2353,
+    "absent_from_existing_mapping": 2300,
+    "additional_unverified_candidates_inside_selected_model": 645,
+    "selected_model_missing_or_invalid_tmdb_rows": 3,
+    "selected_model_rows_with_valid_tmdb_link": 9018,
+    "selected_model_distinct_tmdb_ids": 9016,
+    "selected_model_duplicate_tmdb_groups": 2,
+    "selected_model_rows_in_duplicate_tmdb_groups": 4,
+    "selected_model_rows_with_valid_unique_tmdb": 9014
+  },
+  "full_movielens_tmdb_link_coverage": {
+    "movielens_movies": 87585,
+    "rows_with_valid_tmdb_link": 87461,
+    "rows_missing_or_invalid_tmdb_link": 124,
+    "distinct_tmdb_ids": 87425,
+    "duplicate_tmdb_groups": 36,
+    "rows_in_duplicate_tmdb_groups": 72,
+    "rows_with_valid_unique_tmdb": 87389,
+    "link_coverage_percent": 99.85842324598961
+  },
+  "existing_supported_match_types": {
+    "exact_title_and_year": 3275,
+    "exact_title_year_offset": 72
+  },
+  "unmapped_title_year_diagnostic": {
+    "ambiguous_across_full_movielens_catalogue": 1,
+    "no_normalized_title_year_match": 1580,
+    "unique_match_inside_selected_model": 645,
+    "unique_match_outside_selected_model": 74
+  },
+  "selected_model_missing_tmdb": [
+    {
+      "movie_lens_id": 2851,
+      "title": "Saturn 3 (1980)"
+    },
+    {
+      "movie_lens_id": 7842,
+      "title": "Dune (2000)"
+    },
+    {
+      "movie_lens_id": 26587,
+      "title": "Decalogue, The (Dekalog) (1989)"
+    }
+  ],
+  "selected_model_duplicate_tmdb": [
+    {
+      "tmdb_id": 4912,
+      "model_movies": [
+        {
+          "movie_lens_id": 6003,
+          "title": "Confessions of a Dangerous Mind (2002)"
+        },
+        {
+          "movie_lens_id": 144606,
+          "title": "Confessions of a Dangerous Mind (2002)"
+        }
+      ]
+    },
+    {
+      "tmdb_id": 265189,
+      "model_movies": [
+        {
+          "movie_lens_id": 114342,
+          "title": "Force Majeure (Turist) (2014)"
+        },
+        {
+          "movie_lens_id": 175813,
+          "title": "Force Majeure (2014)"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Catalogue coverage does not measure recovery of actual users' saved opinions.",
+    "Existing mapping entries and generated candidates are not verified against TMDB here.",
+    "Normalized title/year matches can collapse different works; candidates require identity review before migration.",
+    "Mapping a film outside the selected catalogue does not add model support for that film.",
+    "Valid unique TMDB integers do not establish movie identity or movie-only eligibility."
+  ]
+}

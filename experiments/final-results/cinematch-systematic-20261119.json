@@ -1,0 +1,250 @@
+{
+  "candidate_run": "cm-20261119-full-knn-conditional",
+  "selection_reason": "Selected after40validation experiments across seven change families. Conditional item neighbours improve sample and full-data validation over both MF references and popularity. Full-data NDCG0.494177 versus popularity0.379548; paired interval for difference[0.098119,0.132605]. Retain the regularized parent: removing shrinkage changes NDCG by only0.00002985, while binary weighting, extra popularity and observed-only feedback do not improve the primary metric. Candidate, inference, catalogue and evaluation are frozen before fresh holdout access. No further model selection or tuning will use final results.",
+  "selected_at": "2026-11-19T09:13:23.873453+00:00",
+  "protocol": {
+    "primary_metric": "ndcg_at_5",
+    "references": [
+      "original_sample",
+      "full_user",
+      "established_popularity",
+      "full_popularity"
+    ],
+    "candidates": "One frozen candidate; no selection or tuning after fresh evaluation.",
+    "ranking": "Original full fixed catalogue, exclude onboarding movies, held-out rating >=4 is relevant.",
+    "metrics": "Existing campaign_common.evaluate_score_matrix and comparisons; bootstrap seed42, 2000 replicates.",
+    "parity": "Candidate completed validation metrics, per-user values and top lists must replay; then freeze all scores.",
+    "parity_rtol": 1e-10,
+    "parity_atol": 1e-10,
+    "limits": "Retrospective random onboarding; unrated items have unknown relevance. Bootstrap covers users, not training randomness.",
+    "failure_policy": "Exclusive sentinel is permanent, including failed/interrupted attempts. No automatic retries or replacement candidate.",
+    "adoption": "Evaluation only. App defaults and existing models remain unchanged."
+  },
+  "campaign_id": "cinematch-systematic-20261119",
+  "fresh_holdout_loaded": true,
+  "status": "complete",
+  "artifact_directory": "artifacts/experiments/cinematch-systematic-20261119/final-evaluation",
+  "frozen_at": "2026-11-19T09:13:24.735957+00:00",
+  "freeze_sha256": "95760d85a1c1afbbd22fa9f639c09394051e67536174729250b1c54c4ef70c17",
+  "final_benchmark_id": "f0d9f9b120c2f318bf07057af16ee55baa02e2a776aa4b61c1502ae719ca6082",
+  "started_at": "2026-11-19T09:13:45.324776+00:00",
+  "evidence_stage": "fresh_final_holdout",
+  "validation_leaderboard_entry": false,
+  "fresh_holdout_access_started": true,
+  "finished_at": "2026-11-19T09:13:49.573845+00:00",
+  "elapsed_seconds": 4.2490719999186695,
+  "metrics": {
+    "candidate": {
+      "users": 500,
+      "users_with_relevant_targets": 499,
+      "rmse_macro": null,
+      "ndcg_at_5": 0.48536088814913336,
+      "recall_at_5": 0.056196535530372335,
+      "hit_rate_at_5": 0.8356713426853707,
+      "catalog_coverage_at_5": 0.008424786609023389,
+      "distinct_recommended_movies": 76
+    },
+    "original_sample": {
+      "users": 500,
+      "users_with_relevant_targets": 499,
+      "rmse_macro": 0.9446574647989717,
+      "ndcg_at_5": 0.1438368039525805,
+      "recall_at_5": 0.013435146193198457,
+      "hit_rate_at_5": 0.3687374749498998,
+      "catalog_coverage_at_5": 0.028045671211617336,
+      "distinct_recommended_movies": 253
+    },
+    "full_user": {
+      "users": 500,
+      "users_with_relevant_targets": 499,
+      "rmse_macro": 0.9383506651281096,
+      "ndcg_at_5": 0.15988768872706263,
+      "recall_at_5": 0.016188480211521892,
+      "hit_rate_at_5": 0.4168336673346693,
+      "catalog_coverage_at_5": 0.0525440638510143,
+      "distinct_recommended_movies": 474
+    },
+    "established_popularity": {
+      "users": 500,
+      "users_with_relevant_targets": 499,
+      "rmse_macro": null,
+      "ndcg_at_5": 0.38021214171190626,
+      "recall_at_5": 0.04085998577666182,
+      "hit_rate_at_5": 0.751503006012024,
+      "catalog_coverage_at_5": 0.0008868196430550937,
+      "distinct_recommended_movies": 8
+    },
+    "full_popularity": {
+      "users": 500,
+      "users_with_relevant_targets": 499,
+      "rmse_macro": null,
+      "ndcg_at_5": 0.38021214171190626,
+      "recall_at_5": 0.04085998577666182,
+      "hit_rate_at_5": 0.751503006012024,
+      "catalog_coverage_at_5": 0.0008868196430550937,
+      "distinct_recommended_movies": 8
+    }
+  },
+  "comparisons": {
+    "original_sample": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": 0.3415240841965529,
+          "relative_percent": 237.43859346954417
+        },
+        "hit_rate_at_5": {
+          "absolute": 0.4669338677354709,
+          "relative_percent": 126.63043478260869
+        },
+        "recall_at_5": {
+          "absolute": 0.042761389337173876,
+          "relative_percent": 318.28004490804744
+        },
+        "catalog_coverage_at_5": {
+          "absolute": -0.019620884602593945,
+          "relative_percent": -69.96047430830039
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": 0.34152408419655284,
+      "bootstrap_95_percent": [
+        0.3133434567528676,
+        0.3697088076228328
+      ]
+    },
+    "full_user": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": 0.32547319942207076,
+          "relative_percent": 203.56364021101837
+        },
+        "hit_rate_at_5": {
+          "absolute": 0.4188376753507014,
+          "relative_percent": 100.48076923076923
+        },
+        "recall_at_5": {
+          "absolute": 0.04000805531885045,
+          "relative_percent": 247.13904453103237
+        },
+        "catalog_coverage_at_5": {
+          "absolute": -0.04411927724199091,
+          "relative_percent": -83.96624472573839
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": 0.32547319942207076,
+      "bootstrap_95_percent": [
+        0.2972538456779783,
+        0.3536591256625194
+      ]
+    },
+    "established_popularity": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": 0.1051487464372271,
+          "relative_percent": 27.655283696042574
+        },
+        "hit_rate_at_5": {
+          "absolute": 0.08416833667334667,
+          "relative_percent": 11.199999999999996
+        },
+        "recall_at_5": {
+          "absolute": 0.015336549753710516,
+          "relative_percent": 37.53439817022736
+        },
+        "catalog_coverage_at_5": {
+          "absolute": 0.007537966965968295,
+          "relative_percent": 849.9999999999998
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": 0.10514874643722719,
+      "bootstrap_95_percent": [
+        0.08593586621705428,
+        0.12352216660464296
+      ]
+    },
+    "full_popularity": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": 0.1051487464372271,
+          "relative_percent": 27.655283696042574
+        },
+        "hit_rate_at_5": {
+          "absolute": 0.08416833667334667,
+          "relative_percent": 11.199999999999996
+        },
+        "recall_at_5": {
+          "absolute": 0.015336549753710516,
+          "relative_percent": 37.53439817022736
+        },
+        "catalog_coverage_at_5": {
+          "absolute": 0.007537966965968295,
+          "relative_percent": 849.9999999999998
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": 0.10514874643722719,
+      "bootstrap_95_percent": [
+        0.08593586621705428,
+        0.12352216660464296
+      ]
+    },
+    "training_matched_popularity": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": 0.1051487464372271,
+          "relative_percent": 27.655283696042574
+        },
+        "hit_rate_at_5": {
+          "absolute": 0.08416833667334667,
+          "relative_percent": 11.199999999999996
+        },
+        "recall_at_5": {
+          "absolute": 0.015336549753710516,
+          "relative_percent": 37.53439817022736
+        },
+        "catalog_coverage_at_5": {
+          "absolute": 0.007537966965968295,
+          "relative_percent": 849.9999999999998
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": 0.10514874643722719,
+      "bootstrap_95_percent": [
+        0.08593586621705428,
+        0.12352216660464296
+      ]
+    }
+  },
+  "candidate_configuration": {
+    "scale": "full",
+    "seed": 42,
+    "kind": "neighbors",
+    "feedback": "positive",
+    "top_k": 100,
+    "shrink": 10,
+    "similarity": "conditional",
+    "aggregation": "positive"
+  },
+  "training_matched_popularity": "full_popularity",
+  "per_user_artifact": "artifacts/experiments/cinematch-systematic-20261119/final-evaluation/final_per_user.npz",
+  "per_user_sha256": "5ebc07202765ed64bc634daf04ba691910151020ed86902f9af0452dd6e8f5bf",
+  "next_decision": "Report the frozen result. Do not tune or choose another model using this holdout.",
+  "adoption_decision": "Not deployed; existing model unchanged."
+}

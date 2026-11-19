@@ -1,0 +1,311 @@
+{
+  "run_id": "cm-20261119-genre-blend25",
+  "family": "metadata",
+  "parent_run": "cm-20261119-genre",
+  "configuration": {
+    "scale": "sample",
+    "seed": 42,
+    "kind": "hybrid",
+    "base_run": "cm-20261119-genre",
+    "alpha": 0.25
+  },
+  "question": "Does genre taste improve a popularity prior?",
+  "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+  "changed_variable": "25% standardized genre score + 75% standardized log-count",
+  "evidence_stage": "exploratory_validation",
+  "campaign_id": "cinematch-systematic-20261119",
+  "status": "complete",
+  "created_at": "2026-11-19T09:06:26.339046+00:00",
+  "benchmark_id": "7b0b1ce54a04ae5830072a94ff6537ce1bd7cb98c50db610a00366dd94248a40",
+  "training_data": {
+    "scale": "sample",
+    "path": "artifacts/data",
+    "manifest_sha256": "a24f886816fc6d7a3a87748c3624b1bc7a4824f984c4d6ad1ca73426b02080aa",
+    "training_arrays_sha256": "9a0d22ecad7da559dc34f86074ceac5a705d9658dfd013bcff0ad6ad027041af",
+    "users": 10000,
+    "ratings": 1500603
+  },
+  "holdout_contract": {
+    "validation_sha256": "2515bdbcf41deacc0cd9a4639c50d6d95624e148b41cad843fa23dbe462b2273",
+    "reserved_fresh_test_sha256": "297eb9875df60af0647bada547584793b2a9761360518c57a31d9fb2ca3b6e2f",
+    "fresh_test_loaded": false,
+    "all_reserved_users_excluded_from_training": true
+  },
+  "fixed_conditions": [
+    "500 frozen validation users, exact five onboarding ratings and target arrays",
+    "9,021 catalogue IDs and order",
+    "Exclude onboarding; positive heldout rating >=4; original top_items and evaluation metric arithmetic",
+    "Original, full-user and both popularity controls retained",
+    "No app deployment"
+  ],
+  "source_revision": "536c1efedddd9e0e98127c8ef2a747b55c8100e7",
+  "source_sha256": {
+    "environment.lock": "70ce2fb68d50bc924b2545654dab6b45e470b415ead859f39a01bf5c8ef9d623",
+    "experiments/campaign_common.py": "b1b6987c6b6b8756c1fb195202bbb01d969995284b9f5d6b32266eef53949d63",
+    "experiments/campaign_mf.py": "1485f118f45fd5dcfc6c18f3b1ba40838f779fb8aed376212a90ac0195e26e55",
+    "experiments/campaign_neighbors.py": "83426a77caeb65e8e6a6bc2639131bb6ffd247535ca8bbf2c3ac2a6e7b27c4fd",
+    "experiments/campaign_ranking.py": "4402b8c38f3d39fc1a42e00fa8b8b2e8724429d011f3b11f7a1523b3bef805fe",
+    "experiments/run_campaign.py": "81756b24add80ce863dadbcf3c8e70fbd626396fc5f59115edc10ccc678fea61",
+    "experiments/run_full_data.py": "7000cccb0247b1bdbd2e64a2f29731c1dcdd7cb61c9868830c876192e452a1da",
+    "git.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pyproject.toml": "4f2219feabb7aa295ff7419751189e4bde6b1af2ddce2b4061b06be8d1ae9869",
+    "requirements.lock": "e8b1c2122c024c8313c97a2de0657ff0174dcbb284be8119b1a59595b8f8daa9",
+    "src/cinematch/__init__.py": "dfe7c50843f3d7cb23dc967cc6ba6fa6075f3e095ab99095e06a47e0de174d00",
+    "src/cinematch/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "src/cinematch/cli.py": "542e4722e7e556f73cd04038774b5cf6db3d7be0f1228799e4f078440f9d4d59",
+    "src/cinematch/data.py": "c752c22a6a5d58a1e01e13f2a2bbedd483afb5cfcf6f0f29bd8573aa92010547",
+    "src/cinematch/evaluation.py": "283dcfabbf90a4134a0b2383331468beac04dbcaf856a81773994d46e53709b0",
+    "src/cinematch/model.py": "3d5e55db9110764e54641481057b8f9657420681769f755b8f56a6a3ad5bd867",
+    "src/cinematch/recommend.py": "d1f2545b3c7c2922009d6f400b5657969899f180932ab29b4db0cf46dd45b04e",
+    "src/cinematch/training.py": "d94e04ce4bdcbbf254834023daf72171779026f32838552dec46082084c63961"
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "platform": "macOS-26.3.1-arm64-arm-64bit",
+    "numpy": "2.5.4",
+    "torch": "2.14.1",
+    "pandas": "3.1.0",
+    "dependencies": "source/environment.lock",
+    "cpu_threads": 2
+  },
+  "artifact_directory": "artifacts/experiments/cm-20261119-genre-blend25",
+  "model_artifacts": "artifacts/experiments/cm-20261119-genre-blend25/model",
+  "reproduction_command": ".venv/bin/python -B -u experiments/run_campaign.py --replay cm-20261119-genre-blend25 --run-id new-unique-id",
+  "adoption_decision": "Not deployed; current app model unchanged",
+  "started_at": "2026-11-19T09:06:26.941580+00:00",
+  "finished_at": "2026-11-19T09:06:28.289057+00:00",
+  "elapsed_seconds": 1.3474811250343919,
+  "metrics": {
+    "users": 500,
+    "users_with_relevant_targets": 498,
+    "rmse_macro": null,
+    "ndcg_at_5": 0.37120778687234784,
+    "recall_at_5": 0.03888519328584262,
+    "hit_rate_at_5": 0.7168674698795181,
+    "catalog_coverage_at_5": 0.00875734397516905,
+    "distinct_recommended_movies": 79
+  },
+  "comparisons": {
+    "original_sample": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": 0.21930654637241118,
+          "relative_percent": 144.37442752319237
+        },
+        "hit_rate_at_5": {
+          "absolute": 0.3353413654618474,
+          "relative_percent": 87.89473684210526
+        },
+        "recall_at_5": {
+          "absolute": 0.022724308112387074,
+          "relative_percent": 140.61301635700025
+        },
+        "catalog_coverage_at_5": {
+          "absolute": -0.016849573218046778,
+          "relative_percent": -65.8008658008658
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": 0.21930654637241118,
+      "bootstrap_95_percent": [
+        0.19370707496635833,
+        0.24646417568822793
+      ]
+    },
+    "established_popularity": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": -0.008339943924954185,
+          "relative_percent": -2.19733731708388
+        },
+        "hit_rate_at_5": {
+          "absolute": -0.026104417670682722,
+          "relative_percent": -3.5135135135135123
+        },
+        "recall_at_5": {
+          "absolute": -0.004525495550073547,
+          "relative_percent": -10.424841603364154
+        },
+        "catalog_coverage_at_5": {
+          "absolute": 0.007870524332113956,
+          "relative_percent": 887.4999999999999
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": -0.008339943924954131,
+      "bootstrap_95_percent": [
+        -0.026996608369407562,
+        0.012608341327760689
+      ]
+    },
+    "full_user": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": 0.2036898226758271,
+          "relative_percent": 121.59282358330955
+        },
+        "hit_rate_at_5": {
+          "absolute": 0.30722891566265065,
+          "relative_percent": 75.00000000000001
+        },
+        "recall_at_5": {
+          "absolute": 0.02168862237595347,
+          "relative_percent": 126.12178607934622
+        },
+        "catalog_coverage_at_5": {
+          "absolute": -0.04012858884824299,
+          "relative_percent": -82.08616780045351
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": 0.20368982267582714,
+      "bootstrap_95_percent": [
+        0.1776492378130168,
+        0.2307334697830281
+      ]
+    },
+    "full_popularity": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": -0.008339943924954185,
+          "relative_percent": -2.19733731708388
+        },
+        "hit_rate_at_5": {
+          "absolute": -0.026104417670682722,
+          "relative_percent": -3.5135135135135123
+        },
+        "recall_at_5": {
+          "absolute": -0.004525495550073547,
+          "relative_percent": -10.424841603364154
+        },
+        "catalog_coverage_at_5": {
+          "absolute": 0.007870524332113956,
+          "relative_percent": 887.4999999999999
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": -0.008339943924954131,
+      "bootstrap_95_percent": [
+        -0.026996608369407562,
+        0.012608341327760689
+      ]
+    },
+    "training_matched_popularity": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": -0.008339943924954185,
+          "relative_percent": -2.19733731708388
+        },
+        "hit_rate_at_5": {
+          "absolute": -0.026104417670682722,
+          "relative_percent": -3.5135135135135123
+        },
+        "recall_at_5": {
+          "absolute": -0.004525495550073547,
+          "relative_percent": -10.424841603364154
+        },
+        "catalog_coverage_at_5": {
+          "absolute": 0.007870524332113956,
+          "relative_percent": 887.4999999999999
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": -0.008339943924954131,
+      "bootstrap_95_percent": [
+        -0.026996608369407562,
+        0.012608341327760689
+      ]
+    },
+    "immediate_parent": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": 0.32773022817062925,
+          "relative_percent": 753.7916984232023
+        },
+        "hit_rate_at_5": {
+          "absolute": 0.5562248995983936,
+          "relative_percent": 346.25000000000006
+        },
+        "recall_at_5": {
+          "absolute": 0.03450346986038833,
+          "relative_percent": 787.440614347107
+        },
+        "catalog_coverage_at_5": {
+          "absolute": -0.10808114399733953,
+          "relative_percent": -92.50474383301707
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": 0.3277302281706293,
+      "bootstrap_95_percent": [
+        0.30086650862571324,
+        0.3548146591108711
+      ]
+    }
+  },
+  "interpretation": {
+    "decision": "retain inconclusive content hybrid; do not select",
+    "conclusion": "Validation NDCG@5 0.371208; difference from established popularity -0.008340, paired 95% interval [-0.026997, +0.012608]. Adding popularity rescues much of the genre model deficit but the hybrid does not demonstrate a gain over popularity itself.",
+    "limitations": "Improvement over a weak genre parent is insufficient evidence that genre personalization adds value; the popularity interval includes zero. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-genre-blend25.json",
+    "source_record_sha256_before_review_merge": "d08817b0a963839b7ec7932ce537fba3fa459449dc40d382e6d513785460281b",
+    "immediate_parent": "cm-20261119-genre",
+    "immediate_parent_ndcg_difference": 0.3277302281706293,
+    "immediate_parent_bootstrap_95_percent": [
+      0.30086650862571324,
+      0.3548146591108711
+    ]
+  },
+  "resource_use": {
+    "peak_process_rss_bytes": 342441984,
+    "rss_units": "bytes on macOS; process lifetime high-water mark",
+    "validation_scoring_seconds": 0.05906791682355106,
+    "milliseconds_per_user_cpu": 0.11813583364710212,
+    "model_artifact_bytes": 200
+  },
+  "artifact_checksums": {
+    "comparison.json": "f5f348f498d9ffe0d2a07100d6f393193c17aca23e08024e3b6eccf53d7d30df",
+    "diagnostics.json": "c18c4fc4590287d1575fc1cdea7656c931ac9cdb9c794af00b085af86629bbfb",
+    "model/model.json": "8c84ede7bb62c84874d3c1b6b708eed9a47be6ba1a28ed6c8d9a4aeb3ca4e92e",
+    "validation_per_user.npz": "4f1e1a5bfb006b1cce50430975f05e8b6dc2e66cb2764d446c3b51b804778885",
+    "review.json": "fe518b4d4b8546566ed5562c88ebbdc432912cd16588418419c8a43a436f28ac"
+  },
+  "record_corrections": [
+    {
+      "at": "2026-11-19T09:08:26.210717+00:00",
+      "changes": [
+        {
+          "field": "reproduction_command",
+          "reason": "Use corrected replay dispatcher; it copies the original archived source, not current implementation."
+        }
+      ],
+      "original_plan_preserved": true
+    }
+  ],
+  "automated_initial_interpretation": {
+    "conclusion": "Observed NDCG@5 0.371208; difference from established popularity -0.008340 (interval includes zero).",
+    "limitations": "Exploratory validation search. User-bootstrap uncertainty excludes training-seed variability and best-of-many selection. Coverage is not quality. Existing retrospective onboarding/exposure limitations remain.",
+    "decision": "retain as diagnostic; not an improvement over popularity",
+    "personalization_check": 0.41960000000000003
+  }
+}

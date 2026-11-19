@@ -1,0 +1,602 @@
+{
+  "cm-20261119-fit-lambda01": {
+    "decision": "retain as MF diagnostic; do not select",
+    "conclusion": "Validation NDCG@5 0.205594; difference from established popularity -0.173954, paired 95% interval [-0.199881, -0.146239]. Reducing fold-in regularization from 1 to 0.1 improves ranking over the original MF, but worsens rating RMSE substantially and remains far below popularity.",
+    "limitations": "One fixed trained checkpoint and five random ratings per user; this is not evidence for weak regularization under other onboarding conditions. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-fit-lambda01.json",
+    "source_record_sha256_before_review_merge": "5a38465a16656d328e5d2a527ece5ea0b1efbc2197d8948b88b9a9d1d7f4d622",
+    "immediate_parent": "mf16-sample-20261023",
+    "immediate_parent_ndcg_difference": 0.053692645559493324,
+    "immediate_parent_bootstrap_95_percent": [
+      0.03548960934740541,
+      0.07274154211174601
+    ]
+  },
+  "cm-20261119-fit-lambda001": {
+    "decision": "reject further weakening for this candidate",
+    "conclusion": "Validation NDCG@5 0.198521; difference from established popularity -0.181027, paired 95% interval [-0.207820, -0.152705]. Lambda 0.01 regresses from 0.1 while RMSE worsens further; the parent comparison is inconclusive rather than decisive.",
+    "limitations": "The parent interval includes zero. Increased coverage does not offset the lack of ranking improvement. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-fit-lambda001.json",
+    "source_record_sha256_before_review_merge": "82998dcfad928bc7a964299081d4542450076d644c05f04960a996574e579b86",
+    "immediate_parent": "cm-20261119-fit-lambda01",
+    "immediate_parent_ndcg_difference": -0.007072715431542234,
+    "immediate_parent_bootstrap_95_percent": [
+      -0.015080066840144188,
+      0.0005332922860764587
+    ]
+  },
+  "cm-20261119-fit-no-intercept": {
+    "decision": "retain intercept; reject this refinement",
+    "conclusion": "Validation NDCG@5 0.204319; difference from established popularity -0.175229, paired 95% interval [-0.201522, -0.146711]. Removing the user intercept makes little difference to the lambda-0.1 parent and increases RMSE; no useful gain was demonstrated.",
+    "limitations": "Small observed ranking decline with paired interval crossing zero; do not claim the intercept is universally necessary. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-fit-no-intercept.json",
+    "source_record_sha256_before_review_merge": "9867988bdfab21518039538a0b843073fcbfd97dde17ff22352b2d25002809ea",
+    "immediate_parent": "cm-20261119-fit-lambda01",
+    "immediate_parent_ndcg_difference": -0.0012749950850294563,
+    "immediate_parent_bootstrap_95_percent": [
+      -0.004701348071741571,
+      0.0019462454729481835
+    ]
+  },
+  "cm-20261119-fit-centered": {
+    "decision": "reject tested centring rule",
+    "conclusion": "Validation NDCG@5 0.148931; difference from established popularity -0.230617, paired 95% interval [-0.257091, -0.204239]. Replacing the global mean with the five-support-rating mean loses the preceding ranking gain and ends slightly below the original MF.",
+    "limitations": "This is this particular support-mean centring rule, combined with lambda 0.1; it does not rule out every centring scheme. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-fit-centered.json",
+    "source_record_sha256_before_review_merge": "3d3a7df58e637292ba380dd0cf62ea7eb5a72fe31eabfa45c54397f3d0a6e3d5",
+    "immediate_parent": "cm-20261119-fit-lambda01",
+    "immediate_parent_ndcg_difference": -0.05666314137962661,
+    "immediate_parent_bootstrap_95_percent": [
+      -0.07681846796979377,
+      -0.038741651819384035
+    ]
+  },
+  "cm-20261119-bias-zero": {
+    "decision": "retain bias-sensitivity finding; do not select",
+    "conclusion": "Validation NDCG@5 0.233599; difference from established popularity -0.145949, paired 95% interval [-0.174670, -0.117342]. Removing movie biases improves the original MF ranking markedly, but is worse than partial scaling or stronger count shrinkage and worsens RMSE.",
+    "limitations": "Bias changes affect both support residuals and candidate scores. This cannot attribute the gain solely to suppressing candidate priors. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-bias-zero.json",
+    "source_record_sha256_before_review_merge": "c755b7fe2d82cb2cad19da9d366318b177b0a4664ce29f3889596d1eeccb363d",
+    "immediate_parent": "mf16-sample-20261023",
+    "immediate_parent_ndcg_difference": 0.08169792826772905,
+    "immediate_parent_bootstrap_95_percent": [
+      0.0615467614937959,
+      0.10271460792706671
+    ]
+  },
+  "cm-20261119-bias-half": {
+    "decision": "retain bias-sensitivity finding; do not select",
+    "conclusion": "Validation NDCG@5 0.248111; difference from established popularity -0.131437, paired 95% interval [-0.159057, -0.104992]. Halving movie bias improves ranking more than removing it, suggesting useful prior information should be reduced rather than discarded in this checkpoint.",
+    "limitations": "The half-versus-zero comparison is descriptive; no dedicated paired contrast is included in this run record. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-bias-half.json",
+    "source_record_sha256_before_review_merge": "3c3cf21827b4e8c29aa59c1e6823493d08fc8c6dda1da03a499cf328ec906210",
+    "immediate_parent": "mf16-sample-20261023",
+    "immediate_parent_ndcg_difference": 0.09620966657217317,
+    "immediate_parent_bootstrap_95_percent": [
+      0.07952773195798651,
+      0.11439597387077526
+    ]
+  },
+  "cm-20261119-bias-shrink100": {
+    "decision": "retain evidence-aware shrinkage as MF finding",
+    "conclusion": "Validation NDCG@5 0.281979; difference from established popularity -0.097569, paired 95% interval [-0.123421, -0.073355]. Count-dependent shrinkage gives a larger ranking improvement than the simple bias-scaling screens, while still losing to popularity.",
+    "limitations": "This is a post-training transformation, not retraining under the same effective bias objective. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-bias-shrink100.json",
+    "source_record_sha256_before_review_merge": "2f24c44e65f74ac03196cf631d107a6420486c45721a785d78ff953e7f5a34a5",
+    "immediate_parent": "mf16-sample-20261023",
+    "immediate_parent_ndcg_difference": 0.13007736841875636,
+    "immediate_parent_bootstrap_95_percent": [
+      0.11187298052244994,
+      0.1485539291975298
+    ]
+  },
+  "cm-20261119-bias-shrink1000": {
+    "decision": "retain strongest tested standalone MF adjustment; do not select",
+    "conclusion": "Validation NDCG@5 0.310111; difference from established popularity -0.069437, paired 95% interval [-0.094823, -0.045311]. Stronger count shrinkage improves its shrink-100 parent with a positive paired interval, but remains below popularity and worsens RMSE.",
+    "limitations": "Only two shrinkage strengths were tried; this does not establish an optimal penalty or general superiority outside this checkpoint. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-bias-shrink1000.json",
+    "source_record_sha256_before_review_merge": "fe87633d5778bd07db9895fa3b0e63cb0e63324235d24dbf08fe6e89146bb696",
+    "immediate_parent": "cm-20261119-bias-shrink100",
+    "immediate_parent_ndcg_difference": 0.028131932297835394,
+    "immediate_parent_bootstrap_95_percent": [
+      0.01752405830499767,
+      0.03911899223946373
+    ]
+  },
+  "cm-20261119-blend25": {
+    "decision": "retain as near-popularity control; do not select",
+    "conclusion": "Validation NDCG@5 0.375830; difference from established popularity -0.003717, paired 95% interval [-0.019857, +0.013332]. A popularity-heavy MF blend largely closes the original deficit but does not demonstrate an improvement over popularity.",
+    "limitations": "The small negative difference from popularity has an interval spanning zero; this is inconclusive, not evidence of exact equivalence. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-blend25.json",
+    "source_record_sha256_before_review_merge": "a2bb3113bafa00def994bdd6c7a192044b20dc5a353964055eaa336b38500f6e",
+    "immediate_parent": "mf16-sample-20261023",
+    "immediate_parent_ndcg_difference": 0.22392904598503768,
+    "immediate_parent_bootstrap_95_percent": [
+      0.20004002751819602,
+      0.24756723836062194
+    ]
+  },
+  "cm-20261119-blend50": {
+    "decision": "reject tested stronger MF blend",
+    "conclusion": "Validation NDCG@5 0.350007; difference from established popularity -0.029541, paired 95% interval [-0.051227, -0.008665]. Giving the original MF half of the standardized blend worsens ranking relative to popularity; adding more of this personal score does not help.",
+    "limitations": "Blend weights apply after per-user standardization of scores and log counts, so they are not probabilities or literal fractions of recommended movies. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-blend50.json",
+    "source_record_sha256_before_review_merge": "b82fb94f9240fffa0d73c50786cf95e820f5ab87e539615fc66ef8e3ca929014",
+    "immediate_parent": "mf16-sample-20261023",
+    "immediate_parent_ndcg_difference": 0.19810579323511163,
+    "immediate_parent_bootstrap_95_percent": [
+      0.17592133035821372,
+      0.21994397413192837
+    ]
+  },
+  "cm-20261119-blend-confidence": {
+    "decision": "retain as inconclusive hybrid; do not select",
+    "conclusion": "Validation NDCG@5 0.386272; difference from established popularity +0.006725, paired 95% interval [-0.006742, +0.021288]. Support-dependent weighting produces a small observed gain over popularity, but the paired interval includes zero and the result is much weaker than item neighbours.",
+    "limitations": "Confidence counts ratings >=4, whereas neighbour positive inference includes 3.5 ratings; these definitions are not interchangeable. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-blend-confidence.json",
+    "source_record_sha256_before_review_merge": "5da77746786d4851acbdf115f0b22c60e7d73ba37440e794d75b88a71aa46875",
+    "immediate_parent": "mf16-sample-20261023",
+    "immediate_parent_ndcg_difference": 0.23437123348511948,
+    "immediate_parent_bootstrap_95_percent": [
+      0.21009326790634608,
+      0.2591104868596045
+    ]
+  },
+  "cm-20261119-rerank100": {
+    "decision": "reject tested MF reranking rule",
+    "conclusion": "Validation NDCG@5 0.306680; difference from established popularity -0.072868, paired 95% interval [-0.097834, -0.048483]. Reranking the 100 most popular eligible movies improves the original MF but remains well below recommending popularity directly.",
+    "limitations": "All catalogue items remain in the benchmark with finite low scores outside the candidate set; the candidate generator changes scoring, not evaluation membership. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-rerank100.json",
+    "source_record_sha256_before_review_merge": "a4a7261a233b362ec84586250f807bcef3a16ed5cb38d70a2e4bf8bdbeb48d8d",
+    "immediate_parent": "mf16-sample-20261023",
+    "immediate_parent_ndcg_difference": 0.1547783651615552,
+    "immediate_parent_bootstrap_95_percent": [
+      0.134020561968422,
+      0.17558786975056714
+    ]
+  },
+  "cm-20261119-full-blend25": {
+    "decision": "retain as inconclusive full-data hybrid; do not select",
+    "conclusion": "Validation NDCG@5 0.393960; difference from established popularity +0.014412, paired 95% interval [-0.002246, +0.029740]. The full-user MF blend has a small observed advantage over popularity, with a paired interval spanning zero. More MF training data does not make this a clear winner.",
+    "limitations": "The validation users have been reused for selection; a near-zero pointwise interval is not proof of reliable benefit. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-full-blend25.json",
+    "source_record_sha256_before_review_merge": "bf303bb52e6fd385667d27e0cdcbbfaf0c8e8f5af3447499d7633308eafbece4",
+    "immediate_parent": "mf16-full-users-fixed-catalog-20261117",
+    "immediate_parent_ndcg_difference": 0.2264420926497632,
+    "immediate_parent_bootstrap_95_percent": [
+      0.20068139675178143,
+      0.25229004885019396
+    ]
+  },
+  "cm-20261119-mf8": {
+    "decision": "reject tested smaller MF model",
+    "conclusion": "Validation NDCG@5 0.119530; difference from established popularity -0.260018, paired 95% interval [-0.288467, -0.232472]. Eight factors worsens ranking relative to the original checkpoint; lower model size does not compensate for this quality loss.",
+    "limitations": "Training used a fixed fold-in lambda 1 and a 12-epoch cap rather than the original 20-epoch/three-penalty policy, so this is not a perfectly isolated factor-count comparison. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-mf8.json",
+    "source_record_sha256_before_review_merge": "250c10020708731c9a001ac6b71df0db4f6e065184b9bf62e87db84536177fe5",
+    "immediate_parent": "mf16-sample-20261023",
+    "immediate_parent_ndcg_difference": -0.032371043801587764,
+    "immediate_parent_bootstrap_95_percent": [
+      -0.049985459310064595,
+      -0.014021274558378333
+    ]
+  },
+  "cm-20261119-mf32": {
+    "decision": "reject tested larger MF model",
+    "conclusion": "Validation NDCG@5 0.138805; difference from established popularity -0.240743, paired 95% interval [-0.269195, -0.212890]. Thirty-two factors does not improve original MF ranking; the observed decline has an interval including zero.",
+    "limitations": "The training-policy difference and a single random seed limit attribution to factor count alone. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-mf32.json",
+    "source_record_sha256_before_review_merge": "a2ae2b3a2ee1e3b8db223bfd82122d836b7f331ec3603d2738d4346c049874d1",
+    "immediate_parent": "mf16-sample-20261023",
+    "immediate_parent_ndcg_difference": -0.013096531605732846,
+    "immediate_parent_bootstrap_95_percent": [
+      -0.029227194695761467,
+      0.0025910024576277445
+    ]
+  },
+  "cm-20261119-mf-biasreg10": {
+    "decision": "retain MF regularization finding; do not select",
+    "conclusion": "Validation NDCG@5 0.207051; difference from established popularity -0.172496, paired 95% interval [-0.199273, -0.148164]. Evidence-aware bias regularization during training improves ranking over the original MF but remains far below popularity.",
+    "limitations": "This screen differs from the original checkpoint in both the intended regularizer and the campaign epoch/fold-in policy; only one training seed was run. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-mf-biasreg10.json",
+    "source_record_sha256_before_review_merge": "b980af9b4740f2076f8be4e15b24a1fde184ac74e91480d5934ab138652bde5e",
+    "immediate_parent": "mf16-sample-20261023",
+    "immediate_parent_ndcg_difference": 0.05515002117463585,
+    "immediate_parent_bootstrap_95_percent": [
+      0.04302380246075241,
+      0.06681839635030264
+    ]
+  },
+  "cm-20261119-mf-huber": {
+    "decision": "reject Huber for the ranking objective tested",
+    "conclusion": "Validation NDCG@5 0.115829; difference from established popularity -0.263719, paired 95% interval [-0.291635, -0.235380]. Huber achieves a lower rating RMSE while materially worsening NDCG. Better rating prediction did not translate into better top-five recovery here.",
+    "limitations": "This is a single robust-loss strength and training seed under the campaign policy; it does not rule out all robust or ranking losses. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-mf-huber.json",
+    "source_record_sha256_before_review_merge": "4167d3eed748cb6aeef77ef3e0ee6602e4f2efa6f8bae89110b5f5f5c866f55e",
+    "immediate_parent": "mf16-sample-20261023",
+    "immediate_parent_ndcg_difference": -0.03607238962261716,
+    "immediate_parent_bootstrap_95_percent": [
+      -0.046607766765561776,
+      -0.02613194958677051
+    ]
+  },
+  "cm-20261119-knn-cos100": {
+    "decision": "retain successful item-to-item baseline",
+    "conclusion": "Validation NDCG@5 0.463983; difference from established popularity +0.084435, paired 95% interval [+0.055387, +0.111369]. Positive co-occurrence cosine neighbours beat the original MF, full-user MF and popularity while returning many more distinct titles than popularity.",
+    "limitations": "One fixed sample population; deterministic graph construction removes optimization-seed variation but not data-sample or onboarding uncertainty. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-knn-cos100.json",
+    "source_record_sha256_before_review_merge": "8c6b112473ee24ccfb20a380a6674af45f1ae249590417b94f08b0b93a279df4",
+    "immediate_parent": "mf16-sample-20261023",
+    "immediate_parent_ndcg_difference": 0.31208151266300355,
+    "immediate_parent_bootstrap_95_percent": [
+      0.28453223998075156,
+      0.340001781095754
+    ]
+  },
+  "cm-20261119-knn-cos300": {
+    "decision": "retain combined configuration; use isolates for attribution",
+    "conclusion": "Validation NDCG@5 0.479735; difference from established popularity +0.100187, paired 95% interval [+0.073770, +0.126828]. Increasing K to 300 and shrinkage to 50 improves the cosine-100 parent, but the two changes cannot be credited independently from this run.",
+    "limitations": "Later isolates show a clearer gain from shrinkage than from K. Do not describe this as a neighbourhood-size-only improvement. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-knn-cos300.json",
+    "source_record_sha256_before_review_merge": "6c9281b58642ec4bb858c9d00a2d5e6e84ea8e7493c26dbf0dcb9ce132fc6dc2",
+    "immediate_parent": "cm-20261119-knn-cos100",
+    "immediate_parent_ndcg_difference": 0.015752016488955443,
+    "immediate_parent_bootstrap_95_percent": [
+      0.0039361691308970785,
+      0.028299038618497138
+    ]
+  },
+  "cm-20261119-knn-k300-isolate": {
+    "decision": "do not prefer larger graph on this evidence",
+    "conclusion": "Validation NDCG@5 0.470711; difference from established popularity +0.091164, paired 95% interval [+0.063430, +0.118342]. Increasing K alone produces a small observed gain with an interval including zero, at roughly triple neighbour storage.",
+    "limitations": "The comparison controls shrinkage but still uses the same validation users; lower confidence in a practical benefit than the joint screen implied. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-knn-k300-isolate.json",
+    "source_record_sha256_before_review_merge": "ece0773e18d92c8028e3e5f33b65008baf97fb7d0c19a0d942054e20c27b6211",
+    "immediate_parent": "cm-20261119-knn-cos100",
+    "immediate_parent_ndcg_difference": 0.0067287120323972225,
+    "immediate_parent_bootstrap_95_percent": [
+      -0.004990982891615923,
+      0.01899908109659751
+    ]
+  },
+  "cm-20261119-knn-shrink50-isolate": {
+    "decision": "retain stronger shrinkage for sample cosine models",
+    "conclusion": "Validation NDCG@5 0.484459; difference from established popularity +0.104911, paired 95% interval [+0.078018, +0.131969]. Increasing support shrinkage alone improves the cosine-100 parent with a positive paired interval and exceeds the combined K300/shrink50 point estimate.",
+    "limitations": "The isolate applies to sample-trained cosine similarity; it cannot establish that the same penalty helps full-data conditional similarity. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-knn-shrink50-isolate.json",
+    "source_record_sha256_before_review_merge": "b6dc7d532ede733dcd9f6b519a3113b0e610e59166b9860a2bad6cacb0449ae2",
+    "immediate_parent": "cm-20261119-knn-cos100",
+    "immediate_parent_ndcg_difference": 0.020476403873245827,
+    "immediate_parent_bootstrap_95_percent": [
+      0.010032026341299197,
+      0.03131134188210397
+    ]
+  },
+  "cm-20261119-knn-conditional": {
+    "decision": "retain leading sample configuration",
+    "conclusion": "Validation NDCG@5 0.488362; difference from established popularity +0.108814, paired 95% interval [+0.091618, +0.126482]. Conditional seed-to-candidate similarity improves the cosine-100 parent and strongly beats popularity; rankings differ across users despite favouring broadly liked titles.",
+    "limitations": "The gain is not evidence of long-tail discovery: recommended titles are heavily rated. Conditional similarity changes normalization as well as row-neighbour selection. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-knn-conditional.json",
+    "source_record_sha256_before_review_merge": "60fbda29bf254a7fe2c1a11c60a4b6a1ae61da61ea3a78085c797f16c373dd65",
+    "immediate_parent": "cm-20261119-knn-cos100",
+    "immediate_parent_ndcg_difference": 0.024379356721493647,
+    "immediate_parent_bootstrap_95_percent": [
+      0.0027195217524897787,
+      0.04717612641270089
+    ]
+  },
+  "cm-20261119-knn-observed": {
+    "decision": "reject replacing co-likes with co-ratings here",
+    "conclusion": "Validation NDCG@5 0.396532; difference from established popularity +0.016985, paired 95% interval [-0.014476, +0.048111]. Using all observed ratings instead of ratings >=4 reduces ranking substantially relative to positive cosine neighbours; its advantage over popularity is inconclusive.",
+    "limitations": "Observed ratings include dislikes and neutral feedback. This tests binary co-rating, not every implicit-feedback treatment. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-knn-observed.json",
+    "source_record_sha256_before_review_merge": "57ff50b3de73df685a91c0c9c98f343bce075f448b38336443ed46e33d881b23",
+    "immediate_parent": "cm-20261119-knn-cos100",
+    "immediate_parent_ndcg_difference": -0.06745033356035067,
+    "immediate_parent_bootstrap_95_percent": [
+      -0.0874923622774887,
+      -0.04748840476414611
+    ]
+  },
+  "cm-20261119-knn-signed": {
+    "decision": "reject current signed rule; preserve failure diagnosis",
+    "conclusion": "Validation NDCG@5 0.435832; difference from established popularity +0.056284, paired 95% interval [+0.026602, +0.083395]. Signed rating weights worsen the positive parent. An independent audit found 16 nonfallback users with no positive candidate score: all 80 top-five slots were zero-score catalogue-order ties.",
+    "limitations": "The fallback triggers only if every score is zero, so negative-only evidence can produce arbitrary zero-score recommendations. A repair would require a separate recorded experiment; this does not show that dislikes are inherently harmful. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-knn-signed.json",
+    "source_record_sha256_before_review_merge": "534d5b42d70121959a687d60ec7619b768ee654703e04f34a3f313e27aab53e9",
+    "immediate_parent": "cm-20261119-knn-cos100",
+    "immediate_parent_ndcg_difference": -0.028151094335472457,
+    "immediate_parent_bootstrap_95_percent": [
+      -0.03924876467456002,
+      -0.016898480949041342
+    ]
+  },
+  "cm-20261119-bpr16": {
+    "decision": "retain ranking-oriented alternative",
+    "conclusion": "Validation NDCG@5 0.409495; difference from established popularity +0.029947, paired 95% interval [+0.017044, +0.043439]. The new-user-compatible pairwise item-context model improves on popularity, although outputs remain concentrated in 16 titles across validation users.",
+    "limitations": "Training uses sampled unobserved negatives, which are not confirmed dislikes; 300k pairs per epoch are a compute budget, not a pass over every rating. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-bpr16.json",
+    "source_record_sha256_before_review_merge": "9bd04d8b0b917412d198a55f675b1314e718e1eeb5493d5d0f3c844c55945fce",
+    "immediate_parent": "mf16-sample-20261023",
+    "immediate_parent_ndcg_difference": 0.2575932962113454,
+    "immediate_parent_bootstrap_95_percent": [
+      0.23072170164441755,
+      0.28537419903642414
+    ]
+  },
+  "cm-20261119-bpr16-no-bias": {
+    "decision": "retain item bias for this BPR screen",
+    "conclusion": "Validation NDCG@5 0.403306; difference from established popularity +0.023758, paired 95% interval [+0.013360, +0.034193]. Removing the learned target-item bias slightly reduces ranking relative to BPR16 and narrows the set of recommended titles.",
+    "limitations": "The parent interval is only narrowly below zero after many comparisons; one seed does not establish a universal need for target-item biases. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-bpr16-no-bias.json",
+    "source_record_sha256_before_review_merge": "61b367292606f5087726cc077fdfb558bf1490b8a78663412a00ace255ed7a59",
+    "immediate_parent": "cm-20261119-bpr16",
+    "immediate_parent_ndcg_difference": -0.006188715998967418,
+    "immediate_parent_bootstrap_95_percent": [
+      -0.012683387164091188,
+      -0.00018099310869192285
+    ]
+  },
+  "cm-20261119-bpr32": {
+    "decision": "retain best sample BPR for repeated full-data checks",
+    "conclusion": "Validation NDCG@5 0.426355; difference from established popularity +0.046807, paired 95% interval [+0.026313, +0.066151]. Increasing BPR factors from 16 to 32 improves the parent with a positive paired interval and broadens the recommended set.",
+    "limitations": "One sample training seed; factor count also changes model capacity and optimization dynamics. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-bpr32.json",
+    "source_record_sha256_before_review_merge": "97440da3b2936588dddd2ae736ed35f3f756fc8ea9c93937fdcc7650c9912f0a",
+    "immediate_parent": "cm-20261119-bpr16",
+    "immediate_parent_ndcg_difference": 0.016860370316484078,
+    "immediate_parent_bootstrap_95_percent": [
+      0.003438648678453813,
+      0.029562073477296832
+    ]
+  },
+  "cm-20261119-genre": {
+    "decision": "reject standalone genre cosine for this benchmark",
+    "conclusion": "Validation NDCG@5 0.043478; difference from established popularity -0.336070, paired 95% interval [-0.364072, -0.307540]. Genre-only cosine is worse than both reference MF models and popularity despite recommending 1,054 distinct titles. Diversity alone is not recommendation quality.",
+    "limitations": "Only verified coarse MovieLens genres were used; this result does not reject richer verified metadata or item models with content features. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-genre.json",
+    "source_record_sha256_before_review_merge": "5f8fdbadad02d92e7d5709daced92617384d48abe848570da7593fc3d2e430d1",
+    "immediate_parent": "mf16-sample-20261023",
+    "immediate_parent_ndcg_difference": -0.10842368179821808,
+    "immediate_parent_bootstrap_95_percent": [
+      -0.13012099021454337,
+      -0.08622886709089511
+    ]
+  },
+  "cm-20261119-genre-blend25": {
+    "decision": "retain inconclusive content hybrid; do not select",
+    "conclusion": "Validation NDCG@5 0.371208; difference from established popularity -0.008340, paired 95% interval [-0.026997, +0.012608]. Adding popularity rescues much of the genre model deficit but the hybrid does not demonstrate a gain over popularity itself.",
+    "limitations": "Improvement over a weak genre parent is insufficient evidence that genre personalization adds value; the popularity interval includes zero. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-genre-blend25.json",
+    "source_record_sha256_before_review_merge": "d08817b0a963839b7ec7932ce537fba3fa459449dc40d382e6d513785460281b",
+    "immediate_parent": "cm-20261119-genre",
+    "immediate_parent_ndcg_difference": 0.3277302281706293,
+    "immediate_parent_bootstrap_95_percent": [
+      0.30086650862571324,
+      0.3548146591108711
+    ]
+  },
+  "cm-20261119-full-knn-conditional": {
+    "decision": "recommend freezing regularized conditional candidate for separate final evaluation",
+    "conclusion": "Validation NDCG@5 0.494177; difference from established popularity +0.114629, paired 95% interval [+0.098119, +0.132605]. The full-data conditional graph is a strong practical validation candidate: large gains over all fixed references, useful personalization, and a compact top-100 graph. Its small improvement over the sample conditional parent is inconclusive.",
+    "limitations": "This remains validation-selected evidence. Do not attribute the whole gain to more data: the sample conditional model already achieves 0.488362. Final evaluation and app adoption are separate decisions. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-full-knn-conditional.json",
+    "source_record_sha256_before_review_merge": "c0607a9ad3056a63da60f546838343adec264e3a73db71a6882f55abc81ed18f",
+    "immediate_parent": "cm-20261119-knn-conditional",
+    "immediate_parent_ndcg_difference": 0.005814962155880241,
+    "immediate_parent_bootstrap_95_percent": [
+      -0.0006601432753772779,
+      0.01301358399056554
+    ]
+  },
+  "cm-20261119-full-knn-cos300": {
+    "decision": "retain diversity-oriented alternative; do not choose over conditional on NDCG",
+    "conclusion": "Validation NDCG@5 0.479044; difference from established popularity +0.099496, paired 95% interval [+0.070714, +0.126966]. Full-data cosine K300/shrink50 does not improve its sample counterpart, though it recovers likes well above popularity and reaches 484 titles.",
+    "limitations": "The sample-to-full interval spans zero. Higher catalogue coverage and a larger graph are trade-offs, not evidence of higher user satisfaction. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-full-knn-cos300.json",
+    "source_record_sha256_before_review_merge": "7cf5272375d3afb3283c25bb5d8a303c5204f534f9351d626aef59156a07c5d0",
+    "immediate_parent": "cm-20261119-knn-cos300",
+    "immediate_parent_ndcg_difference": -0.000691010076467092,
+    "immediate_parent_bootstrap_95_percent": [
+      -0.012916985976484146,
+      0.011828827833883934
+    ]
+  },
+  "cm-20261119-full-bpr32-seed42": {
+    "decision": "retain strongest tested stochastic alternative",
+    "conclusion": "Validation NDCG@5 0.450809; difference from established popularity +0.071261, paired 95% interval [+0.050890, +0.090434]. Full-data BPR32 with a 1M-pair budget improves its sample parent, but remains below conditional neighbours in observed NDCG.",
+    "limitations": "Both data population and pair budget increased. The equal-budget removal shows the initial gain cannot be credited to more data alone. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-full-bpr32-seed42.json",
+    "source_record_sha256_before_review_merge": "dd0ff75182abe2eaa5701abf14a349bc044a49f9e27124dd7ddcf61b67051276",
+    "immediate_parent": "cm-20261119-bpr32",
+    "immediate_parent_ndcg_difference": 0.024453996080054215,
+    "immediate_parent_bootstrap_95_percent": [
+      0.006160156945121177,
+      0.04104708070128685
+    ]
+  },
+  "cm-20261119-full-bpr32-seed7": {
+    "decision": "retain seed replication; do not choose best seed opportunistically",
+    "conclusion": "Validation NDCG@5 0.443191; difference from established popularity +0.063643, paired 95% interval [+0.045103, +0.081650]. Seed 7 remains above popularity but scores below seed 42; this demonstrates variation even under the same full-data policy.",
+    "limitations": "Three seeds give a small descriptive estimate of stochastic variability, not a reliable interval over all training outcomes. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-full-bpr32-seed7.json",
+    "source_record_sha256_before_review_merge": "121b57837927fb4e6ffffa360fa9a0d138878358a488442f08c66f8489a97188",
+    "immediate_parent": "cm-20261119-full-bpr32-seed42",
+    "immediate_parent_ndcg_difference": -0.00761780434562224,
+    "immediate_parent_bootstrap_95_percent": [
+      -0.02410062108556073,
+      0.008716051961799951
+    ]
+  },
+  "cm-20261119-full-bpr32-seed123": {
+    "decision": "retain seed replication; do not choose best seed opportunistically",
+    "conclusion": "Validation NDCG@5 0.448373; difference from established popularity +0.068825, paired 95% interval [+0.048763, +0.087734]. Seed 123 also remains above popularity and lies between the other two seed outcomes. The promising BPR direction is not unique to seed 42.",
+    "limitations": "The seeds share training data, validation users and selection policy; their results are not independent final tests. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-full-bpr32-seed123.json",
+    "source_record_sha256_before_review_merge": "4202630fbfdd2584601992cc78a183eabf1b98b67ebbbaebacaaa32f6d54622e",
+    "immediate_parent": "cm-20261119-full-bpr32-seed42",
+    "immediate_parent_ndcg_difference": -0.0024359863238497008,
+    "immediate_parent_bootstrap_95_percent": [
+      -0.018200938336001653,
+      0.013323219757014506
+    ]
+  },
+  "cm-20261119-full-knn-no-shrink": {
+    "decision": "retain removal result; keep regularized parent",
+    "conclusion": "Validation NDCG@5 0.494207; difference from established popularity +0.114659, paired 95% interval [+0.098192, +0.132634]. Removing shrinkage changes NDCG by only +0.00002985 with identical hit rate, recall and distinct-title count. The tiny numerical maximum does not justify replacing the established regularized parent.",
+    "limitations": "The paired interval touches zero and is driven by an extremely small ranking change; this is practically negligible. No general benefit from removing shrinkage is established. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-full-knn-no-shrink.json",
+    "source_record_sha256_before_review_merge": "50ba5fad50d2e4fa5b7bd1a76aff8ad9401858d195b5f6a71377f5e5eb743072",
+    "immediate_parent": "cm-20261119-full-knn-conditional",
+    "immediate_parent_ndcg_difference": 2.9845928374226232e-05,
+    "immediate_parent_bootstrap_95_percent": [
+      0.0,
+      8.95377851226787e-05
+    ]
+  },
+  "cm-20261119-full-knn-binary": {
+    "decision": "retain simpler onboarding option as inconclusive; keep parent",
+    "conclusion": "Validation NDCG@5 0.490270; difference from established popularity +0.110723, paired 95% interval [+0.094075, +0.128149]. Binary >=4 onboarding weights slightly lower NDCG while slightly raising hit rate; neither approach clearly dominates the primary-metric parent comparison.",
+    "limitations": "This removes rating-strength differences AND removes contributions from 3.5-star seeds. It does not isolate rating intensity alone; the paired NDCG interval includes zero. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-full-knn-binary.json",
+    "source_record_sha256_before_review_merge": "4dd7bd59550b4fcb79ca594a9b88160a52836cf1ed6415c10f548d5e4578ee24",
+    "immediate_parent": "cm-20261119-full-knn-conditional",
+    "immediate_parent_ndcg_difference": -0.003906715893125874,
+    "immediate_parent_bootstrap_95_percent": [
+      -0.01034719811564861,
+      0.0027568919253816338
+    ]
+  },
+  "cm-20261119-full-knn-blend50": {
+    "decision": "reject extra popularity blend for this candidate",
+    "conclusion": "Validation NDCG@5 0.488018; difference from established popularity +0.108470, paired 95% interval [+0.092404, +0.125079]. Adding a 50% standardized popularity component lowers NDCG relative to conditional neighbours, with a negative paired interval. The successful graph already supplies a useful popularity-aware prior.",
+    "limitations": "This is one calibrated blend weight on reused validation users, not a claim that no other blend could help. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-full-knn-blend50.json",
+    "source_record_sha256_before_review_merge": "755e2ee4ec0bd1b4ae64a6f3fb5a3e382dbf84e2d292de8e0beff1f65d21e8ed",
+    "immediate_parent": "cm-20261119-full-knn-conditional",
+    "immediate_parent_ndcg_difference": -0.006159264560646993,
+    "immediate_parent_bootstrap_95_percent": [
+      -0.009676797255224509,
+      -0.0028006494272934256
+    ]
+  },
+  "cm-20261119-full-knn-no-personal": {
+    "decision": "retain successful personalization removal control",
+    "conclusion": "Validation NDCG@5 0.379548; difference from established popularity +0.000000, paired 95% interval [+0.000000, +0.000000]. Setting the personal weight to zero exactly reproduces matched popularity and loses 0.114629 NDCG. The conditional model gain is not merely its popularity fallback.",
+    "limitations": "This removes the entire co-like score, including conditional popularity structure; the experiment does not separate every causal component of personalization. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-full-knn-no-personal.json",
+    "source_record_sha256_before_review_merge": "b157df389d3651c87b3af18e20d15336479f7abbd69c839d464a96a2390c7a24",
+    "immediate_parent": "cm-20261119-full-knn-conditional",
+    "immediate_parent_ndcg_difference": -0.11462934124301212,
+    "immediate_parent_bootstrap_95_percent": [
+      -0.1326046087909605,
+      -0.09811916471319994
+    ]
+  },
+  "cm-20261119-full-knn-observed": {
+    "decision": "retain positive training threshold; reject co-rating replacement",
+    "conclusion": "Validation NDCG@5 0.473514; difference from established popularity +0.093966, paired 95% interval [+0.075409, +0.112452]. Replacing full-data co-likes with co-ratings lowers NDCG by 0.020663 with a negative paired interval, while still beating popularity. Positive rating information contributes useful signal.",
+    "limitations": "This conclusion applies to the tested binary feedback and conditional normalization, not all possible rating-aware similarities. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-full-knn-observed.json",
+    "source_record_sha256_before_review_merge": "2d2b2640753590d1e3ae1a0db27070ad94499f34b934977aaedc129147658b3b",
+    "immediate_parent": "cm-20261119-full-knn-conditional",
+    "immediate_parent_ndcg_difference": -0.02066342978860372,
+    "immediate_parent_bootstrap_95_percent": [
+      -0.031191781022795843,
+      -0.009239889349679425
+    ]
+  },
+  "cm-20261119-full-bpr32-budget300k": {
+    "decision": "retain compute-confound finding; do not claim data-only BPR gain",
+    "conclusion": "Validation NDCG@5 0.426368; difference from established popularity +0.046820, paired 95% interval [+0.030556, +0.063293]. At the sample 300k-pair budget, full-data BPR scores 0.426368, essentially the sample BPR32 score of 0.426355. Reducing the full-data 1M budget loses 0.024441 with a negative parent interval.",
+    "limitations": "This supports a material role for training budget, but does not fully decompose data and compute: there is no matched sample-data 1M-budget run and only one seed for the budget removal. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-full-bpr32-budget300k.json",
+    "source_record_sha256_before_review_merge": "dbecbe0b761502925e98134b717a8c9f685526abad4c41801471ebff17a1c8cf",
+    "immediate_parent": "cm-20261119-full-bpr32-seed42",
+    "immediate_parent_ndcg_difference": -0.02444105765146008,
+    "immediate_parent_bootstrap_95_percent": [
+      -0.04142741828704197,
+      -0.005936892491666924
+    ]
+  }
+}

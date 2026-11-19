@@ -1,0 +1,312 @@
+{
+  "run_id": "cm-20261119-bias-zero",
+  "family": "movie_bias",
+  "parent_run": "mf16-sample-20261023",
+  "configuration": {
+    "scale": "sample",
+    "seed": 42,
+    "kind": "mf",
+    "source_run": "mf16-sample-20261023",
+    "movie_bias_scale": 0
+  },
+  "question": "Does reducing unsupported movie-prior influence improve ranking?",
+  "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+  "changed_variable": "{\"movie_bias_scale\": 0}",
+  "evidence_stage": "exploratory_validation",
+  "campaign_id": "cinematch-systematic-20261119",
+  "status": "complete",
+  "created_at": "2026-11-19T09:04:31.946903+00:00",
+  "benchmark_id": "7b0b1ce54a04ae5830072a94ff6537ce1bd7cb98c50db610a00366dd94248a40",
+  "training_data": {
+    "scale": "sample",
+    "path": "artifacts/data",
+    "manifest_sha256": "a24f886816fc6d7a3a87748c3624b1bc7a4824f984c4d6ad1ca73426b02080aa",
+    "training_arrays_sha256": "9a0d22ecad7da559dc34f86074ceac5a705d9658dfd013bcff0ad6ad027041af",
+    "users": 10000,
+    "ratings": 1500603
+  },
+  "holdout_contract": {
+    "validation_sha256": "2515bdbcf41deacc0cd9a4639c50d6d95624e148b41cad843fa23dbe462b2273",
+    "reserved_fresh_test_sha256": "297eb9875df60af0647bada547584793b2a9761360518c57a31d9fb2ca3b6e2f",
+    "fresh_test_loaded": false,
+    "all_reserved_users_excluded_from_training": true
+  },
+  "fixed_conditions": [
+    "500 frozen validation users, exact five onboarding ratings and target arrays",
+    "9,021 catalogue IDs and order",
+    "Exclude onboarding; positive heldout rating >=4; original top_items and evaluation metric arithmetic",
+    "Original, full-user and both popularity controls retained",
+    "No app deployment"
+  ],
+  "source_revision": "536c1efedddd9e0e98127c8ef2a747b55c8100e7",
+  "source_sha256": {
+    "environment.lock": "70ce2fb68d50bc924b2545654dab6b45e470b415ead859f39a01bf5c8ef9d623",
+    "experiments/campaign_common.py": "b1b6987c6b6b8756c1fb195202bbb01d969995284b9f5d6b32266eef53949d63",
+    "experiments/campaign_mf.py": "1485f118f45fd5dcfc6c18f3b1ba40838f779fb8aed376212a90ac0195e26e55",
+    "experiments/campaign_neighbors.py": "83426a77caeb65e8e6a6bc2639131bb6ffd247535ca8bbf2c3ac2a6e7b27c4fd",
+    "experiments/campaign_ranking.py": "4402b8c38f3d39fc1a42e00fa8b8b2e8724429d011f3b11f7a1523b3bef805fe",
+    "experiments/run_campaign.py": "be2d3a37f3735288cf2d975107d5338cd2b296201595a01874f23f9eb39f8863",
+    "experiments/run_full_data.py": "7000cccb0247b1bdbd2e64a2f29731c1dcdd7cb61c9868830c876192e452a1da",
+    "git.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pyproject.toml": "4f2219feabb7aa295ff7419751189e4bde6b1af2ddce2b4061b06be8d1ae9869",
+    "requirements.lock": "e8b1c2122c024c8313c97a2de0657ff0174dcbb284be8119b1a59595b8f8daa9",
+    "src/cinematch/__init__.py": "dfe7c50843f3d7cb23dc967cc6ba6fa6075f3e095ab99095e06a47e0de174d00",
+    "src/cinematch/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "src/cinematch/cli.py": "542e4722e7e556f73cd04038774b5cf6db3d7be0f1228799e4f078440f9d4d59",
+    "src/cinematch/data.py": "c752c22a6a5d58a1e01e13f2a2bbedd483afb5cfcf6f0f29bd8573aa92010547",
+    "src/cinematch/evaluation.py": "283dcfabbf90a4134a0b2383331468beac04dbcaf856a81773994d46e53709b0",
+    "src/cinematch/model.py": "3d5e55db9110764e54641481057b8f9657420681769f755b8f56a6a3ad5bd867",
+    "src/cinematch/recommend.py": "d1f2545b3c7c2922009d6f400b5657969899f180932ab29b4db0cf46dd45b04e",
+    "src/cinematch/training.py": "d94e04ce4bdcbbf254834023daf72171779026f32838552dec46082084c63961"
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "platform": "macOS-26.3.1-arm64-arm-64bit",
+    "numpy": "2.5.4",
+    "torch": "2.14.1",
+    "pandas": "3.1.0",
+    "dependencies": "source/environment.lock",
+    "cpu_threads": 2
+  },
+  "artifact_directory": "artifacts/experiments/cm-20261119-bias-zero",
+  "model_artifacts": "artifacts/experiments/cm-20261119-bias-zero/model",
+  "reproduction_command": ".venv/bin/python -B -u experiments/run_campaign.py --replay cm-20261119-bias-zero --run-id new-unique-id",
+  "adoption_decision": "Not deployed; current app model unchanged",
+  "started_at": "2026-11-19T09:04:32.529934+00:00",
+  "finished_at": "2026-11-19T09:04:33.797154+00:00",
+  "elapsed_seconds": 1.2672245420981199,
+  "metrics": {
+    "users": 500,
+    "users_with_relevant_targets": 498,
+    "rmse_macro": 0.9725266166321641,
+    "ndcg_at_5": 0.23359916876766573,
+    "recall_at_5": 0.02182269827537491,
+    "hit_rate_at_5": 0.5180722891566265,
+    "catalog_coverage_at_5": 0.04179137567897129,
+    "distinct_recommended_movies": 377
+  },
+  "comparisons": {
+    "original_sample": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": 0.08169792826772906,
+          "relative_percent": 53.78358201608178
+        },
+        "hit_rate_at_5": {
+          "absolute": 0.1365461847389558,
+          "relative_percent": 35.78947368421052
+        },
+        "recall_at_5": {
+          "absolute": 0.0056618131019193635,
+          "relative_percent": 35.03405315458192
+        },
+        "catalog_coverage_at_5": {
+          "absolute": 0.01618445848575546,
+          "relative_percent": 63.20346320346321
+        },
+        "rmse_macro": {
+          "absolute": 0.0478259956996564,
+          "relative_percent": 5.172051863815839
+        }
+      },
+      "ndcg_at_5_difference": 0.08169792826772905,
+      "bootstrap_95_percent": [
+        0.0615467614937959,
+        0.10271460792706671
+      ]
+    },
+    "established_popularity": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": -0.1459485620296363,
+          "relative_percent": -38.45328273285879
+        },
+        "hit_rate_at_5": {
+          "absolute": -0.22489959839357432,
+          "relative_percent": -30.270270270270274
+        },
+        "recall_at_5": {
+          "absolute": -0.021587990560541257,
+          "relative_percent": -49.72966598650301
+        },
+        "catalog_coverage_at_5": {
+          "absolute": 0.040904556035916195,
+          "relative_percent": 4612.5
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": -0.1459485620296363,
+      "bootstrap_95_percent": [
+        -0.17467041923335958,
+        -0.11734208150501338
+      ]
+    },
+    "full_user": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": 0.066081204571145,
+          "relative_percent": 39.44723474171582
+        },
+        "hit_rate_at_5": {
+          "absolute": 0.10843373493975905,
+          "relative_percent": 26.470588235294123
+        },
+        "recall_at_5": {
+          "absolute": 0.00462612736548576,
+          "relative_percent": 26.901452561251244
+        },
+        "catalog_coverage_at_5": {
+          "absolute": -0.007094557144440752,
+          "relative_percent": -14.512471655328802
+        },
+        "rmse_macro": {
+          "absolute": 0.04340834830528806,
+          "relative_percent": 4.671993844600247
+        }
+      },
+      "ndcg_at_5_difference": 0.06608120457114497,
+      "bootstrap_95_percent": [
+        0.04140314946132327,
+        0.09201690800726868
+      ]
+    },
+    "full_popularity": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": -0.1459485620296363,
+          "relative_percent": -38.45328273285879
+        },
+        "hit_rate_at_5": {
+          "absolute": -0.22489959839357432,
+          "relative_percent": -30.270270270270274
+        },
+        "recall_at_5": {
+          "absolute": -0.021587990560541257,
+          "relative_percent": -49.72966598650301
+        },
+        "catalog_coverage_at_5": {
+          "absolute": 0.040904556035916195,
+          "relative_percent": 4612.5
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": -0.1459485620296363,
+      "bootstrap_95_percent": [
+        -0.17467041923335958,
+        -0.11734208150501338
+      ]
+    },
+    "training_matched_popularity": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": -0.1459485620296363,
+          "relative_percent": -38.45328273285879
+        },
+        "hit_rate_at_5": {
+          "absolute": -0.22489959839357432,
+          "relative_percent": -30.270270270270274
+        },
+        "recall_at_5": {
+          "absolute": -0.021587990560541257,
+          "relative_percent": -49.72966598650301
+        },
+        "catalog_coverage_at_5": {
+          "absolute": 0.040904556035916195,
+          "relative_percent": 4612.5
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": -0.1459485620296363,
+      "bootstrap_95_percent": [
+        -0.17467041923335958,
+        -0.11734208150501338
+      ]
+    },
+    "immediate_parent": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": 0.08169792826772906,
+          "relative_percent": 53.78358201608178
+        },
+        "hit_rate_at_5": {
+          "absolute": 0.1365461847389558,
+          "relative_percent": 35.78947368421052
+        },
+        "recall_at_5": {
+          "absolute": 0.0056618131019193635,
+          "relative_percent": 35.03405315458192
+        },
+        "catalog_coverage_at_5": {
+          "absolute": 0.01618445848575546,
+          "relative_percent": 63.20346320346321
+        },
+        "rmse_macro": {
+          "absolute": 0.0478259956996564,
+          "relative_percent": 5.172051863815839
+        }
+      },
+      "ndcg_at_5_difference": 0.08169792826772905,
+      "bootstrap_95_percent": [
+        0.0615467614937959,
+        0.10271460792706671
+      ]
+    }
+  },
+  "interpretation": {
+    "decision": "retain bias-sensitivity finding; do not select",
+    "conclusion": "Validation NDCG@5 0.233599; difference from established popularity -0.145949, paired 95% interval [-0.174670, -0.117342]. Removing movie biases improves the original MF ranking markedly, but is worse than partial scaling or stronger count shrinkage and worsens RMSE.",
+    "limitations": "Bias changes affect both support residuals and candidate scores. This cannot attribute the gain solely to suppressing candidate priors. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-bias-zero.json",
+    "source_record_sha256_before_review_merge": "c755b7fe2d82cb2cad19da9d366318b177b0a4664ce29f3889596d1eeccb363d",
+    "immediate_parent": "mf16-sample-20261023",
+    "immediate_parent_ndcg_difference": 0.08169792826772905,
+    "immediate_parent_bootstrap_95_percent": [
+      0.0615467614937959,
+      0.10271460792706671
+    ]
+  },
+  "resource_use": {
+    "peak_process_rss_bytes": 332726272,
+    "rss_units": "bytes on macOS; process lifetime high-water mark",
+    "validation_scoring_seconds": 0.044382791966199875,
+    "milliseconds_per_user_cpu": 0.08876558393239975,
+    "model_artifact_bytes": 634613
+  },
+  "artifact_checksums": {
+    "comparison.json": "365522a8ea008c8bd457958e3cdbd49959b1c7f2bb749f5433bef10b4a1c24f7",
+    "diagnostics.json": "681a54a70c1aa17fa60e9aa5bca47ef1cb7a333227541addebc9d5f61060708d",
+    "model/model.npz": "625ddca91933347b603d5a5abb00cbb4be4068d12168aec934222bea308cf97c",
+    "model/selected_config.json": "d236388b0b03bfb864496e4a3b483afdb255156fd417c84e4e9434e1d5b7dccb",
+    "validation_per_user.npz": "b75ee8f9d76953606da4a6d683f4c69d1e69bbea0e65d9b34b9e85a68fdfe834",
+    "review.json": "9512614f89897553cb9ae2b7d124fccb9745f45b0dec9fc7d3cf779eaaf714d9"
+  },
+  "record_corrections": [
+    {
+      "at": "2026-11-19T09:08:26.344216+00:00",
+      "changes": [
+        {
+          "field": "reproduction_command",
+          "reason": "Use corrected replay dispatcher; it copies the original archived source, not current implementation."
+        }
+      ],
+      "original_plan_preserved": true
+    }
+  ],
+  "automated_initial_interpretation": {
+    "conclusion": "Observed NDCG@5 0.233599; difference from established popularity -0.145949 (interval below zero).",
+    "limitations": "Exploratory validation search. User-bootstrap uncertainty excludes training-seed variability and best-of-many selection. Coverage is not quality. Existing retrospective onboarding/exposure limitations remain.",
+    "decision": "retain as diagnostic; not an improvement over popularity",
+    "personalization_check": 0.07479999999999999
+  }
+}

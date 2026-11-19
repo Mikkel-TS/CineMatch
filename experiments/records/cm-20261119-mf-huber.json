@@ -1,0 +1,322 @@
+{
+  "run_id": "cm-20261119-mf-huber",
+  "family": "mf_training",
+  "parent_run": "mf16-sample-20261023",
+  "configuration": {
+    "scale": "sample",
+    "seed": 42,
+    "kind": "mf",
+    "train": true,
+    "epochs": 12,
+    "patience": 3,
+    "fold_in_grid": [
+      1.0
+    ],
+    "threads": 2,
+    "factors": 16,
+    "loss": "huber",
+    "huber_delta": 1.0
+  },
+  "question": "Does a robust rating loss improve ranking?",
+  "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+  "changed_variable": "{\"factors\": 16, \"loss\": \"huber\", \"huber_delta\": 1.0}; fixed fold-in lambda1, maximum12 epochs",
+  "evidence_stage": "exploratory_validation",
+  "campaign_id": "cinematch-systematic-20261119",
+  "status": "complete",
+  "created_at": "2026-11-19T09:05:32.412046+00:00",
+  "benchmark_id": "7b0b1ce54a04ae5830072a94ff6537ce1bd7cb98c50db610a00366dd94248a40",
+  "training_data": {
+    "scale": "sample",
+    "path": "artifacts/data",
+    "manifest_sha256": "a24f886816fc6d7a3a87748c3624b1bc7a4824f984c4d6ad1ca73426b02080aa",
+    "training_arrays_sha256": "9a0d22ecad7da559dc34f86074ceac5a705d9658dfd013bcff0ad6ad027041af",
+    "users": 10000,
+    "ratings": 1500603
+  },
+  "holdout_contract": {
+    "validation_sha256": "2515bdbcf41deacc0cd9a4639c50d6d95624e148b41cad843fa23dbe462b2273",
+    "reserved_fresh_test_sha256": "297eb9875df60af0647bada547584793b2a9761360518c57a31d9fb2ca3b6e2f",
+    "fresh_test_loaded": false,
+    "all_reserved_users_excluded_from_training": true
+  },
+  "fixed_conditions": [
+    "500 frozen validation users, exact five onboarding ratings and target arrays",
+    "9,021 catalogue IDs and order",
+    "Exclude onboarding; positive heldout rating >=4; original top_items and evaluation metric arithmetic",
+    "Original, full-user and both popularity controls retained",
+    "No app deployment"
+  ],
+  "source_revision": "536c1efedddd9e0e98127c8ef2a747b55c8100e7",
+  "source_sha256": {
+    "environment.lock": "70ce2fb68d50bc924b2545654dab6b45e470b415ead859f39a01bf5c8ef9d623",
+    "experiments/campaign_common.py": "b1b6987c6b6b8756c1fb195202bbb01d969995284b9f5d6b32266eef53949d63",
+    "experiments/campaign_mf.py": "1485f118f45fd5dcfc6c18f3b1ba40838f779fb8aed376212a90ac0195e26e55",
+    "experiments/campaign_neighbors.py": "83426a77caeb65e8e6a6bc2639131bb6ffd247535ca8bbf2c3ac2a6e7b27c4fd",
+    "experiments/campaign_ranking.py": "4402b8c38f3d39fc1a42e00fa8b8b2e8724429d011f3b11f7a1523b3bef805fe",
+    "experiments/run_campaign.py": "81756b24add80ce863dadbcf3c8e70fbd626396fc5f59115edc10ccc678fea61",
+    "experiments/run_full_data.py": "7000cccb0247b1bdbd2e64a2f29731c1dcdd7cb61c9868830c876192e452a1da",
+    "git.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pyproject.toml": "4f2219feabb7aa295ff7419751189e4bde6b1af2ddce2b4061b06be8d1ae9869",
+    "requirements.lock": "e8b1c2122c024c8313c97a2de0657ff0174dcbb284be8119b1a59595b8f8daa9",
+    "src/cinematch/__init__.py": "dfe7c50843f3d7cb23dc967cc6ba6fa6075f3e095ab99095e06a47e0de174d00",
+    "src/cinematch/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "src/cinematch/cli.py": "542e4722e7e556f73cd04038774b5cf6db3d7be0f1228799e4f078440f9d4d59",
+    "src/cinematch/data.py": "c752c22a6a5d58a1e01e13f2a2bbedd483afb5cfcf6f0f29bd8573aa92010547",
+    "src/cinematch/evaluation.py": "283dcfabbf90a4134a0b2383331468beac04dbcaf856a81773994d46e53709b0",
+    "src/cinematch/model.py": "3d5e55db9110764e54641481057b8f9657420681769f755b8f56a6a3ad5bd867",
+    "src/cinematch/recommend.py": "d1f2545b3c7c2922009d6f400b5657969899f180932ab29b4db0cf46dd45b04e",
+    "src/cinematch/training.py": "d94e04ce4bdcbbf254834023daf72171779026f32838552dec46082084c63961"
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "platform": "macOS-26.3.1-arm64-arm-64bit",
+    "numpy": "2.5.4",
+    "torch": "2.14.1",
+    "pandas": "3.1.0",
+    "dependencies": "source/environment.lock",
+    "cpu_threads": 2
+  },
+  "artifact_directory": "artifacts/experiments/cm-20261119-mf-huber",
+  "model_artifacts": "artifacts/experiments/cm-20261119-mf-huber/model",
+  "reproduction_command": ".venv/bin/python -B -u experiments/run_campaign.py --replay cm-20261119-mf-huber --run-id new-unique-id",
+  "adoption_decision": "Not deployed; current app model unchanged",
+  "started_at": "2026-11-19T09:05:33.149908+00:00",
+  "finished_at": "2026-11-19T09:05:44.282155+00:00",
+  "elapsed_seconds": 11.132234000135213,
+  "metrics": {
+    "users": 500,
+    "users_with_relevant_targets": 498,
+    "rmse_macro": 0.9164450568771468,
+    "ndcg_at_5": 0.1158288508773195,
+    "recall_at_5": 0.012750224414963757,
+    "hit_rate_at_5": 0.321285140562249,
+    "catalog_coverage_at_5": 0.020951114067176587,
+    "distinct_recommended_movies": 189
+  },
+  "comparisons": {
+    "original_sample": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": -0.03607238962261716,
+          "relative_percent": -23.74726467268857
+        },
+        "hit_rate_at_5": {
+          "absolute": -0.060240963855421714,
+          "relative_percent": -15.789473684210533
+        },
+        "recall_at_5": {
+          "absolute": -0.003410660758491788,
+          "relative_percent": -21.104417993723764
+        },
+        "catalog_coverage_at_5": {
+          "absolute": -0.004655803126039242,
+          "relative_percent": -18.181818181818183
+        },
+        "rmse_macro": {
+          "absolute": -0.008255564055360876,
+          "relative_percent": -0.8927823631215486
+        }
+      },
+      "ndcg_at_5_difference": -0.03607238962261716,
+      "bootstrap_95_percent": [
+        -0.046607766765561776,
+        -0.02613194958677051
+      ]
+    },
+    "established_popularity": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": -0.26371887991998255,
+          "relative_percent": -69.48240195403038
+        },
+        "hit_rate_at_5": {
+          "absolute": -0.42168674698795183,
+          "relative_percent": -56.756756756756765
+        },
+        "recall_at_5": {
+          "absolute": -0.03066046442095241,
+          "relative_percent": -70.62883645279832
+        },
+        "catalog_coverage_at_5": {
+          "absolute": 0.020064294424121495,
+          "relative_percent": 2262.5
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": -0.2637188799199825,
+      "bootstrap_95_percent": [
+        -0.29163508412815775,
+        -0.23538027692439392
+      ]
+    },
+    "full_user": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": -0.05168911331920123,
+          "relative_percent": -30.855862872451734
+        },
+        "hit_rate_at_5": {
+          "absolute": -0.08835341365461846,
+          "relative_percent": -21.568627450980394
+        },
+        "recall_at_5": {
+          "absolute": -0.004446346494925391,
+          "relative_percent": -25.856006515627207
+        },
+        "catalog_coverage_at_5": {
+          "absolute": -0.027934818756235453,
+          "relative_percent": -57.14285714285714
+        },
+        "rmse_macro": {
+          "absolute": -0.012673211449729216,
+          "relative_percent": -1.3640041189321028
+        }
+      },
+      "ndcg_at_5_difference": -0.051689113319201244,
+      "bootstrap_95_percent": [
+        -0.0728583950597197,
+        -0.029778810120215198
+      ]
+    },
+    "full_popularity": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": -0.26371887991998255,
+          "relative_percent": -69.48240195403038
+        },
+        "hit_rate_at_5": {
+          "absolute": -0.42168674698795183,
+          "relative_percent": -56.756756756756765
+        },
+        "recall_at_5": {
+          "absolute": -0.03066046442095241,
+          "relative_percent": -70.62883645279832
+        },
+        "catalog_coverage_at_5": {
+          "absolute": 0.020064294424121495,
+          "relative_percent": 2262.5
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": -0.2637188799199825,
+      "bootstrap_95_percent": [
+        -0.29163508412815775,
+        -0.23538027692439392
+      ]
+    },
+    "training_matched_popularity": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": -0.26371887991998255,
+          "relative_percent": -69.48240195403038
+        },
+        "hit_rate_at_5": {
+          "absolute": -0.42168674698795183,
+          "relative_percent": -56.756756756756765
+        },
+        "recall_at_5": {
+          "absolute": -0.03066046442095241,
+          "relative_percent": -70.62883645279832
+        },
+        "catalog_coverage_at_5": {
+          "absolute": 0.020064294424121495,
+          "relative_percent": 2262.5
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": -0.2637188799199825,
+      "bootstrap_95_percent": [
+        -0.29163508412815775,
+        -0.23538027692439392
+      ]
+    },
+    "immediate_parent": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": -0.03607238962261716,
+          "relative_percent": -23.74726467268857
+        },
+        "hit_rate_at_5": {
+          "absolute": -0.060240963855421714,
+          "relative_percent": -15.789473684210533
+        },
+        "recall_at_5": {
+          "absolute": -0.003410660758491788,
+          "relative_percent": -21.104417993723764
+        },
+        "catalog_coverage_at_5": {
+          "absolute": -0.004655803126039242,
+          "relative_percent": -18.181818181818183
+        },
+        "rmse_macro": {
+          "absolute": -0.008255564055360876,
+          "relative_percent": -0.8927823631215486
+        }
+      },
+      "ndcg_at_5_difference": -0.03607238962261716,
+      "bootstrap_95_percent": [
+        -0.046607766765561776,
+        -0.02613194958677051
+      ]
+    }
+  },
+  "interpretation": {
+    "decision": "reject Huber for the ranking objective tested",
+    "conclusion": "Validation NDCG@5 0.115829; difference from established popularity -0.263719, paired 95% interval [-0.291635, -0.235380]. Huber achieves a lower rating RMSE while materially worsening NDCG. Better rating prediction did not translate into better top-five recovery here.",
+    "limitations": "This is a single robust-loss strength and training seed under the campaign policy; it does not rule out all robust or ranking losses. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-mf-huber.json",
+    "source_record_sha256_before_review_merge": "4167d3eed748cb6aeef77ef3e0ee6602e4f2efa6f8bae89110b5f5f5c866f55e",
+    "immediate_parent": "mf16-sample-20261023",
+    "immediate_parent_ndcg_difference": -0.03607238962261716,
+    "immediate_parent_bootstrap_95_percent": [
+      -0.046607766765561776,
+      -0.02613194958677051
+    ]
+  },
+  "resource_use": {
+    "peak_process_rss_bytes": 446988288,
+    "rss_units": "bytes on macOS; process lifetime high-water mark",
+    "validation_scoring_seconds": 0.0418998331297189,
+    "milliseconds_per_user_cpu": 0.0837996662594378,
+    "model_artifact_bytes": 641532
+  },
+  "artifact_checksums": {
+    "comparison.json": "7a2cd4356d1b31e0e328f20c2028c86dd77651f6a5c6b198c4e47af089b11b6c",
+    "diagnostics.json": "44084c4b8fdfdb507d0759a1cff151a23866fbaec8041f941a9ed33e91e3007c",
+    "model/config.json": "724babdedb5e88556a2c6523375b398f0bbf650caadde399030efdbc75aafc9d",
+    "model/fit_config.json": "724babdedb5e88556a2c6523375b398f0bbf650caadde399030efdbc75aafc9d",
+    "model/history.json": "358ea1997af36de6bd9f06a962f1b83fce51585eef04bbdf3038cbc9f40c3d7a",
+    "model/model.npz": "f14712ad8e920cedeae97d1dd8373a7d3bb13c36fe4cdfa8a9ac71fbb2e5c0a3",
+    "validation_per_user.npz": "b3637abf6043ef163636cd868e070abc5f111e67ea75c3802f1ecc23a3eb67d5",
+    "review.json": "cb9b00c943781f24a1907a2f35b3f211fb40cc6d3336d48d09a69927895eda0e"
+  },
+  "record_corrections": [
+    {
+      "at": "2026-11-19T09:08:26.342302+00:00",
+      "changes": [
+        {
+          "field": "reproduction_command",
+          "reason": "Use corrected replay dispatcher; it copies the original archived source, not current implementation."
+        }
+      ],
+      "original_plan_preserved": true
+    }
+  ],
+  "automated_initial_interpretation": {
+    "conclusion": "Observed NDCG@5 0.115829; difference from established popularity -0.263719 (interval below zero).",
+    "limitations": "Exploratory validation search. User-bootstrap uncertainty excludes training-seed variability and best-of-many selection. Coverage is not quality. Existing retrospective onboarding/exposure limitations remain.",
+    "decision": "retain as diagnostic; not an improvement over popularity",
+    "personalization_check": 0.08159999999999999
+  }
+}

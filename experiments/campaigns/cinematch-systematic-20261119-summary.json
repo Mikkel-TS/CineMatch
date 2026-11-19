@@ -1,0 +1,62 @@
+{
+  "status": "complete",
+  "initial_screening_configurations": 27,
+  "subsequent_refinements_confirmations_removals": 13,
+  "validation_attempts": 40,
+  "completed": 40,
+  "failed": 0,
+  "interrupted": 0,
+  "primary_change_families": [
+    "profile_fitting",
+    "movie_bias",
+    "popularity_hybrid",
+    "mf_training",
+    "item_neighbors",
+    "pairwise_ranking",
+    "metadata"
+  ],
+  "correctness_tests": 63,
+  "correctness_tests_are_model_experiments": false,
+  "sum_recorded_worker_runtime_seconds": 206.2022920444142,
+  "runtime_excludes": "coordinator startup, source snapshotting, initial reference cache and correctness tests",
+  "peak_worker_rss_bytes": 1951858688,
+  "concurrency": "One worker; 2 numerical threads",
+  "stochastic_full_bpr_seeds": {
+    "seeds": [
+      42,
+      7,
+      123
+    ],
+    "ndcg_mean": 0.4474576395513297,
+    "ndcg_sample_standard_deviation": 0.003890505760372105,
+    "ndcg_min": 0.44319109876219814,
+    "ndcg_max": 0.4508089031078204
+  },
+  "selected_candidate": "cm-20261119-full-knn-conditional",
+  "numerically_best_validation": "cm-20261119-full-knn-no-shrink",
+  "selection_tradeoff": "The no-shrink variant gains only 0.00002985 NDCG over the confirmed regularized parent; no practically meaningful advantage. Selection was frozen before final access.",
+  "final_holdout_evaluations": 1,
+  "final_status": "complete",
+  "final_result": "experiments/final-results/cinematch-systematic-20261119.json",
+  "frozen_inputs_unchanged_after_final": true,
+  "further_tuning_performed_after_final": false,
+  "app_model_changed": false,
+  "skipped_directions": [
+    {
+      "direction": "Further MF dimension/loss training and full-data confirmations of regressions",
+      "reason": "8/32 factors and Huber lost even against original MF; bias/profile refinements remained far below item neighbours. Budget focused on promising families."
+    },
+    {
+      "direction": "External tags, plots, embeddings and Letterboxd hybrid",
+      "reason": "Verified aligned MovieLens genres were sufficient for one lightweight metadata family; external identity/text validation would introduce a separate data-cleaning effort. No metadata-improvement claim made."
+    },
+    {
+      "direction": "Alternative catalogue, temporal or self-selected onboarding benchmark",
+      "reason": "This campaign preserves the user-requested fixed benchmark; product-realistic protocols require separate reference reruns and fresh evaluation evidence."
+    },
+    {
+      "direction": "Additional seeds for deterministic neighbour methods",
+      "reason": "Co-occurrence fitting is deterministic on the fixed training data; repeated identical fits do not estimate training-data uncertainty. Successful stochastic ranking models were repeated across 3 seeds."
+    }
+  ]
+}

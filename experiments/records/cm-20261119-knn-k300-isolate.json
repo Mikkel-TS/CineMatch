@@ -1,0 +1,326 @@
+{
+  "run_id": "cm-20261119-knn-k300-isolate",
+  "family": "item_neighbors",
+  "parent_run": "cm-20261119-knn-cos100",
+  "configuration": {
+    "scale": "sample",
+    "seed": 42,
+    "kind": "neighbors",
+    "feedback": "positive",
+    "top_k": 300,
+    "shrink": 10,
+    "similarity": "cosine",
+    "aggregation": "positive"
+  },
+  "question": "Does neighbourhood size account for the combined cosine improvement?",
+  "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+  "changed_variable": "Only K100\u2192300; shrink remains10",
+  "evidence_stage": "exploratory_validation",
+  "campaign_id": "cinematch-systematic-20261119",
+  "status": "complete",
+  "created_at": "2026-11-19T09:07:31.595673+00:00",
+  "benchmark_id": "7b0b1ce54a04ae5830072a94ff6537ce1bd7cb98c50db610a00366dd94248a40",
+  "training_data": {
+    "scale": "sample",
+    "path": "artifacts/data",
+    "manifest_sha256": "a24f886816fc6d7a3a87748c3624b1bc7a4824f984c4d6ad1ca73426b02080aa",
+    "training_arrays_sha256": "9a0d22ecad7da559dc34f86074ceac5a705d9658dfd013bcff0ad6ad027041af",
+    "users": 10000,
+    "ratings": 1500603
+  },
+  "holdout_contract": {
+    "validation_sha256": "2515bdbcf41deacc0cd9a4639c50d6d95624e148b41cad843fa23dbe462b2273",
+    "reserved_fresh_test_sha256": "297eb9875df60af0647bada547584793b2a9761360518c57a31d9fb2ca3b6e2f",
+    "fresh_test_loaded": false,
+    "all_reserved_users_excluded_from_training": true
+  },
+  "fixed_conditions": [
+    "500 frozen validation users, exact five onboarding ratings and target arrays",
+    "9,021 catalogue IDs and order",
+    "Exclude onboarding; positive heldout rating >=4; original top_items and evaluation metric arithmetic",
+    "Original, full-user and both popularity controls retained",
+    "No app deployment"
+  ],
+  "source_revision": "536c1efedddd9e0e98127c8ef2a747b55c8100e7",
+  "source_sha256": {
+    "environment.lock": "70ce2fb68d50bc924b2545654dab6b45e470b415ead859f39a01bf5c8ef9d623",
+    "experiments/campaign_common.py": "b1b6987c6b6b8756c1fb195202bbb01d969995284b9f5d6b32266eef53949d63",
+    "experiments/campaign_mf.py": "1485f118f45fd5dcfc6c18f3b1ba40838f779fb8aed376212a90ac0195e26e55",
+    "experiments/campaign_neighbors.py": "83426a77caeb65e8e6a6bc2639131bb6ffd247535ca8bbf2c3ac2a6e7b27c4fd",
+    "experiments/campaign_ranking.py": "4402b8c38f3d39fc1a42e00fa8b8b2e8724429d011f3b11f7a1523b3bef805fe",
+    "experiments/run_campaign.py": "4830377b9bb4cec34d3650b5a366f3a29aa5e06498129769a4b07e3eed994458",
+    "experiments/run_full_data.py": "7000cccb0247b1bdbd2e64a2f29731c1dcdd7cb61c9868830c876192e452a1da",
+    "git.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pyproject.toml": "4f2219feabb7aa295ff7419751189e4bde6b1af2ddce2b4061b06be8d1ae9869",
+    "requirements.lock": "e8b1c2122c024c8313c97a2de0657ff0174dcbb284be8119b1a59595b8f8daa9",
+    "src/cinematch/__init__.py": "dfe7c50843f3d7cb23dc967cc6ba6fa6075f3e095ab99095e06a47e0de174d00",
+    "src/cinematch/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "src/cinematch/cli.py": "542e4722e7e556f73cd04038774b5cf6db3d7be0f1228799e4f078440f9d4d59",
+    "src/cinematch/data.py": "c752c22a6a5d58a1e01e13f2a2bbedd483afb5cfcf6f0f29bd8573aa92010547",
+    "src/cinematch/evaluation.py": "283dcfabbf90a4134a0b2383331468beac04dbcaf856a81773994d46e53709b0",
+    "src/cinematch/model.py": "3d5e55db9110764e54641481057b8f9657420681769f755b8f56a6a3ad5bd867",
+    "src/cinematch/recommend.py": "d1f2545b3c7c2922009d6f400b5657969899f180932ab29b4db0cf46dd45b04e",
+    "src/cinematch/training.py": "d94e04ce4bdcbbf254834023daf72171779026f32838552dec46082084c63961"
+  },
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "platform": "macOS-26.3.1-arm64-arm-64bit",
+    "numpy": "2.5.4",
+    "torch": "2.14.1",
+    "pandas": "3.1.0",
+    "dependencies": "source/environment.lock",
+    "cpu_threads": 2
+  },
+  "artifact_directory": "artifacts/experiments/cm-20261119-knn-k300-isolate",
+  "model_artifacts": "artifacts/experiments/cm-20261119-knn-k300-isolate/model",
+  "reproduction_command": ".venv/bin/python -B -u experiments/run_campaign.py --replay cm-20261119-knn-k300-isolate --run-id new-unique-id",
+  "reference_inputs": {
+    "benchmark_id": "7b0b1ce54a04ae5830072a94ff6537ce1bd7cb98c50db610a00366dd94248a40",
+    "checksums": {
+      "artifacts/mf16/model.pt": "bdc4066d1a73e99b85449af7fea0a54d480f91f76b75ba01d7c602fc95b5888e",
+      "artifacts/experiments/mf16-full-users-fixed-catalog-20261117/model/model.pt": "70935fd3397ddfd19d291744d95b2621e4ecf7513ee636756e9a095f900a4ffd",
+      "artifacts/data/validation.npz": "2515bdbcf41deacc0cd9a4639c50d6d95624e148b41cad843fa23dbe462b2273",
+      "artifacts/data/catalog.csv": "2c9fc2f9cdb9bbbd855e635931dcec63d442f229daac5a0b60fab75b49b377fb",
+      "src/cinematch/evaluation.py": "283dcfabbf90a4134a0b2383331468beac04dbcaf856a81773994d46e53709b0"
+    },
+    "created_at": "2026-11-19T09:04:23.456317+00:00",
+    "test_evaluated": false
+  },
+  "adoption_decision": "Not deployed; current app model unchanged",
+  "started_at": "2026-11-19T09:07:32.262214+00:00",
+  "finished_at": "2026-11-19T09:07:34.900888+00:00",
+  "elapsed_seconds": 2.6386755420826375,
+  "metrics": {
+    "users": 500,
+    "users_with_relevant_targets": 498,
+    "rmse_macro": null,
+    "ndcg_at_5": 0.4707114651953374,
+    "recall_at_5": 0.06110828548133591,
+    "hit_rate_at_5": 0.8293172690763052,
+    "catalog_coverage_at_5": 0.05154639175257732,
+    "distinct_recommended_movies": 465
+  },
+  "comparisons": {
+    "original_sample": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": 0.31881022469540077,
+          "relative_percent": 209.8799349143786
+        },
+        "hit_rate_at_5": {
+          "absolute": 0.4477911646586345,
+          "relative_percent": 117.36842105263158
+        },
+        "recall_at_5": {
+          "absolute": 0.04494740030788036,
+          "relative_percent": 278.12461895160925
+        },
+        "catalog_coverage_at_5": {
+          "absolute": 0.025939474559361488,
+          "relative_percent": 101.2987012987013
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": 0.31881022469540077,
+      "bootstrap_95_percent": [
+        0.29144321475330415,
+        0.34713914945466035
+      ]
+    },
+    "established_popularity": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": 0.09116373439803538,
+          "relative_percent": 24.019043456413524
+        },
+        "hit_rate_at_5": {
+          "absolute": 0.08634538152610438,
+          "relative_percent": 11.621621621621617
+        },
+        "recall_at_5": {
+          "absolute": 0.01769759664541974,
+          "relative_percent": 40.767831886550255
+        },
+        "catalog_coverage_at_5": {
+          "absolute": 0.050659572109522225,
+          "relative_percent": 5712.5
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": 0.09116373439803543,
+      "bootstrap_95_percent": [
+        0.06342990587554996,
+        0.11834215351032641
+      ]
+    },
+    "full_user": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": 0.3031935009988167,
+          "relative_percent": 180.99163421251384
+        },
+        "hit_rate_at_5": {
+          "absolute": 0.41967871485943775,
+          "relative_percent": 102.45098039215686
+        },
+        "recall_at_5": {
+          "absolute": 0.043911714571446755,
+          "relative_percent": 255.35157445950264
+        },
+        "catalog_coverage_at_5": {
+          "absolute": 0.002660458929165277,
+          "relative_percent": 5.442176870748291
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": 0.3031935009988167,
+      "bootstrap_95_percent": [
+        0.2762616571914102,
+        0.33131065291796735
+      ]
+    },
+    "full_popularity": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": 0.09116373439803538,
+          "relative_percent": 24.019043456413524
+        },
+        "hit_rate_at_5": {
+          "absolute": 0.08634538152610438,
+          "relative_percent": 11.621621621621617
+        },
+        "recall_at_5": {
+          "absolute": 0.01769759664541974,
+          "relative_percent": 40.767831886550255
+        },
+        "catalog_coverage_at_5": {
+          "absolute": 0.050659572109522225,
+          "relative_percent": 5712.5
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": 0.09116373439803543,
+      "bootstrap_95_percent": [
+        0.06342990587554996,
+        0.11834215351032641
+      ]
+    },
+    "training_matched_popularity": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": 0.09116373439803538,
+          "relative_percent": 24.019043456413524
+        },
+        "hit_rate_at_5": {
+          "absolute": 0.08634538152610438,
+          "relative_percent": 11.621621621621617
+        },
+        "recall_at_5": {
+          "absolute": 0.01769759664541974,
+          "relative_percent": 40.767831886550255
+        },
+        "catalog_coverage_at_5": {
+          "absolute": 0.050659572109522225,
+          "relative_percent": 5712.5
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": 0.09116373439803543,
+      "bootstrap_95_percent": [
+        0.06342990587554996,
+        0.11834215351032641
+      ]
+    },
+    "immediate_parent": {
+      "changes": {
+        "ndcg_at_5": {
+          "absolute": 0.006728712032397166,
+          "relative_percent": 1.450207359331349
+        },
+        "hit_rate_at_5": {
+          "absolute": 0.002008032128514081,
+          "relative_percent": 0.24271844660194478
+        },
+        "recall_at_5": {
+          "absolute": 0.000593994833276934,
+          "relative_percent": 0.9815777842154823
+        },
+        "catalog_coverage_at_5": {
+          "absolute": 0.0003325573661456596,
+          "relative_percent": 0.6493506493506483
+        },
+        "rmse_macro": {
+          "absolute": null,
+          "relative_percent": null
+        }
+      },
+      "ndcg_at_5_difference": 0.0067287120323972225,
+      "bootstrap_95_percent": [
+        -0.004990982891615923,
+        0.01899908109659751
+      ]
+    }
+  },
+  "interpretation": {
+    "decision": "do not prefer larger graph on this evidence",
+    "conclusion": "Validation NDCG@5 0.470711; difference from established popularity +0.091164, paired 95% interval [+0.063430, +0.118342]. Increasing K alone produces a small observed gain with an interval including zero, at roughly triple neighbour storage.",
+    "limitations": "The comparison controls shrinkage but still uses the same validation users; lower confidence in a practical benefit than the joint screen implied. All comparisons are exploratory on the same 500 validation users (498 with relevant targets). Paired user-bootstrap intervals do not account for choosing among 40 attempts, training-population variation, or alternative onboarding protocols. Unobserved relevance is unknown. No fresh-final-holdout evidence enters this review.",
+    "review_scope": "Validation-only scientific interpretation; does not modify prior plans, source provenance or app-adoption decisions.",
+    "review_date": "2026-11-19",
+    "source_record": "experiments/records/cm-20261119-knn-k300-isolate.json",
+    "source_record_sha256_before_review_merge": "ece0773e18d92c8028e3e5f33b65008baf97fb7d0c19a0d942054e20c27b6211",
+    "immediate_parent": "cm-20261119-knn-cos100",
+    "immediate_parent_ndcg_difference": 0.0067287120323972225,
+    "immediate_parent_bootstrap_95_percent": [
+      -0.004990982891615923,
+      0.01899908109659751
+    ]
+  },
+  "resource_use": {
+    "peak_process_rss_bytes": 411303936,
+    "rss_units": "bytes on macOS; process lifetime high-water mark",
+    "validation_scoring_seconds": 0.015048207947984338,
+    "milliseconds_per_user_cpu": 0.030096415895968676,
+    "model_artifact_bytes": 12196309
+  },
+  "artifact_checksums": {
+    "comparison.json": "09321c1c4167299e560e592400b1d5f847c89f9b8c526c44953bd56455285aaf",
+    "diagnostics.json": "754fa4af294641b9cfc5008cc694d79b4e22803fb5c33ffb2c001918d5d2340e",
+    "model/model.npz": "ce8647a6f45d83213d10e264ce852be5d3ee362d1f56d3295b8843314f4e505b",
+    "validation_per_user.npz": "3701857b9ece2c781cb1006df7d9d108086ca9c8d3630e3938d3aeca05b4b0de",
+    "review.json": "f266c1e727bbc1217bd49e8638bb9fe5862aa579f6de6bf916c5a71604624939"
+  },
+  "record_corrections": [
+    {
+      "at": "2026-11-19T09:08:26.341422+00:00",
+      "changes": [
+        {
+          "field": "reproduction_command",
+          "reason": "Use corrected replay dispatcher; it copies the original archived source, not current implementation."
+        }
+      ],
+      "original_plan_preserved": true
+    }
+  ],
+  "automated_initial_interpretation": {
+    "conclusion": "Observed NDCG@5 0.470711; difference from established popularity +0.091164 (interval above zero).",
+    "limitations": "Exploratory validation search. User-bootstrap uncertainty excludes training-seed variability and best-of-many selection. Coverage is not quality. Existing retrospective onboarding/exposure limitations remain.",
+    "decision": "investigate and confirm",
+    "personalization_check": 0.18719999999999998
+  }
+}

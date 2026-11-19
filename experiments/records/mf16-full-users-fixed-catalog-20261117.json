@@ -1,0 +1,174 @@
+{
+  "run_id": "mf16-full-users-fixed-catalog-20261117",
+  "parent_run": "mf16-sample-20261023",
+  "created_at": "2026-11-17T17:19:12.892506+00:00",
+  "status": "complete",
+  "benchmark_id": "7b0b1ce54a04ae5830072a94ff6537ce1bd7cb98c50db610a00366dd94248a40",
+  "question": "Does using all available training users improve recommendation quality on the existing catalogue?",
+  "hypothesis": "More real ratings improve movie profiles and new-user ranking; this remains unproven.",
+  "user_decisions": [
+    "Try full-data training.",
+    "Keep the current 9,021-movie catalogue for a clean comparison."
+  ],
+  "implementation_decisions": [
+    "Keep original validation and legacy-test profiles byte-for-byte, including onboarding and targets.",
+    "Reserve 500 previously unused users for a future final test before expanding training.",
+    "Keep model architecture, objective, hyperparameters and epoch-selection policy unchanged.",
+    "Compare both historical and newly fitted popularity controls on the frozen validation benchmark.",
+    "Do not evaluate either test group or automatically replace the existing model."
+  ],
+  "changed_variable": "Training-user population and the ratings they contribute within the frozen catalogue.",
+  "interpretation_limits": [
+    "More ratings also mean more optimizer updates per epoch; this is not an equal-compute comparison.",
+    "A fixed random seed does not guarantee identical initial item factors when user-table size changes.",
+    "Historical checkpoint source revision is not embedded; the current run records its exact source snapshot."
+  ],
+  "parameters": {
+    "factors": 16,
+    "epochs": 20,
+    "batch_size": 4096,
+    "learning_rate": 0.001,
+    "regularization": 0.01,
+    "fold_in_grid": [
+      1.0,
+      5.0,
+      20.0
+    ],
+    "bias_regularization": 5.0,
+    "patience": 3,
+    "seed": 42,
+    "threads": 4
+  },
+  "reference_checkpoint_sha256": "bdc4066d1a73e99b85449af7fea0a54d480f91f76b75ba01d7c602fc95b5888e",
+  "reference_manifest_sha256": "a24f886816fc6d7a3a87748c3624b1bc7a4824f984c4d6ad1ca73426b02080aa",
+  "git_commit": "536c1efedddd9e0e98127c8ef2a747b55c8100e7",
+  "git_status": "?? experiments/\n?? tests/test_full_data_experiment.py",
+  "environment": {
+    "python": "3.12.14 (main, Aug 25 2026, 13:50:33) [Clang 22.1.3 ]",
+    "platform": "macOS-26.3.1-arm64-arm-64bit",
+    "torch": "2.14.1",
+    "numpy": "2.5.4",
+    "pandas": "3.1.0"
+  },
+  "artifact_directory": "artifacts/experiments/mf16-full-users-fixed-catalog-20261117",
+  "source_sha256": {
+    "git.diff": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "pyproject.toml": "4f2219feabb7aa295ff7419751189e4bde6b1af2ddce2b4061b06be8d1ae9869",
+    "requirements.lock": "e8b1c2122c024c8313c97a2de0657ff0174dcbb284be8119b1a59595b8f8daa9",
+    "run_full_data.py": "7000cccb0247b1bdbd2e64a2f29731c1dcdd7cb61c9868830c876192e452a1da",
+    "src/cinematch/__init__.py": "dfe7c50843f3d7cb23dc967cc6ba6fa6075f3e095ab99095e06a47e0de174d00",
+    "src/cinematch/__main__.py": "6d8b7d7846a845059d7a3107143f11131f63c5511d669b44085b15ec5e3d2279",
+    "src/cinematch/cli.py": "542e4722e7e556f73cd04038774b5cf6db3d7be0f1228799e4f078440f9d4d59",
+    "src/cinematch/data.py": "c752c22a6a5d58a1e01e13f2a2bbedd483afb5cfcf6f0f29bd8573aa92010547",
+    "src/cinematch/evaluation.py": "283dcfabbf90a4134a0b2383331468beac04dbcaf856a81773994d46e53709b0",
+    "src/cinematch/model.py": "3d5e55db9110764e54641481057b8f9657420681769f755b8f56a6a3ad5bd867",
+    "src/cinematch/recommend.py": "d1f2545b3c7c2922009d6f400b5657969899f180932ab29b4db0cf46dd45b04e",
+    "src/cinematch/training.py": "d94e04ce4bdcbbf254834023daf72171779026f32838552dec46082084c63961"
+  },
+  "training_users": 199447,
+  "training_ratings": 30495721,
+  "dataset_sha256": "faefc269e442f9135aaee7feb57610a602892604d63d3e0d4b8ad654281f038c",
+  "finished_at": "2026-11-17T17:23:12.194041+00:00",
+  "elapsed_seconds": 239.24958395794965,
+  "checkpoint_sha256": "70935fd3397ddfd19d291744d95b2621e4ecf7513ee636756e9a095f900a4ffd",
+  "comparison": {
+    "evaluation": "Frozen validation users, support ratings, targets, catalogue and metric implementation.",
+    "metrics": {
+      "sample_model": {
+        "users": 500,
+        "users_with_relevant_targets": 498,
+        "rmse_macro": 0.9247006209325077,
+        "ndcg_at_5": 0.15190124049993667,
+        "recall_at_5": 0.016160885173455545,
+        "hit_rate_at_5": 0.3815261044176707,
+        "catalog_coverage_at_5": 0.02560691719321583
+      },
+      "sample_popularity": {
+        "users": 500,
+        "users_with_relevant_targets": 498,
+        "rmse_macro": null,
+        "ndcg_at_5": 0.37954773079730203,
+        "recall_at_5": 0.043410688835916166,
+        "hit_rate_at_5": 0.7429718875502008,
+        "catalog_coverage_at_5": 0.0008868196430550937
+      },
+      "full_user_model": {
+        "users": 500,
+        "users_with_relevant_targets": 498,
+        "rmse_macro": 0.929118268326876,
+        "ndcg_at_5": 0.16751796419652074,
+        "recall_at_5": 0.017196570909889148,
+        "hit_rate_at_5": 0.40963855421686746,
+        "catalog_coverage_at_5": 0.04888593282341204
+      },
+      "full_user_popularity": {
+        "users": 500,
+        "users_with_relevant_targets": 498,
+        "rmse_macro": null,
+        "ndcg_at_5": 0.37954773079730203,
+        "recall_at_5": 0.043410688835916166,
+        "hit_rate_at_5": 0.7429718875502008,
+        "catalog_coverage_at_5": 0.0008868196430550937
+      }
+    },
+    "full_vs_sample": {
+      "ndcg_at_5_difference": 0.015616723696584067,
+      "bootstrap_95_percent": [
+        -0.005901877604385588,
+        0.03696836338511305
+      ]
+    },
+    "full_vs_full_popularity": {
+      "ndcg_at_5_difference": -0.2120297666007813,
+      "bootstrap_95_percent": [
+        -0.2410380229717317,
+        -0.1842864052345759
+      ]
+    },
+    "full_vs_sample_popularity": {
+      "ndcg_at_5_difference": -0.2120297666007813,
+      "bootstrap_95_percent": [
+        -0.2410380229717317,
+        -0.1842864052345759
+      ]
+    },
+    "limits": "Exploratory validation comparison from one training seed; bootstrap covers validation users only.",
+    "test_evaluated": false,
+    "fresh_test_evaluated": false
+  },
+  "adoption_decision": "Pending review; the historical model remains unchanged.",
+  "review": {
+    "status": "exploratory_validation_result",
+    "conclusion": "The observed ranking score improved, but the paired uncertainty interval includes zero. More data alone did not close the gap to popularity.",
+    "observed_ndcg_relative_change_percent": 10.28084013348829,
+    "ndcg_difference": {
+      "ndcg_at_5_difference": 0.015616723696584067,
+      "bootstrap_95_percent": [
+        -0.005901877604385588,
+        0.03696836338511305
+      ]
+    },
+    "unique_recommended_movies": {
+      "sample_model": 231,
+      "full_user_model": 441
+    },
+    "rating_rmse": {
+      "sample_model": 0.9247006209325077,
+      "full_user_model": 0.929118268326876,
+      "interpretation": "Observed RMSE is slightly worse; no separate uncertainty analysis."
+    },
+    "validation_selection": 3,
+    "adoption_decision": "Pending review; neither a replacement nor a rejection has been approved by the user.",
+    "final_test_status": "Both legacy and fresh test groups were excluded from this run's evaluation.",
+    "verification": {
+      "automated_checks_passed": 13,
+      "saved_dataset_checks": [
+        "Original training users retained",
+        "Identical catalogue IDs/order",
+        "Original validation and legacy-test profiles copied byte-for-byte",
+        "Validation, legacy test and fresh test users excluded from training",
+        "Historical checkpoint unchanged"
+      ]
+    }
+  }
+}

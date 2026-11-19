@@ -1,0 +1,113 @@
+[
+  {
+    "run_id": "cm-20261119-full-knn-no-shrink",
+    "family": "removal_test",
+    "parent_run": "cm-20261119-full-knn-conditional",
+    "configuration": {
+      "scale": "full",
+      "seed": 42,
+      "kind": "neighbors",
+      "feedback": "positive",
+      "similarity": "conditional",
+      "top_k": 100,
+      "shrink": 0,
+      "aggregation": "positive"
+    },
+    "question": "Does support shrinkage contribute to the strongest full-data neighbour model?",
+    "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+    "changed_variable": "Remove co-occurrence support shrinkage only",
+    "evidence_stage": "full_data_validation_confirmation"
+  },
+  {
+    "run_id": "cm-20261119-full-knn-binary",
+    "family": "removal_test",
+    "parent_run": "cm-20261119-full-knn-conditional",
+    "configuration": {
+      "scale": "full",
+      "seed": 42,
+      "kind": "neighbors",
+      "feedback": "positive",
+      "similarity": "conditional",
+      "top_k": 100,
+      "shrink": 10,
+      "aggregation": "binary_positive",
+      "reuse_model_run": "cm-20261119-full-knn-conditional"
+    },
+    "question": "Does the strength of onboarding ratings help beyond a binary like?",
+    "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+    "changed_variable": "Reuse exact graph; binary >=4 seed weights instead of max(r-3,0)",
+    "evidence_stage": "full_data_validation_confirmation"
+  },
+  {
+    "run_id": "cm-20261119-full-knn-blend50",
+    "family": "popularity_hybrid",
+    "parent_run": "cm-20261119-full-knn-conditional",
+    "configuration": {
+      "scale": "full",
+      "seed": 42,
+      "kind": "hybrid",
+      "base_run": "cm-20261119-full-knn-conditional",
+      "alpha": 0.5
+    },
+    "question": "Does extra popularity improve already successful conditional neighbours?",
+    "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+    "changed_variable": "50% standardized neighbour scores +50% standardized log-count",
+    "evidence_stage": "full_data_validation_confirmation"
+  },
+  {
+    "run_id": "cm-20261119-full-knn-no-personal",
+    "family": "removal_test",
+    "parent_run": "cm-20261119-full-knn-conditional",
+    "configuration": {
+      "scale": "full",
+      "seed": 42,
+      "kind": "hybrid",
+      "base_run": "cm-20261119-full-knn-conditional",
+      "alpha": 0.0
+    },
+    "question": "Does the chosen neighbour model add useful personalisation beyond popularity?",
+    "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+    "changed_variable": "Remove the entire personal score; retain matched training-count ranking and same exclusions",
+    "evidence_stage": "full_data_validation_confirmation"
+  },
+  {
+    "run_id": "cm-20261119-full-knn-observed",
+    "family": "removal_test",
+    "parent_run": "cm-20261119-full-knn-conditional",
+    "configuration": {
+      "scale": "full",
+      "seed": 42,
+      "kind": "neighbors",
+      "feedback": "observed",
+      "similarity": "conditional",
+      "top_k": 100,
+      "shrink": 10,
+      "aggregation": "positive"
+    },
+    "question": "Does co-liking rather than merely co-rating account for the gain?",
+    "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+    "changed_variable": "Replace positive>=4 training events with all observed ratings; rest fixed",
+    "evidence_stage": "full_data_validation_confirmation"
+  },
+  {
+    "run_id": "cm-20261119-full-bpr32-budget300k",
+    "family": "pairwise_ranking",
+    "parent_run": "cm-20261119-full-bpr32-seed42",
+    "configuration": {
+      "scale": "full",
+      "seed": 42,
+      "kind": "ranking",
+      "factors": 32,
+      "epochs": 8,
+      "patience": 3,
+      "pairs_per_epoch": 300000,
+      "use_item_bias": true,
+      "aggregation": "positive",
+      "threads": 2
+    },
+    "question": "How much of the full-data ranking gain comes from the larger sampling budget?",
+    "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+    "changed_variable": "Use sample-run300k-pair budget with full-user population; compare1M-budget parent",
+    "evidence_stage": "full_data_validation_confirmation"
+  }
+]

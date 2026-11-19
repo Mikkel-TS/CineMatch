@@ -1,0 +1,141 @@
+[
+  {
+    "run_id": "cm-20261119-knn-k300-isolate",
+    "family": "item_neighbors",
+    "parent_run": "cm-20261119-knn-cos100",
+    "configuration": {
+      "scale": "sample",
+      "seed": 42,
+      "kind": "neighbors",
+      "feedback": "positive",
+      "top_k": 300,
+      "shrink": 10,
+      "similarity": "cosine",
+      "aggregation": "positive"
+    },
+    "question": "Does neighbourhood size account for the combined cosine improvement?",
+    "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+    "changed_variable": "Only K100\u2192300; shrink remains10",
+    "evidence_stage": "exploratory_validation"
+  },
+  {
+    "run_id": "cm-20261119-knn-shrink50-isolate",
+    "family": "item_neighbors",
+    "parent_run": "cm-20261119-knn-cos100",
+    "configuration": {
+      "scale": "sample",
+      "seed": 42,
+      "kind": "neighbors",
+      "feedback": "positive",
+      "top_k": 100,
+      "shrink": 50,
+      "similarity": "cosine",
+      "aggregation": "positive"
+    },
+    "question": "Does shrinkage account for the combined cosine improvement?",
+    "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+    "changed_variable": "Only shrink10\u219250; K remains100",
+    "evidence_stage": "exploratory_validation"
+  },
+  {
+    "run_id": "cm-20261119-full-knn-conditional",
+    "family": "item_neighbors",
+    "parent_run": "cm-20261119-knn-conditional",
+    "configuration": {
+      "scale": "full",
+      "seed": 42,
+      "kind": "neighbors",
+      "feedback": "positive",
+      "top_k": 100,
+      "shrink": 10,
+      "similarity": "conditional",
+      "aggregation": "positive"
+    },
+    "question": "Does the promising item-neighbour result persist with all eligible training users?",
+    "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+    "changed_variable": "Training data expands to30,495,721 ratings; algorithm settings fixed",
+    "evidence_stage": "full_data_validation_confirmation"
+  },
+  {
+    "run_id": "cm-20261119-full-knn-cos300",
+    "family": "item_neighbors",
+    "parent_run": "cm-20261119-knn-cos300",
+    "configuration": {
+      "scale": "full",
+      "seed": 42,
+      "kind": "neighbors",
+      "feedback": "positive",
+      "top_k": 300,
+      "shrink": 50,
+      "similarity": "cosine",
+      "aggregation": "positive"
+    },
+    "question": "Does the promising item-neighbour result persist with all eligible training users?",
+    "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+    "changed_variable": "Training data expands to30,495,721 ratings; algorithm settings fixed",
+    "evidence_stage": "full_data_validation_confirmation"
+  },
+  {
+    "run_id": "cm-20261119-full-bpr32-seed42",
+    "family": "pairwise_ranking",
+    "parent_run": "cm-20261119-bpr32",
+    "configuration": {
+      "scale": "full",
+      "seed": 42,
+      "kind": "ranking",
+      "factors": 32,
+      "epochs": 8,
+      "patience": 3,
+      "pairs_per_epoch": 1000000,
+      "use_item_bias": true,
+      "aggregation": "positive",
+      "threads": 2
+    },
+    "question": "Does pairwise ranking improve with full training data and remain stable across seeds?",
+    "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+    "changed_variable": "Full eligible user population,1M uniformly sampled pairs per epoch; seed42",
+    "evidence_stage": "full_data_validation_confirmation"
+  },
+  {
+    "run_id": "cm-20261119-full-bpr32-seed7",
+    "family": "pairwise_ranking",
+    "parent_run": "cm-20261119-full-bpr32-seed42",
+    "configuration": {
+      "scale": "full",
+      "seed": 7,
+      "kind": "ranking",
+      "factors": 32,
+      "epochs": 8,
+      "patience": 3,
+      "pairs_per_epoch": 1000000,
+      "use_item_bias": true,
+      "aggregation": "positive",
+      "threads": 2
+    },
+    "question": "Does pairwise ranking improve with full training data and remain stable across seeds?",
+    "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+    "changed_variable": "Full eligible user population,1M uniformly sampled pairs per epoch; seed7",
+    "evidence_stage": "full_data_validation_confirmation"
+  },
+  {
+    "run_id": "cm-20261119-full-bpr32-seed123",
+    "family": "pairwise_ranking",
+    "parent_run": "cm-20261119-full-bpr32-seed42",
+    "configuration": {
+      "scale": "full",
+      "seed": 123,
+      "kind": "ranking",
+      "factors": 32,
+      "epochs": 8,
+      "patience": 3,
+      "pairs_per_epoch": 1000000,
+      "use_item_bias": true,
+      "aggregation": "positive",
+      "threads": 2
+    },
+    "question": "Does pairwise ranking improve with full training data and remain stable across seeds?",
+    "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+    "changed_variable": "Full eligible user population,1M uniformly sampled pairs per epoch; seed123",
+    "evidence_stage": "full_data_validation_confirmation"
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "exportedAt": "2026-11-19T10:27:11.489683+00:00",
+  "modelVersion": "cm-20261119-full-knn-conditional+tmdb-eba502308c73",
+  "bundleSHA256": "a4bc91bd5796cbc04d9789657e9a6985202f421f6ff7caeafd8c2b2b64c89085",
+  "sourceModelSHA256": "1b7a90f95036324bf87502032b662e846d955decee39d538bffe2eac4dbbf8ba",
+  "verificationReportSHA256": "0d80db47bca237ed68fa64150376eccb7a9494b18350025a755a585356286e87",
+  "catalogueSHA256": "eba502308c73220e4ab6b4b24feed81f9cc73ebeb9009a728cff786292b8e1c9",
+  "graphNodes": 9021,
+  "directedEdges": 902100,
+  "eligibleMovies": 8937,
+  "legacyMappings": 3789,
+  "bundleBytes": 22984443,
+  "scoreContract": {
+    "aggregation": "positive",
+    "ratingCenter": 3,
+    "fallback": "training_rating_count",
+    "tieBreak": "original_catalogue_order"
+  },
+  "verificationCounts": {
+    "excluded_duplicate_tmdb": 4,
+    "excluded_identity_mismatch": 15,
+    "excluded_missing_tmdb": 3,
+    "excluded_unavailable": 61,
+    "excluded_uncertain": 1,
+    "verified_imdb": 8937
+  },
+  "verificationPolicy": "tmdb-movie-matching-imdb-v2",
+  "finalHoldoutRead": false,
+  "frozenModelModified": false
+}

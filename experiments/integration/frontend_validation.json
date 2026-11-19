@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-19",
+  "modelVersion": "cm-20261119-full-knn-conditional+tmdb-eba502308c73",
+  "bundleSHA256": "a4bc91bd5796cbc04d9789657e9a6985202f421f6ff7caeafd8c2b2b64c89085",
+  "eligibleMovies": 8937,
+  "legacyFilmMappings": 3789,
+  "python": {
+    "command": ".venv/bin/python -m pytest -q",
+    "passed": 73,
+    "failed": 0,
+    "scope": "ML repository suite including TMDB verification and export"
+  },
+  "swift": {
+    "command": "python3 ml/conditional_knn/check_swift.py --with-supabase",
+    "passed": 34,
+    "failed": 0,
+    "suites": 7,
+    "productionReferenceProfiles": 8,
+    "supabaseVersion": "2.55.3",
+    "scope": "Actual scorer, catalogue/opinion services, recommendation view model and remote adapters compiled/tested in a temporary macOS SwiftPM package"
+  },
+  "backendSchema": {
+    "readOnly": true,
+    "returnedUserRows": 0,
+    "checks": {
+      "taste_signals": 200,
+      "recommendation_batches": 200,
+      "recommendation_feedback": 200,
+      "recommendation_metrics_by_score": 200
+    },
+    "authenticatedWritesTested": false,
+    "sqlConstraintsInspected": false
+  },
+  "iOSBuild": {
+    "performed": false,
+    "reason": "Xcode and iOS simulator SDK unavailable; Command Line Tools only"
+  },
+  "frozenGraphChanged": false,
+  "finalHoldoutRead": false,
+  "bulkUserMigrationPerformed": false,
+  "storage": "Canonical TMDB stars namespace with verified read-through translation of swipe/search; originals preserved",
+  "limitations": [
+    "Full iOS build, device UI and device performance still require Xcode.",
+    "Search uses title/genre metadata; director/actor search is not provided by this export."
+  ]
+}

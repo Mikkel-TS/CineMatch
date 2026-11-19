@@ -1,0 +1,503 @@
+{
+  "campaign_id": "cinematch-systematic-20261119",
+  "created_at": "2026-11-19T09:04:20.437118+00:00",
+  "phase": "screening",
+  "planned_experiments": [
+    {
+      "run_id": "cm-20261119-fit-lambda01",
+      "family": "profile_fitting",
+      "parent_run": "mf16-sample-20261023",
+      "configuration": {
+        "scale": "sample",
+        "seed": 42,
+        "kind": "mf",
+        "source_run": "mf16-sample-20261023",
+        "fold_in_regularization": 0.1
+      },
+      "question": "Does weaker new-user regularisation retain useful taste signal?",
+      "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+      "changed_variable": "{\"fold_in_regularization\": 0.1}",
+      "evidence_stage": "exploratory_validation"
+    },
+    {
+      "run_id": "cm-20261119-fit-lambda001",
+      "family": "profile_fitting",
+      "parent_run": "mf16-sample-20261023",
+      "configuration": {
+        "scale": "sample",
+        "seed": 42,
+        "kind": "mf",
+        "source_run": "mf16-sample-20261023",
+        "fold_in_regularization": 0.01
+      },
+      "question": "Does very weak new-user regularisation help or overfit five ratings?",
+      "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+      "changed_variable": "{\"fold_in_regularization\": 0.01}",
+      "evidence_stage": "exploratory_validation"
+    },
+    {
+      "run_id": "cm-20261119-fit-no-intercept",
+      "family": "profile_fitting",
+      "parent_run": "mf16-sample-20261023",
+      "configuration": {
+        "scale": "sample",
+        "seed": 42,
+        "kind": "mf",
+        "source_run": "mf16-sample-20261023",
+        "fold_in_regularization": 0.1,
+        "fit_user_bias": false
+      },
+      "question": "Does removing the new-user intercept improve sparse fitting?",
+      "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+      "changed_variable": "{\"fold_in_regularization\": 0.1, \"fit_user_bias\": false}",
+      "evidence_stage": "exploratory_validation"
+    },
+    {
+      "run_id": "cm-20261119-fit-centered",
+      "family": "profile_fitting",
+      "parent_run": "mf16-sample-20261023",
+      "configuration": {
+        "scale": "sample",
+        "seed": 42,
+        "kind": "mf",
+        "source_run": "mf16-sample-20261023",
+        "fold_in_regularization": 0.1,
+        "user_center": true
+      },
+      "question": "Does centring onboarding ratings reduce rating-scale differences?",
+      "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+      "changed_variable": "{\"fold_in_regularization\": 0.1, \"user_center\": true}",
+      "evidence_stage": "exploratory_validation"
+    },
+    {
+      "run_id": "cm-20261119-bias-zero",
+      "family": "movie_bias",
+      "parent_run": "mf16-sample-20261023",
+      "configuration": {
+        "scale": "sample",
+        "seed": 42,
+        "kind": "mf",
+        "source_run": "mf16-sample-20261023",
+        "movie_bias_scale": 0
+      },
+      "question": "Does reducing unsupported movie-prior influence improve ranking?",
+      "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+      "changed_variable": "{\"movie_bias_scale\": 0}",
+      "evidence_stage": "exploratory_validation"
+    },
+    {
+      "run_id": "cm-20261119-bias-half",
+      "family": "movie_bias",
+      "parent_run": "mf16-sample-20261023",
+      "configuration": {
+        "scale": "sample",
+        "seed": 42,
+        "kind": "mf",
+        "source_run": "mf16-sample-20261023",
+        "movie_bias_scale": 0.5
+      },
+      "question": "Does reducing unsupported movie-prior influence improve ranking?",
+      "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+      "changed_variable": "{\"movie_bias_scale\": 0.5}",
+      "evidence_stage": "exploratory_validation"
+    },
+    {
+      "run_id": "cm-20261119-bias-shrink100",
+      "family": "movie_bias",
+      "parent_run": "mf16-sample-20261023",
+      "configuration": {
+        "scale": "sample",
+        "seed": 42,
+        "kind": "mf",
+        "source_run": "mf16-sample-20261023",
+        "bias_shrinkage_tau": 100
+      },
+      "question": "Does reducing unsupported movie-prior influence improve ranking?",
+      "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+      "changed_variable": "{\"bias_shrinkage_tau\": 100}",
+      "evidence_stage": "exploratory_validation"
+    },
+    {
+      "run_id": "cm-20261119-bias-shrink1000",
+      "family": "movie_bias",
+      "parent_run": "mf16-sample-20261023",
+      "configuration": {
+        "scale": "sample",
+        "seed": 42,
+        "kind": "mf",
+        "source_run": "mf16-sample-20261023",
+        "bias_shrinkage_tau": 1000
+      },
+      "question": "Does reducing unsupported movie-prior influence improve ranking?",
+      "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+      "changed_variable": "{\"bias_shrinkage_tau\": 1000}",
+      "evidence_stage": "exploratory_validation"
+    },
+    {
+      "run_id": "cm-20261119-blend25",
+      "family": "popularity_hybrid",
+      "parent_run": "mf16-sample-20261023",
+      "configuration": {
+        "scale": "sample",
+        "seed": 42,
+        "kind": "hybrid",
+        "base_run": "mf16-sample-20261023",
+        "alpha": 0.25
+      },
+      "question": "Can popularity stabilise sparse personalisation without erasing it?",
+      "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+      "changed_variable": "{\"alpha\": 0.25}",
+      "evidence_stage": "exploratory_validation"
+    },
+    {
+      "run_id": "cm-20261119-blend50",
+      "family": "popularity_hybrid",
+      "parent_run": "mf16-sample-20261023",
+      "configuration": {
+        "scale": "sample",
+        "seed": 42,
+        "kind": "hybrid",
+        "base_run": "mf16-sample-20261023",
+        "alpha": 0.5
+      },
+      "question": "Can popularity stabilise sparse personalisation without erasing it?",
+      "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+      "changed_variable": "{\"alpha\": 0.5}",
+      "evidence_stage": "exploratory_validation"
+    },
+    {
+      "run_id": "cm-20261119-blend-confidence",
+      "family": "popularity_hybrid",
+      "parent_run": "mf16-sample-20261023",
+      "configuration": {
+        "scale": "sample",
+        "seed": 42,
+        "kind": "hybrid",
+        "base_run": "mf16-sample-20261023",
+        "alpha": 0.5,
+        "confidence": true
+      },
+      "question": "Can popularity stabilise sparse personalisation without erasing it?",
+      "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+      "changed_variable": "{\"alpha\": 0.5, \"confidence\": true}",
+      "evidence_stage": "exploratory_validation"
+    },
+    {
+      "run_id": "cm-20261119-rerank100",
+      "family": "popularity_hybrid",
+      "parent_run": "mf16-sample-20261023",
+      "configuration": {
+        "scale": "sample",
+        "seed": 42,
+        "kind": "hybrid",
+        "base_run": "mf16-sample-20261023",
+        "candidate_count": 100
+      },
+      "question": "Can popularity stabilise sparse personalisation without erasing it?",
+      "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+      "changed_variable": "{\"candidate_count\": 100}",
+      "evidence_stage": "exploratory_validation"
+    },
+    {
+      "run_id": "cm-20261119-full-blend25",
+      "family": "popularity_hybrid",
+      "parent_run": "mf16-full-users-fixed-catalog-20261117",
+      "configuration": {
+        "scale": "full",
+        "seed": 42,
+        "kind": "hybrid",
+        "base_run": "mf16-full-users-fixed-catalog-20261117",
+        "alpha": 0.25
+      },
+      "question": "Does the same blend improve the full-user model?",
+      "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+      "changed_variable": "25% standardized MF + 75% standardized log-count",
+      "evidence_stage": "exploratory_validation"
+    },
+    {
+      "run_id": "cm-20261119-mf8",
+      "family": "mf_training",
+      "parent_run": "mf16-sample-20261023",
+      "configuration": {
+        "scale": "sample",
+        "seed": 42,
+        "kind": "mf",
+        "train": true,
+        "epochs": 12,
+        "patience": 3,
+        "fold_in_grid": [
+          1.0
+        ],
+        "threads": 2,
+        "factors": 8
+      },
+      "question": "Does a smaller latent profile generalise better from five ratings?",
+      "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+      "changed_variable": "{\"factors\": 8}; fixed fold-in lambda1, maximum12 epochs",
+      "evidence_stage": "exploratory_validation"
+    },
+    {
+      "run_id": "cm-20261119-mf32",
+      "family": "mf_training",
+      "parent_run": "mf16-sample-20261023",
+      "configuration": {
+        "scale": "sample",
+        "seed": 42,
+        "kind": "mf",
+        "train": true,
+        "epochs": 12,
+        "patience": 3,
+        "fold_in_grid": [
+          1.0
+        ],
+        "threads": 2,
+        "factors": 32
+      },
+      "question": "Does a larger latent space improve new-user ranking?",
+      "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+      "changed_variable": "{\"factors\": 32}; fixed fold-in lambda1, maximum12 epochs",
+      "evidence_stage": "exploratory_validation"
+    },
+    {
+      "run_id": "cm-20261119-mf-biasreg10",
+      "family": "mf_training",
+      "parent_run": "mf16-sample-20261023",
+      "configuration": {
+        "scale": "sample",
+        "seed": 42,
+        "kind": "mf",
+        "train": true,
+        "epochs": 12,
+        "patience": 3,
+        "fold_in_grid": [
+          1.0
+        ],
+        "threads": 2,
+        "factors": 16,
+        "bias_count_regularization": 10.0
+      },
+      "question": "Does evidence-aware bias regularisation protect low-support movies?",
+      "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+      "changed_variable": "{\"factors\": 16, \"bias_count_regularization\": 10.0}; fixed fold-in lambda1, maximum12 epochs",
+      "evidence_stage": "exploratory_validation"
+    },
+    {
+      "run_id": "cm-20261119-mf-huber",
+      "family": "mf_training",
+      "parent_run": "mf16-sample-20261023",
+      "configuration": {
+        "scale": "sample",
+        "seed": 42,
+        "kind": "mf",
+        "train": true,
+        "epochs": 12,
+        "patience": 3,
+        "fold_in_grid": [
+          1.0
+        ],
+        "threads": 2,
+        "factors": 16,
+        "loss": "huber",
+        "huber_delta": 1.0
+      },
+      "question": "Does a robust rating loss improve ranking?",
+      "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+      "changed_variable": "{\"factors\": 16, \"loss\": \"huber\", \"huber_delta\": 1.0}; fixed fold-in lambda1, maximum12 epochs",
+      "evidence_stage": "exploratory_validation"
+    },
+    {
+      "run_id": "cm-20261119-knn-cos100",
+      "family": "item_neighbors",
+      "parent_run": "mf16-sample-20261023",
+      "configuration": {
+        "scale": "sample",
+        "seed": 42,
+        "kind": "neighbors",
+        "feedback": "positive",
+        "top_k": 100,
+        "shrink": 10,
+        "similarity": "cosine",
+        "aggregation": "positive"
+      },
+      "question": "Can item co-occurrence transfer five onboarding ratings into better rankings?",
+      "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+      "changed_variable": "{\"kind\": \"neighbors\", \"feedback\": \"positive\", \"top_k\": 100, \"shrink\": 10, \"similarity\": \"cosine\", \"aggregation\": \"positive\"}",
+      "evidence_stage": "exploratory_validation"
+    },
+    {
+      "run_id": "cm-20261119-knn-cos300",
+      "family": "item_neighbors",
+      "parent_run": "mf16-sample-20261023",
+      "configuration": {
+        "scale": "sample",
+        "seed": 42,
+        "kind": "neighbors",
+        "feedback": "positive",
+        "top_k": 300,
+        "shrink": 50,
+        "similarity": "cosine",
+        "aggregation": "positive"
+      },
+      "question": "Can item co-occurrence transfer five onboarding ratings into better rankings?",
+      "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+      "changed_variable": "{\"kind\": \"neighbors\", \"feedback\": \"positive\", \"top_k\": 300, \"shrink\": 50, \"similarity\": \"cosine\", \"aggregation\": \"positive\"}",
+      "evidence_stage": "exploratory_validation"
+    },
+    {
+      "run_id": "cm-20261119-knn-conditional",
+      "family": "item_neighbors",
+      "parent_run": "mf16-sample-20261023",
+      "configuration": {
+        "scale": "sample",
+        "seed": 42,
+        "kind": "neighbors",
+        "feedback": "positive",
+        "top_k": 100,
+        "shrink": 10,
+        "similarity": "conditional",
+        "aggregation": "positive"
+      },
+      "question": "Can item co-occurrence transfer five onboarding ratings into better rankings?",
+      "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+      "changed_variable": "{\"kind\": \"neighbors\", \"feedback\": \"positive\", \"top_k\": 100, \"shrink\": 10, \"similarity\": \"conditional\", \"aggregation\": \"positive\"}",
+      "evidence_stage": "exploratory_validation"
+    },
+    {
+      "run_id": "cm-20261119-knn-observed",
+      "family": "item_neighbors",
+      "parent_run": "mf16-sample-20261023",
+      "configuration": {
+        "scale": "sample",
+        "seed": 42,
+        "kind": "neighbors",
+        "feedback": "observed",
+        "top_k": 100,
+        "shrink": 10,
+        "similarity": "cosine",
+        "aggregation": "positive"
+      },
+      "question": "Can item co-occurrence transfer five onboarding ratings into better rankings?",
+      "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+      "changed_variable": "{\"kind\": \"neighbors\", \"feedback\": \"observed\", \"top_k\": 100, \"shrink\": 10, \"similarity\": \"cosine\", \"aggregation\": \"positive\"}",
+      "evidence_stage": "exploratory_validation"
+    },
+    {
+      "run_id": "cm-20261119-knn-signed",
+      "family": "item_neighbors",
+      "parent_run": "mf16-sample-20261023",
+      "configuration": {
+        "scale": "sample",
+        "seed": 42,
+        "kind": "neighbors",
+        "feedback": "positive",
+        "top_k": 100,
+        "shrink": 10,
+        "similarity": "cosine",
+        "aggregation": "signed"
+      },
+      "question": "Can item co-occurrence transfer five onboarding ratings into better rankings?",
+      "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+      "changed_variable": "{\"kind\": \"neighbors\", \"feedback\": \"positive\", \"top_k\": 100, \"shrink\": 10, \"similarity\": \"cosine\", \"aggregation\": \"signed\"}",
+      "evidence_stage": "exploratory_validation"
+    },
+    {
+      "run_id": "cm-20261119-bpr16",
+      "family": "pairwise_ranking",
+      "parent_run": "mf16-sample-20261023",
+      "configuration": {
+        "scale": "sample",
+        "seed": 42,
+        "kind": "ranking",
+        "factors": 16,
+        "epochs": 8,
+        "patience": 3,
+        "pairs_per_epoch": 300000,
+        "use_item_bias": true,
+        "aggregation": "positive",
+        "threads": 2
+      },
+      "question": "Can a pairwise item-context objective improve recommendations for unseen users?",
+      "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+      "changed_variable": "{\"kind\": \"ranking\", \"factors\": 16, \"epochs\": 8, \"patience\": 3, \"pairs_per_epoch\": 300000, \"use_item_bias\": true, \"aggregation\": \"positive\", \"threads\": 2}",
+      "evidence_stage": "exploratory_validation"
+    },
+    {
+      "run_id": "cm-20261119-bpr16-no-bias",
+      "family": "pairwise_ranking",
+      "parent_run": "mf16-sample-20261023",
+      "configuration": {
+        "scale": "sample",
+        "seed": 42,
+        "kind": "ranking",
+        "factors": 16,
+        "epochs": 8,
+        "patience": 3,
+        "pairs_per_epoch": 300000,
+        "use_item_bias": false,
+        "aggregation": "positive",
+        "threads": 2
+      },
+      "question": "Can a pairwise item-context objective improve recommendations for unseen users?",
+      "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+      "changed_variable": "{\"kind\": \"ranking\", \"factors\": 16, \"epochs\": 8, \"patience\": 3, \"pairs_per_epoch\": 300000, \"use_item_bias\": false, \"aggregation\": \"positive\", \"threads\": 2}",
+      "evidence_stage": "exploratory_validation"
+    },
+    {
+      "run_id": "cm-20261119-bpr32",
+      "family": "pairwise_ranking",
+      "parent_run": "mf16-sample-20261023",
+      "configuration": {
+        "scale": "sample",
+        "seed": 42,
+        "kind": "ranking",
+        "factors": 32,
+        "epochs": 8,
+        "patience": 3,
+        "pairs_per_epoch": 300000,
+        "use_item_bias": true,
+        "aggregation": "positive",
+        "threads": 2
+      },
+      "question": "Can a pairwise item-context objective improve recommendations for unseen users?",
+      "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+      "changed_variable": "{\"kind\": \"ranking\", \"factors\": 32, \"epochs\": 8, \"patience\": 3, \"pairs_per_epoch\": 300000, \"use_item_bias\": true, \"aggregation\": \"positive\", \"threads\": 2}",
+      "evidence_stage": "exploratory_validation"
+    },
+    {
+      "run_id": "cm-20261119-genre",
+      "family": "metadata",
+      "parent_run": "mf16-sample-20261023",
+      "configuration": {
+        "scale": "sample",
+        "seed": 42,
+        "kind": "content",
+        "aggregation": "signed"
+      },
+      "question": "Do verified MovieLens genres help from sparse ratings?",
+      "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+      "changed_variable": "Unit-normalized genre vectors and signed onboarding aggregation",
+      "evidence_stage": "exploratory_validation"
+    },
+    {
+      "run_id": "cm-20261119-genre-blend25",
+      "family": "metadata",
+      "parent_run": "cm-20261119-genre",
+      "configuration": {
+        "scale": "sample",
+        "seed": 42,
+        "kind": "hybrid",
+        "base_run": "cm-20261119-genre",
+        "alpha": 0.25
+      },
+      "question": "Does genre taste improve a popularity prior?",
+      "hypothesis": "This change may improve recovery of held-out likes; no improvement is assumed.",
+      "changed_variable": "25% standardized genre score + 75% standardized log-count",
+      "evidence_stage": "exploratory_validation"
+    }
+  ],
+  "fresh_holdout": "closed until candidate and evaluation are frozen",
+  "breadth": "Seven families; sample screens then selected full-data confirmations",
+  "concurrency": "one experiment worker, two numerical threads",
+  "excluded_families": [],
+  "existing_evidence": "Two recorded MF runs; prior chat diagnostics were unrecorded and are rerun here; automated tests are not model experiments."
+}
